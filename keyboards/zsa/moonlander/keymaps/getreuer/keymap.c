@@ -31,16 +31,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
     KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN2, KC_BTN1,
     KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , MO(FUN),
-    KC_BSPC, HOME_S , HOME_T , HOME_R , HOME_D , KC_Y   , KC_BSLS,
-    WIN_COL, HOME_X , KC_K   , KC_J   , NUM_G  , KC_W   ,
+    KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   , KC_BSLS,
+    WIN_COL, HOME_C , KC_K   , KC_J   , NUM_G  , KC_W   ,
     KC_LCTL, G(KC_TAB), SELLINE, KC_DOWN, KC_UP  ,
                                                                    KC_UNDS,
                                                  KC_UNDS, KC_SPC , KC_BTN1,
 
              KC_VOLU, KC_HOME, KC_LEFT, KC_RGHT, KC_END , KC_DEL , KC_MPLY,
              KC_VOLD, KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-             KC_BSLS, KC_F   , HOME_N , HOME_E , HOME_A , HOME_I , KC_QUOT,
-                      KC_Z   , KC_H   , KC_COMM, KC_DOT , HOME_SC, KC_ENT ,
+             KC_BSLS, KC_F   , HOME_M , HOME_VOMM , HOME_DOT , HOME_SCLN , KC_QUOT,
+                      KC_Z   , KC_H   , KC_COMM, KC_DOT , HOME_A, KC_ENT ,
                                KC_LEFT, KC_RGHT, DASH   , ARROW  , KC_RCTL,
     KC_ESC ,
     MO(WIN), QK_REP , KC_ESC

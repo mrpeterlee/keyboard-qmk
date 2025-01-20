@@ -28,18 +28,32 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
-    KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1,
-    KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   ,
-    KC_BSPC, HOME_S , HOME_T , HOME_R , HOME_D , KC_Y   ,
-    WIN_COL, HOME_X , KC_K   , KC_J   , NUM_G  , KC_W   ,
-                                                 KC_UNDS, KC_SPC ,
+  /* [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy. */
+  /*   KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1, */
+  /*   KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , */
+  /*   KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   , */
+  /*   WIN_COL, HOME_C , KC_K   , KC_J   , NUM_G  , KC_W   , */
+  /*                                                KC_UNDS, KC_SPC , */
+  /**/
+  /*                     KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY, */
+  /*                     KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH, */
+  /*                     KC_F   , HOME_M , HOME_VOMM , HOME_DOT , HOME_SCLN , KC_QUOT, */
+  /*                     KC_Z   , KC_H   , KC_COMM, KC_DOT , HOME_A, KC_ENT , */
+  /*            QK_REP , KC_ESC */
+  /* ), */
 
-                      KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY,
-                      KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-                      KC_F   , HOME_N , HOME_E , HOME_A , HOME_I , KC_QUOT,
-                      KC_Z   , KC_H   , KC_COMM, KC_DOT , HOME_SC, KC_ENT ,
-             QK_REP , KC_ESC
+  [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
+    KC_GRV  , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1,
+    KC_TAB  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,
+    CKC_CAPS, HOME_A , KC_S   , KC_D   , KC_F   , NUM_G  ,
+    KC_LSFT , KC_Z   , HOME_X , HOME_C , HOME_V , KC_B   ,
+                                                 KC_ENT, QK_REP,
+
+                      KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL   , KC_MINS,
+                      KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
+                      KC_H   , KC_J   , KC_K    , KC_L   , HOME_SCLN, KC_QUOT,
+                      KC_N   , HOME_M , HOME_VOMM, HOME_DOT, KC_SLSH, MAGIC  ,
+             KC_BSPC, KC_SPC
   ),
 
   [SYM] = LAYOUT_LR(  // Symbol layer.

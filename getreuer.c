@@ -142,20 +142,26 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-#define HOME_S LT(SYM, KC_S)
-#define HOME_T LALT_T(KC_T)
-#define HOME_R LSFT_T(KC_R)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_N RCTL_T(KC_N)
-#define HOME_E RSFT_T(KC_E)
-#define HOME_A LALT_T(KC_A)
-#define HOME_I LT(SYM, KC_I)
-#define HOME_X LGUI_T(KC_X)
-#define HOME_SC RGUI_T(KC_SCLN)
+/* #define HOME_X LT(SYM, KC_S) */
+#define HOME_A LSFT_T(KC_A)       // A acts as Shift when held
+#define HOME_X RCS_T(KC_X)        // Z acts as CTRL+SHIFT when held
+#define HOME_C LALT_T(KC_C)       // X acts as Alt when held
+#define HOME_V LCTL_T(KC_V)       // C acts as Ctrl when held
+
+#define HOME_M RCTL_T(KC_M)       // M acts as Ctrl when held
+#define HOME_VOMM RALT_T(KC_COMM) // , acts as Alt when held
+#define HOME_DOT RCS_T(KC_DOT)    // . acts as CTRL+SHIFT when held
+/* #define HOME_SCLN LT(SYM, KC_I) */
+#define HOME_SCLN RSFT_T(KC_SCLN) // ; acts as Shift when held 
+
+#define HOME_B LSFT_T(KC_B)
+/* #define HOME_C LGUI_T(KC_X) */
 
 #define NUM_G LT(NUM, KC_G)
 #define WIN_COL LT(WIN, KC_SCLN)
 
+#define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
+#define CKC_SUPR LCTL_T(LALT_T(LSFT_T(KC_F13)))  // ; Send CTRL+ALT+SHIFT when held; F13 when tapped
 
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
@@ -163,11 +169,11 @@ enum custom_keycodes {
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_COMM, COMBO_END};
 const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, NUM_G, COMBO_END};
-const uint16_t d_y_combo[] PROGMEM = {HOME_D, KC_Y, COMBO_END};
+const uint16_t d_y_combo[] PROGMEM = {HOME_V, KC_Y, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
     COMBO(caps_combo, CW_TOGG),          // J and , => activate Caps Word.
-    COMBO(j_k_combo, KC_BSLS),           // J and K => backslash
+    /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
     COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer
     COMBO(d_y_combo, OSL(FUN)),          // D and Y => one-shot FUN layer
 };
@@ -180,7 +186,7 @@ combo_t key_combos[] = {
 const custom_shift_key_t custom_shift_keys[] = {
     {KC_DOT, KC_QUES},
     {KC_COMM, KC_EXLM},
-    {HOME_SC, KC_AT  },
+    {HOME_A, KC_AT  },
     {KC_MPLY, KC_MNXT},
     {KC_EQL , KC_EQL },  // Don't shift =
     {KC_SLSH, KC_SLSH},  // Don't shift /
@@ -194,8 +200,8 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case HOME_T:
-    case HOME_A:
+    case HOME_C:
+    case HOME_DOT:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -208,7 +214,10 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // lead to missed triggers in fast typing. Here, returning 0 means we
   // instead want to "force hold" and disable key repeating.
   switch (keycode) {
-    case HOME_N:
+    case HOME_A:
+    case HOME_M:
+    case HOME_C:
+    case HOME_X:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
@@ -230,8 +239,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
-    case HOME_S:
-    case HOME_I:
+    case HOME_X:
+    case HOME_SCLN:
       if (row == 0) { return true; }
       break;
     // Exceptionally allow G + J as a same-hand chord.
@@ -259,13 +268,13 @@ uint16_t achordion_streak_chord_timeout(
 
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
-    case HOME_N:
+    case HOME_M:
       if (next_keycode == KC_C || next_keycode == KC_V) {
         return 0;
       }
       break;
-    case HOME_D:
-      if (next_keycode == HOME_N) {
+    case HOME_V:
+      if (next_keycode == HOME_M) {
         return 0;
       }
       break;
@@ -404,7 +413,7 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t* record,
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
   if ((mods & MOD_MASK_CTRL)) {
     switch (keycode) {
-      case HOME_A: return C(KC_C);  // Ctrl+A -> Ctrl+C
+      case HOME_DOT: return C(KC_C);  // Ctrl+A -> Ctrl+C
       case KC_C: return C(KC_V);    // Ctrl+C -> Ctrl+V
     }
   } else if ((mods & ~MOD_MASK_SHIFT) == 0) {
@@ -417,7 +426,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 
       // For navigating next/previous search results in Vim:
       // N -> Shift + N, Shift + N -> N.
-      case HOME_N:
+      case HOME_M:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return S(KC_N);
         }
@@ -425,11 +434,11 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case KC_N: return KC_N;
 
       // Fix SFBs and awkward strokes.
-      case HOME_A: return KC_O;       // A -> O
+      case HOME_DOT: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
-      case HOME_E: return KC_U;       // E -> U
+      case HOME_VOMM: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
-      case HOME_I:
+      case HOME_SCLN:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return M_ION;  // I -> ON
         } else {
@@ -437,18 +446,18 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         }
       case KC_M: return M_MENT;       // M -> ENT
       case KC_Q: return M_QUEN;       // Q -> UEN
-      case HOME_T: return M_TMENT;    // T -> TMENT
+      case HOME_C: return M_TMENT;    // T -> TMENT
 
       case KC_C: return KC_Y;         // C -> Y
-      case HOME_D: return KC_Y;       // D -> Y
+      case HOME_V: return KC_Y;       // D -> Y
       case NUM_G: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
 
       case KC_L: return KC_K;         // L -> K
-      case HOME_S: return KC_K;       // S -> K
+      case HOME_X: return KC_K;       // S -> K
 
-      case HOME_R: return KC_L;       // R -> L
+      case HOME_B: return KC_L;       // R -> L
       case KC_DOT:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return M_UPDIR;  // . -> ./
@@ -477,8 +486,8 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 
       case KC_F:
       case KC_V:
-      case HOME_X:
-      case HOME_SC:
+      /* case HOME_B: */
+      case HOME_A:
         return M_NOOP;
 
       case KC_PLUS:
