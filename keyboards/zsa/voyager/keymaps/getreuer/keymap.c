@@ -43,13 +43,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* ), */
 
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
-    KC_GRV  , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1,
+    KC_GRV  , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,
     KC_TAB  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,
-    CKC_CAPS, HOME_A , KC_S   , KC_D   , KC_F   , NUM_G  ,
+    CKC_CAPS, HOME_A , HOME_S , KC_D   , KC_F   , NUM_G  ,
     KC_LSFT , KC_Z   , HOME_X , HOME_C , HOME_V , KC_B   ,
                                                  KC_ENT, QK_REP,
 
-                      KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL   , KC_MINS,
+                      KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
                       KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
                       KC_H   , KC_J   , KC_K    , KC_L   , HOME_SCLN, KC_QUOT,
                       KC_N   , HOME_M , HOME_VOMM, HOME_DOT, KC_SLSH, MAGIC  ,

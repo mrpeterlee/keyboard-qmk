@@ -142,7 +142,8 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-/* #define HOME_X LT(SYM, KC_S) */
+#define HOME_S LT(SYM, KC_S)
+
 #define HOME_A LSFT_T(KC_A)       // A acts as Shift when held
 #define HOME_X RCS_T(KC_X)        // Z acts as CTRL+SHIFT when held
 #define HOME_C LALT_T(KC_C)       // X acts as Alt when held
