@@ -63,10 +63,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, KC_SLSH, KC_ASTR, KC_CIRC, USRNAME,
                                                  _______, _______,
 
-                      C(KC_PGUP), KC_PGDN, KC_PGUP, C(KC_PGDN),  _______, KC_MUTE,
-                      KC_AMPR, ARROW  , KC_LBRC, KC_RBRC, SRCHSEL, _______,
-                      KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, _______,
-                      KC_TILD, KC_DLR , KC_LCBR, KC_RCBR, _______, _______,
+                      C(KC_PGUP), C(KC_PGDN),  KC_PGDN, KC_PGUP,   _______, KC_MUTE,
+                      KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE, SRCHSEL, _______,
+                      KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_COLN,  KC_DQUO,
+                      KC_TILD, KC_LCBR, KC_RCBR, _______, KC_QUES,  _______,
              _______, _______
   ),
 
