@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE, SRCHSEL, _______,
                       KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_UNDS,  KC_DQUO,
                       KC_TILD, KC_LCBR, KC_RCBR, _______, KC_QUES,  _______,
-             _______, _______
+             _______, KC_AT
   ),
 
   [NUM] = LAYOUT_LR(  // Number layer.
@@ -91,10 +91,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  XXXXXXX, G(KC_SPC),
 
-                      XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX,
-                      G(KC_TAB), G(KC_8), G(KC_9), G(KC_4), XXXXXXX, XXXXXXX,
-                      G(S(KC_LEFT)), G(KC_1), G(KC_2), G(KC_3), G(S(KC_RGHT)), XXXXXXX,
-                      XXXXXXX, G(KC_7), G(KC_6), G(KC_5), KC_VOLD , KC_VOLU,
+                      XXXXXXX, C(S(KC_7)), C(S(KC_8)), C(S(KC_9)), XXXXXXX, XXXXXXX,
+                      G(KC_TAB), C(S(KC_4)), C(S(KC_5)), C(S(KC_6)), XXXXXXX, XXXXXXX,
+                      C(S(KC_LEFT)), C(S(KC_1)), C(S(KC_2)), C(S(KC_3)), C(S(KC_RGHT)), XXXXXXX,
+                      XXXXXXX, C(S(KC_7)), C(S(KC_6)), C(S(KC_5)), KC_VOLD , KC_VOLU,
              QK_REP , XXXXXXX
   ),
 
