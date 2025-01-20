@@ -58,15 +58,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM] = LAYOUT_LR(  // Symbol layer.
     _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
-    TMUXESC, MO(FUN), KC_LABK, KC_RABK, KC_BSLS, KC_GRV ,
-    _______, KC_LSFT, KC_MINS, KC_PLUS, KC_EQL , KC_HASH,
+    TMUXESC, MO(FUN), _______, _______, _______, _______,
+    _______, KC_LSFT, _______, _______, _______, _______,
     _______, _______, RCTL(KC_RSFT), KC_LALT, KC_LCTL, USRNAME,
-                                                 _______, _______,
+                                              _______, _______,
 
-                      C(KC_PGUP), C(KC_PGDN),  KC_PGDN, KC_PGUP,   _______, KC_MUTE,
-                      KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE, SRCHSEL, _______,
-                      KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_UNDS,  KC_DQUO,
-                      KC_TILD, KC_LCBR, KC_RCBR, _______, KC_QUES,  _______,
+                      KC_EQL , KC_AMPR, KC_ASTR, KC_SLSH, _______, KC_MUTE,
+                      KC_HASH, KC_LBRC, KC_RBRC, KC_PIPE, SRCHSEL, _______,
+                      KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_UNDS, KC_DQUO,
+                      KC_TILD, KC_LCBR, KC_RCBR, _______, KC_QUES, _______,
              _______, KC_AT
   ),
 
@@ -77,11 +77,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, RCTL(KC_RSFT), KC_LALT,  KC_LCTL, XXXXXXX,
                                                  TO(BASE), QK_LLCK,
 
-                      _______, KC_7   , KC_8   , KC_9   , _______, _______,
-                      KC_SLSH, KC_4   , KC_5   , KC_6   , KC_MINS, KC_SLSH,
-                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PLUS, _______,
-                      KC_COMM, KC_0   , _______, KC_DOT , _______, TO(BASE),
-             KC_0   , _______
+                      KC_EQL , KC_7   , KC_8   , KC_9   , _______, _______,
+                      _______, KC_4   , KC_5   , KC_6   , _______, _______,
+                      KC_PLUS, KC_1   , KC_2   , KC_3   , KC_ASTR, _______,
+                      KC_MINS, KC_0   , _______, KC_DOT , KC_SLSH, TO(BASE),
+             KC_0   , KC_0 
   ),
 
   [WIN] = LAYOUT_LR(  // Window management layer.

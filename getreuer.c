@@ -145,13 +145,13 @@ enum custom_keycodes {
 #define HOME_S LT(SYM, KC_S)
 
 #define HOME_A LSFT_T(KC_A)       // A acts as Shift when held
-#define HOME_X RCS_T(KC_X)        // Z acts as CTRL+SHIFT when held
+#define HOME_X LGUI_T(KC_X)        // Z acts as CTRL+SHIFT when held
 #define HOME_C LALT_T(KC_C)       // X acts as Alt when held
 #define HOME_V LCTL_T(KC_V)       // C acts as Ctrl when held
 
 #define HOME_M RCTL_T(KC_M)       // M acts as Ctrl when held
 #define HOME_VOMM RALT_T(KC_COMM) // , acts as Alt when held
-#define HOME_DOT RCS_T(KC_DOT)    // . acts as CTRL+SHIFT when held
+#define HOME_DOT RGUI_T(KC_DOT)    // . acts as CTRL+SHIFT when held
 /* #define HOME_SCLN LT(SYM, KC_I) */
 #define HOME_SCLN RSFT_T(KC_SCLN) // ; acts as Shift when held 
 
