@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
                       KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
                       KC_H   , KC_J   , KC_K    , KC_L   , HOME_SCLN, KC_QUOT,
-                      KC_N   , HOME_M , HOME_COMM, HOME_DOT, KC_SLSH, MAGIC  ,
+                      KC_N   , HOME_M , HOME_VOMM, HOME_DOT, KC_SLSH, MAGIC  ,
              KC_BSPC, KC_SPC
   ),
 
@@ -73,14 +73,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT_LR(  // Number layer.
     _______, _______, _______, _______, _______, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    _______, XXXXXXX, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
-    _______, KC_LGUI, XXXXXXX, KC_LCTL, XXXXXXX, XXXXXXX,
+    _______, KC_LSFT, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
+    _______, _______, RCTL(KC_RSFT), KC_LALT,  KC_LCTL, XXXXXXX,
                                                  TO(BASE), _______,
 
-                      _______, _______, _______, _______, _______, _______,
-                      KC_TAB , KC_8   , KC_9   , KC_4   , KC_PLUS, KC_SLSH,
-                      KC_COLN, KC_1   , KC_2   , KC_3   , KC_MINS, KC_ASTR,
-                      KC_COMM, KC_7   , KC_6   , KC_5   , KC_DOT , _______,
+                      _______, KC_7   , KC_8   , KC_9   , _______, _______,
+                      KC_SLSH, KC_4   , KC_5   , KC_6   , KC_MINS, KC_SLSH,
+                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PLUS, _______,
+                      KC_COMM, KC_0   , _______, KC_DOT , _______, TO(BASE),
              KC_0   , QK_LLCK
   ),
 
