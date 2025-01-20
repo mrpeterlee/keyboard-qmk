@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,
     CKC_CAPS, HOME_A , HOME_S , KC_D   , KC_F   , NUM_G  ,
     KC_LSFT , KC_Z   , HOME_X , HOME_C , HOME_V , KC_B   ,
-                                                 KC_ENT, QK_REP,
+                                                 KC_ENT, ESC_WIN,
 
                       KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
                       KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                       C(KC_PGUP), C(KC_PGDN),  KC_PGDN, KC_PGUP,   _______, KC_MUTE,
                       KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE, SRCHSEL, _______,
-                      KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_COLN,  KC_DQUO,
+                      KC_DLR , KC_LPRN, KC_RPRN, KC_PERC, KC_UNDS,  KC_DQUO,
                       KC_TILD, KC_LCBR, KC_RCBR, _______, KC_QUES,  _______,
              _______, _______
   ),
@@ -75,13 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, KC_LSFT, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
     _______, _______, RCTL(KC_RSFT), KC_LALT,  KC_LCTL, XXXXXXX,
-                                                 TO(BASE), _______,
+                                                 TO(BASE), QK_LLCK,
 
                       _______, KC_7   , KC_8   , KC_9   , _______, _______,
                       KC_SLSH, KC_4   , KC_5   , KC_6   , KC_MINS, KC_SLSH,
                       KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PLUS, _______,
                       KC_COMM, KC_0   , _______, KC_DOT , _______, TO(BASE),
-             KC_0   , QK_LLCK
+             KC_0   , _______
   ),
 
   [WIN] = LAYOUT_LR(  // Window management layer.
@@ -103,13 +103,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, XXXXXXX, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
     _______, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 TO(BASE), _______,
+                                                 TO(BASE), QK_LLCK,
 
                       _______, _______, _______, _______, _______, QK_BOOT,
                       XXXXXXX, KC_F8  , KC_F9  , KC_F4  , KC_F10 , XXXXXXX,
                       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F11 , XXXXXXX,
                       XXXXXXX, KC_F7  , KC_F6  , KC_F5  , KC_F12 , _______,
-             XXXXXXX, QK_LLCK
+             XXXXXXX, _______
   ),
 };
 

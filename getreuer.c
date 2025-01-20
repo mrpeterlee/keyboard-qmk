@@ -160,6 +160,7 @@ enum custom_keycodes {
 
 #define NUM_G LT(NUM, KC_G)
 #define WIN_COL LT(WIN, KC_SCLN)
+#define ESC_WIN LT(WIN, KC_ESC)
 
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
 #define CKC_SUPR LCTL_T(LALT_T(LSFT_T(KC_F13)))  // ; Send CTRL+ALT+SHIFT when held; F13 when tapped
@@ -176,7 +177,7 @@ combo_t key_combos[] = {
     COMBO(caps_combo, CW_TOGG),          // J and , => activate Caps Word.
     /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
     COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer
-    COMBO(d_y_combo, OSL(FUN)),          // D and Y => one-shot FUN layer
+    /* COMBO(d_y_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
 
