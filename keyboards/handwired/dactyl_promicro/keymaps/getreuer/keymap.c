@@ -39,8 +39,8 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 
                       KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY,
                       KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-                      KC_F   , HOME_M , HOME_VOMM , HOME_DOT , HOME_SCLN , KC_QUOT,
-                      KC_Z   , KC_H   , KC_COMM, KC_DOT , HOME_A, KC_ENT ,
+                      KC_F   , HOME_M , CKC_COMM , HOME_DOT , CKC_L , KC_QUOT,
+                      KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT ,
                                KC_LEFT, KC_RGHT, DASH   , ARROW  , KC_RCTL,
     KC_MINS, MO(SYM),
     KC_MUTE,

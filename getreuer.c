@@ -142,27 +142,30 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-#define HOME_S LT(SYM, KC_S)
+#define CKC_A LT(SYM, KC_A)
+#define CKC_S LSFT_T(KC_S)       // A acts as Shift when held
 
-#define HOME_A LSFT_T(KC_A)       // A acts as Shift when held
 #define HOME_X LGUI_T(KC_X)        // Z acts as CTRL+SHIFT when held
+
 #define HOME_C LALT_T(KC_C)       // X acts as Alt when held
 #define HOME_V LCTL_T(KC_V)       // C acts as Ctrl when held
 
 #define HOME_M RCTL_T(KC_M)       // M acts as Ctrl when held
-#define HOME_VOMM RALT_T(KC_COMM) // , acts as Alt when held
+#define CKC_COMM RALT_T(KC_COMM) // , acts as Alt when held
 #define HOME_DOT RGUI_T(KC_DOT)    // . acts as CTRL+SHIFT when held
-/* #define HOME_SCLN LT(SYM, KC_I) */
-#define HOME_SCLN RSFT_T(KC_SCLN) // ; acts as Shift when held 
+
+#define CKC_SCLN LT(SYM, KC_SCLN)
+#define CKC_L RSFT_T(KC_L) // ; acts as Shift when held 
 
 #define HOME_B LSFT_T(KC_B)
 /* #define HOME_C LGUI_T(KC_X) */
 
 #define NUM_G LT(NUM, KC_G)
 #define WIN_COL LT(WIN, KC_SCLN)
-#define ESC_WIN LT(WIN, KC_ESC)
+#define CKC_BSPC LT(WIN, KC_BSPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
+#define CKC_ENT  RALT_T(KC_ENT)       // ENT acts as ALT when held
 #define CKC_SUPR LCTL_T(LALT_T(LSFT_T(KC_F13)))  // ; Send CTRL+ALT+SHIFT when held; F13 when tapped
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -188,7 +191,7 @@ combo_t key_combos[] = {
 const custom_shift_key_t custom_shift_keys[] = {
     {KC_DOT, KC_QUES},
     {KC_COMM, KC_EXLM},
-    {HOME_A, KC_AT  },
+    {CKC_S, KC_AT  },
     {KC_MPLY, KC_MNXT},
     {KC_EQL , KC_EQL },  // Don't shift =
     {KC_SLSH, KC_SLSH},  // Don't shift /
@@ -216,8 +219,8 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // lead to missed triggers in fast typing. Here, returning 0 means we
   // instead want to "force hold" and disable key repeating.
   switch (keycode) {
-    case HOME_A:
-    case HOME_M:
+    case CKC_S:
+    case CKC_ENT:
     case HOME_C:
     case HOME_X:
       return QUICK_TAP_TERM;  // Enable key repeating.
@@ -242,7 +245,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
     case HOME_X:
-    case HOME_SCLN:
+    case CKC_L:
       if (row == 0) { return true; }
       break;
     // Exceptionally allow G + J as a same-hand chord.
@@ -270,13 +273,8 @@ uint16_t achordion_streak_chord_timeout(
 
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
-    case HOME_M:
+    case CKC_ENT:
       if (next_keycode == KC_C || next_keycode == KC_V) {
-        return 0;
-      }
-      break;
-    case HOME_V:
-      if (next_keycode == HOME_M) {
         return 0;
       }
       break;
@@ -438,9 +436,9 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       // Fix SFBs and awkward strokes.
       case HOME_DOT: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
-      case HOME_VOMM: return KC_U;       // E -> U
+      case CKC_COMM: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
-      case HOME_SCLN:
+      case CKC_L:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return M_ION;  // I -> ON
         } else {
@@ -489,7 +487,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case KC_F:
       case KC_V:
       /* case HOME_B: */
-      case HOME_A:
+      case CKC_S:
         return M_NOOP;
 
       case KC_PLUS:
