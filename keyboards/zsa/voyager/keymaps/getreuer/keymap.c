@@ -52,15 +52,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
                       KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
                       KC_H   , KC_J   , KC_K    , KC_L   , HOME_SCLN, KC_QUOT,
-                      KC_N   , HOME_M , HOME_VOMM, HOME_DOT, KC_SLSH, MAGIC  ,
+                      KC_N   , HOME_M , HOME_COMM, HOME_DOT, KC_SLSH, MAGIC  ,
              KC_BSPC, KC_SPC
   ),
 
   [SYM] = LAYOUT_LR(  // Symbol layer.
     _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
     TMUXESC, MO(FUN), KC_LABK, KC_RABK, KC_BSLS, KC_GRV ,
-    _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL , KC_HASH,
-    _______, _______, KC_SLSH, KC_ASTR, KC_CIRC, USRNAME,
+    _______, KC_LSFT, KC_MINS, KC_PLUS, KC_EQL , KC_HASH,
+    _______, _______, RCTL(KC_RSFT), KC_LALT, KC_LCTL, USRNAME,
                                                  _______, _______,
 
                       C(KC_PGUP), C(KC_PGDN),  KC_PGDN, KC_PGUP,   _______, KC_MUTE,
