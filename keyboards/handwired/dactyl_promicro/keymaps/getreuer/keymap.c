@@ -31,7 +31,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1,
     KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   ,
     KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   ,
-    WIN_COL, HOME_C , KC_K   , KC_J   , NUM_G  , KC_W   ,
+    WIN_COL, HOME_C , KC_K   , KC_J   , NUM_F  , KC_W   ,
     KC_LCTL, KC_PGUP, KC_PGDN, KC_DOWN, KC_UP  ,
                                                           MO(FUN), KC_UNDS,
                                                                    KC_BSLS,
@@ -39,7 +39,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 
                       KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY,
                       KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-                      KC_F   , HOME_M , CKC_COMM , HOME_DOT , CKC_L , KC_QUOT,
+                      KC_F   , HOME_M , CKC_COMM , HOME_DOT , CKC_SCLN , KC_QUOT,
                       KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT ,
                                KC_LEFT, KC_RGHT, DASH   , ARROW  , KC_RCTL,
     KC_MINS, MO(SYM),
