@@ -85,14 +85,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [WIN] = LAYOUT_LR(  // Window management layer.
-    RM_TOGG, RGB_DEF, RM_NEXT, RM_HUEU, RM_SATU, RM_VALU,
-    XXXXXXX, XXXXXXX, XXXXXXX, C(A(KC_UP)), XXXXXXX, C(A(KC_T)),
-    XXXXXXX, XXXXXXX, C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)),XXXXXXX,
-    XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    RM_TOGG  , RGB_DEF, RM_NEXT, RM_HUEU, RM_SATU, RM_VALU,
+    G(KC_TAB), XXXXXXX, XXXXXXX, C(A(KC_UP)), XXXXXXX, C(A(KC_T)),
+    XXXXXXX  , XXXXXXX, C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)),XXXXXXX,
+    XXXXXXX  , KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  XXXXXXX, G(KC_SPC),
 
-                      XXXXXXX  , C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
-                      G(KC_TAB), C(A(KC_7)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
+                      XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                      XXXXXXX, C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
                       XXXXXXX  , C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
                       XXXXXXX  , C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), KC_VOLD , KC_VOLU,
              QK_REP , XXXXXXX
