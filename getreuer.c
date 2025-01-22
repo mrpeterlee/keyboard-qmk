@@ -162,12 +162,12 @@ enum custom_keycodes {
 
 #define NUM_F LT(NUM, KC_F)
 #define WIN_COL LT(WIN, KC_SCLN)
-#define CKC_SPC RCTL_T(KC_SPC)
-#define CKC_ENT  RALT_T(KC_ENT)       // ENT acts as ALT when held
-#define CKC_BSPC LT(WIN, KC_BSPC)
+#define LEFT_THUMB_SMALL  RALT_T(KC_ENT)       // ENT acts as ALT when held
+#define LEFT_THUMB_BIG LT(WIN, KC_ESC)
+#define RIGHT_THUMB_BIG KC_BSPC
+#define RIGHT_THUMB_SMALL RCTL_T(KC_SPC)
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
 
-#define CKC_SUPR LCTL_T(LALT_T(LSFT_T(KC_F13)))  // ; Send CTRL+ALT+SHIFT when held; F13 when tapped
 
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
@@ -221,8 +221,8 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // instead want to "force hold" and disable key repeating.
   switch (keycode) {
     case CKC_A:
-    case CKC_ENT:
-    case CKC_BSPC:
+    case LEFT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
     case CKC_SCLN:
     case HOME_C:
     case HOME_X:
@@ -254,9 +254,9 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     // Exceptionally allow G + J as a same-hand chord.
     case CKC_A:
     case CKC_SCLN:
-    case CKC_ENT:
-    case CKC_BSPC:
-    case CKC_SPC:
+    case LEFT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
+    case RIGHT_THUMB_SMALL:
       return true;
     case NUM_F:
       if (other_keycode == KC_J) { return true; }
@@ -282,7 +282,7 @@ uint16_t achordion_streak_chord_timeout(
 
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
-    case CKC_SPC:
+    case RIGHT_THUMB_SMALL:
       if (next_keycode == KC_C || next_keycode == KC_V) {
         return 0;
       }
