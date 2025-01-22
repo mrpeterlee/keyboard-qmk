@@ -73,6 +73,7 @@ enum layers {
   WIN,
   FUN,
   NAV,
+  ARR,
 };
 
 enum custom_keycodes {
@@ -144,7 +145,6 @@ enum custom_keycodes {
 
 // Short aliases for home row mods and other tap-hold keys.
 #define CKC_M LT(SYM, KC_M)
-#define CKC_A LSFT_T(KC_A)       // A acts as Shift when held
 
 #define HOME_X LGUI_T(KC_X)        // Z acts as CTRL+SHIFT when held
 
@@ -155,17 +155,20 @@ enum custom_keycodes {
 #define CKC_COMM RALT_T(KC_COMM) // , acts as Alt when held
 #define HOME_DOT RGUI_T(KC_DOT)    // . acts as CTRL+SHIFT when held
 
-#define CKC_V LT(SYM, KC_V)
-#define CKC_SCLN RSFT_T(KC_SCLN) // ; acts as Shift when held 
+#define LAY_SYM LT(SYM, KC_F)
+
+#define CKC_A LSFT_T(KC_A)
+#define CKC_SCLN LSFT_T(KC_SCLN)
 
 #define HOME_B LSFT_T(KC_B)
 /* #define HOME_C LGUI_T(KC_X) */
 
-#define NUM_F LT(NUM, KC_F)
+#define LAY_NUM LT(NUM, KC_D)
 #define WIN_COL LT(WIN, KC_SCLN)
+
 #define LEFT_THUMB_SMALL  RALT_T(KC_ENT)       // ENT acts as ALT when held
-#define LEFT_THUMB_BIG LT(WIN, KC_ESC)
-#define RIGHT_THUMB_BIG KC_BSPC
+#define LEFT_THUMB_BIG    LT(WIN, KC_ESC)
+#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL RCTL_T(KC_SPC)
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
 
@@ -173,15 +176,15 @@ enum custom_keycodes {
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
-const uint16_t caps_combo[] PROGMEM = {KC_J, KC_COMM, COMBO_END};
-const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
-const uint16_t j_g_combo[] PROGMEM = {KC_J, NUM_F, COMBO_END};
+const uint16_t caps_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
+const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
+const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
 const uint16_t d_y_combo[] PROGMEM = {HOME_V, KC_Y, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
-    COMBO(caps_combo, CW_TOGG),          // J and , => activate Caps Word.
+    COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word.
     /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
-    COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer
+    /* COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer */
     /* COMBO(d_y_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
@@ -222,9 +225,11 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // instead want to "force hold" and disable key repeating.
   switch (keycode) {
     case CKC_A:
-    case LEFT_THUMB_SMALL:
-    case RIGHT_THUMB_BIG:
     case CKC_SCLN:
+    case LEFT_THUMB_BIG:   
+    case LEFT_THUMB_SMALL:
+    case RIGHT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
     case HOME_C:
     case HOME_X:
       return QUICK_TAP_TERM;  // Enable key repeating.
@@ -256,10 +261,11 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case CKC_A:
     case CKC_SCLN:
     case LEFT_THUMB_SMALL:
-    case RIGHT_THUMB_BIG:
+    case LEFT_THUMB_BIG:
     case RIGHT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
       return true;
-    case NUM_F:
+    case LAY_NUM:
       if (other_keycode == KC_J) { return true; }
       break;
   }
@@ -460,7 +466,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 
       case KC_C: return KC_Y;         // C -> Y
       case HOME_V: return KC_Y;       // D -> Y
-      case NUM_F: return KC_Y;        // G -> Y
+      case LAY_NUM: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
 

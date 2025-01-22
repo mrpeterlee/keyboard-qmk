@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN2, KC_BTN1,
     KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , MO(FUN),
     KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   , KC_BSLS,
-    WIN_COL, HOME_C , KC_K   , KC_J   , NUM_F  , KC_W   ,
+    WIN_COL, HOME_C , KC_K   , KC_J   , LAY_NUM  , KC_W   ,
     KC_LCTL, G(KC_TAB), SELLINE, KC_DOWN, KC_UP  ,
                                                                    KC_UNDS,
                                                  KC_UNDS, KC_SPC , KC_BTN1,
