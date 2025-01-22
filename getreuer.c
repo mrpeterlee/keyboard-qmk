@@ -167,9 +167,9 @@ enum custom_keycodes {
 #define WIN_COL LT(WIN, KC_SCLN)
 
 #define LEFT_THUMB_SMALL  RALT_T(KC_ENT)       // ENT acts as ALT when held
-#define LEFT_THUMB_BIG    LT(WIN, KC_ESC)
+#define LEFT_THUMB_BIG    LT(ARR, KC_ESC)
 
-#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
+#define RIGHT_THUMB_BIG   LT(WIN, KC_BSPC)
 #define RIGHT_THUMB_SMALL RCTL_T(KC_SPC)
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
 
