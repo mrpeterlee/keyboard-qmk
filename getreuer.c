@@ -177,8 +177,8 @@ enum custom_keycodes {
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
-const uint16_t caps_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
-const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
+const uint16_t caps_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
+const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
 const uint16_t d_y_combo[] PROGMEM = {HOME_V, KC_Y, COMBO_END};
 // clang-format off

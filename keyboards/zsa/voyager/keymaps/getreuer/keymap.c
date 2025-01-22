@@ -87,8 +87,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [WIN] = LAYOUT_LR(  // Window management layer.
     RM_TOGG  , RGB_DEF   , RM_NEXT      , RM_HUEU      , RM_SATU       , RM_VALU,
     G(KC_TAB), C(A(KC_Q)), XXXXXXX      , C(A(KC_UP))  , XXXXXXX       , C(A(KC_T)),
-    XXXXXXX  , XXXXXXX   , C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)), XXXXXXX,
-    XXXXXXX  , C(A(KC_X)), XXXXXXX      , XXXXXXX      , XXXXXXX       , XXXXXXX,
+    XXXXXXX  , XXXXXXX   , C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)), G(S(KC_S)),
+    XXXXXXX  , A(KC_F4)  , XXXXXXX      , XXXXXXX      , XXXXXXX       , XXXXXXX,
                                                    XXXXXXX, G(KC_SPC),
 
                       XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
