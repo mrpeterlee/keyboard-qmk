@@ -168,6 +168,7 @@ enum custom_keycodes {
 
 #define LEFT_THUMB_SMALL  RALT_T(KC_ENT)       // ENT acts as ALT when held
 #define LEFT_THUMB_BIG    LT(WIN, KC_ESC)
+
 #define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL RCTL_T(KC_SPC)
 #define CKC_CAPS LCTL_T(KC_ESC)  // ; CAPS acts as ESC when tap; CTRL when held
@@ -260,6 +261,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     // Exceptionally allow G + J as a same-hand chord.
     case CKC_A:
     case CKC_SCLN:
+    case CKC_CAPS:
     case LEFT_THUMB_SMALL:
     case LEFT_THUMB_BIG:
     case RIGHT_THUMB_SMALL:
