@@ -51,8 +51,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                       KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
                       KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
-                      KC_H   , KC_J   , KC_K    , KC_L   , CKC_SCLN , LT(MOUSE, KC_QUOT),
-                      KC_N   , CKC_M  , KC_COMM , HOME_DOT,KC_SLSH  , TO(MOUSE),
+                      KC_H   , KC_J   , KC_K    , KC_L   , CKC_SCLN , KC_QUOT,
+                      KC_N   , CKC_M  , KC_COMM , HOME_DOT,KC_SLSH  , TO(NAV),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
   ),
 
@@ -91,10 +91,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                    XXXXXXX, G(KC_SPC),
 
-                      XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      XXXXXXX, C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
+                      XXXXXXX  , C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
                       XXXXXXX  , C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
-                      XXXXXXX  , C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), KC_VOLD , KC_VOLU,
+                      XXXXXXX  , C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), KC_VOLD, KC_VOLU,
+                      XXXXXXX  , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
              QK_REP , XXXXXXX
   ),
 
@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              XXXXXXX, _______
   ),
 
-  [MOUSE] = LAYOUT_LR(  // Mouse layer.
+  [NAV] = LAYOUT_LR(  // Mouse layer.
     _______, _______, _______, _______, _______, _______,
     _______, XXXXXXX, XXXXXXX, MS_UP  , XXXXXXX, XXXXXXX,
     _______, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,

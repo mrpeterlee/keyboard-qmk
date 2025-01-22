@@ -72,6 +72,7 @@ enum layers {
   NUM,
   WIN,
   FUN,
+  NAV,
 };
 
 enum custom_keycodes {
