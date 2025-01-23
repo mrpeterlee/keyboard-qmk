@@ -149,7 +149,7 @@ enum custom_keycodes {
 
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
-#define MOD_CTRL2 RCTL_T(KC_U)       
+#define MOD_CTRL2 LT(ARR, KC_U)
 
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
@@ -170,7 +170,6 @@ enum custom_keycodes {
 #define WIN_COL LT(WIN, KC_SCLN)
 
 #define LEFT_THUMB_SMALL  RCTL_T(KC_ENT)       // ENT acts as ALT when held
-/* #define LEFT_THUMB_BIG    LT(ARR, KC_ESC) */
 #define LEFT_THUMB_BIG    RALT_T(KC_ESC)
 
 #define RIGHT_THUMB_BIG   LSFT_T(KC_BSPC)
