@@ -68,7 +68,8 @@
 
 enum layers {
   BASE,
-  SYM,
+  SYM1,
+  SYM2,
   NUM,
   WIN,
   FUN,
@@ -144,35 +145,63 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-#define CKC_M LT(SYM, KC_M)
+#define CKC_M LT(SYM1, KC_M)
 
-#define HOME_X LGUI_T(KC_X)        // Z acts as CTRL+SHIFT when held
 
-#define HOME_C LALT_T(KC_C)       // X acts as Alt when held
-#define HOME_V LCTL_T(KC_V)       // C acts as Ctrl when held
+#define MOD_CTRL1 LCTL_T(KC_R)       
+#define MOD_CTRL2 RCTL_T(KC_U)       
 
-#define HOME_M RCTL_T(KC_M)       // M acts as Ctrl when held
-#define CKC_COMM RALT_T(KC_COMM) // , acts as Alt when held
-#define HOME_DOT RGUI_T(KC_DOT)    // . acts as CTRL+SHIFT when held
+#define MOD_ALT1 LALT_T(KC_E)       
+#define MOD_ALT2 RALT_T(KC_I)        
 
-#define LAY_SYM LT(SYM, KC_F)
+#define MOD_GUI1 LGUI_T(KC_W)    
+#define MOD_GUI2 RGUI_T(KC_O) 
+
+#define LAY_NUM  LT(NUM, KC_F)
+#define LAY_SYM1 LT(SYM1, KC_D)
+#define LAY_SYM2 LT(SYM2, KC_S)
 
 #define CKC_A LSFT_T(KC_A)
 #define CKC_SCLN LSFT_T(KC_SCLN)
 
 #define HOME_B LSFT_T(KC_B)
-/* #define HOME_C LGUI_T(KC_X) */
+/* #define MOD_CTRL1 LGUI_T(KC_X) */
 
-#define LAY_NUM LT(NUM, KC_D)
 #define WIN_COL LT(WIN, KC_SCLN)
 
-#define LEFT_THUMB_SMALL  RALT_T(KC_ENT)       // ENT acts as ALT when held
+#define LEFT_THUMB_SMALL  RCTL_T(KC_ENT)       // ENT acts as ALT when held
 /* #define LEFT_THUMB_BIG    LT(ARR, KC_ESC) */
-#define LEFT_THUMB_BIG    LSFT_T(KC_ESC)
+#define LEFT_THUMB_BIG    RALT_T(KC_ESC)
 
-#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
-#define RIGHT_THUMB_SMALL RCTL_T(KC_SPC)
+#define RIGHT_THUMB_BIG   LSFT_T(KC_BSPC)
+#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC)
+
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
+
+///////////////////////////////////////////////////////////////////////////////
+// Key overrides
+///////////////////////////////////////////////////////////////////////////////
+/* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */
+/* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
+/* const key_override_t switch_c_k = ko_make_basic(MOD_MASK_CTRL, KC_K, A(KC_K)); */
+/* const key_override_t switch_c_l = ko_make_basic(MOD_MASK_CTRL, KC_L, A(KC_L)); */
+/* const key_override_t switch_a_h = ko_make_basic(MOD_MASK_ALT, KC_H, C(KC_H)); */
+/* const key_override_t switch_a_j = ko_make_basic(MOD_MASK_ALT, KC_J, C(KC_J)); */
+/* const key_override_t switch_a_k = ko_make_basic(MOD_MASK_ALT, KC_K, C(KC_K)); */
+/* const key_override_t switch_a_l = ko_make_basic(MOD_MASK_ALT, KC_L, C(KC_L)); */
+/**/
+/**/
+/* // This globally defines all key overrides to be used */
+/* const key_override_t *key_overrides[] = { */
+/* 	&switch_c_h, */
+/* 	&switch_c_j, */
+/* 	&switch_c_k, */
+/* 	&switch_c_l, */
+/* 	&switch_a_h, */
+/* 	&switch_a_j, */
+/* 	&switch_a_k, */
+/* 	&switch_a_l */
+/* }; */
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -181,7 +210,7 @@ enum custom_keycodes {
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
 const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
-const uint16_t d_y_combo[] PROGMEM = {HOME_V, KC_Y, COMBO_END};
+const uint16_t d_y_combo[] PROGMEM = {MOD_CTRL2, KC_Y, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
     COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word.
@@ -212,8 +241,7 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case HOME_C:
-    case HOME_DOT:
+    case MOD_CTRL1:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -232,8 +260,8 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
-    case HOME_C:
-    case HOME_X:
+    case MOD_CTRL1:
+    case MOD_ALT2:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
@@ -256,7 +284,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
     /* case CKC_SCLN: */
-    case HOME_X:
+    case MOD_ALT2:
       if (row == 0) { return true; }
       break;
     // Exceptionally allow G + J as a same-hand chord.
@@ -432,7 +460,7 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t* record,
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
   if ((mods & MOD_MASK_CTRL)) {
     switch (keycode) {
-      case HOME_DOT: return C(KC_C);  // Ctrl+A -> Ctrl+C
+      /* case MOD_GUI1: return C(KC_C);  // Ctrl+A -> Ctrl+C */
       case KC_C: return C(KC_V);    // Ctrl+C -> Ctrl+V
     }
   } else if ((mods & ~MOD_MASK_SHIFT) == 0) {
@@ -445,7 +473,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 
       // For navigating next/previous search results in Vim:
       // N -> Shift + N, Shift + N -> N.
-      case HOME_M:
+      case MOD_ALT1:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return S(KC_N);
         }
@@ -453,9 +481,9 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case KC_N: return KC_N;
 
       // Fix SFBs and awkward strokes.
-      case HOME_DOT: return KC_O;       // A -> O
+      case MOD_GUI1: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
-      case CKC_COMM: return KC_U;       // E -> U
+      case MOD_GUI2: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
       case CKC_SCLN:
         if ((mods & MOD_MASK_SHIFT) == 0) {
@@ -465,16 +493,16 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         }
       case KC_M: return M_MENT;       // M -> ENT
       case KC_Q: return M_QUEN;       // Q -> UEN
-      case HOME_C: return M_TMENT;    // T -> TMENT
+      case MOD_CTRL1: return M_TMENT;    // T -> TMENT
 
       case KC_C: return KC_Y;         // C -> Y
-      case HOME_V: return KC_Y;       // D -> Y
+      case MOD_CTRL2: return KC_Y;       // D -> Y
       case LAY_NUM: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
 
       case KC_L: return KC_K;         // L -> K
-      case HOME_X: return KC_K;       // S -> K
+      case MOD_ALT2: return KC_K;       // S -> K
 
       case HOME_B: return KC_L;       // R -> L
       case KC_DOT:
@@ -580,9 +608,9 @@ static void dlog_record(uint16_t keycode, keyrecord_t* record) {
 // Status LEDs
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef STATUS_LED_1
-// LED 1 indicates when any layer above the SYM layer is active.
+// LED 1 indicates when any layer above the SYM1 layer is active.
 layer_state_t layer_state_set_user(layer_state_t state) {
-  STATUS_LED_1(get_highest_layer(layer_state) > SYM);
+  STATUS_LED_1(get_highest_layer(layer_state) > SYM1);
   return state;
 }
 #endif  // STATUS_LED_1

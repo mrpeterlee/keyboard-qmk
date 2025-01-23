@@ -31,44 +31,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy. */
   /*   KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1, */
   /*   KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , */
-  /*   KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   , */
-  /*   WIN_COL, HOME_C , KC_K   , KC_J   , LAY_NUM  , KC_W   , */
+  /*   KC_BSPC, MOD_ALT2 , MOD_CTRL1 , HOME_B , MOD_CTRL2 , KC_Y   , */
+  /*   WIN_COL, MOD_CTRL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   , */
   /*                                                KC_UNDS, KC_SPC , */
   /**/
   /*                     KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY, */
   /*                     KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH, */
-  /*                     KC_F   , HOME_M , CKC_COMM , HOME_DOT , CKC_SCLN , KC_QUOT, */
+  /*                     KC_F   , MOD_ALT1 , MOD_GUI2 , MOD_GUI1 , CKC_SCLN , KC_QUOT, */
   /*                     KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT , */
   /*            QK_REP , KC_ESC */
   /* ), */
 
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
-    KC_GRV  , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,
-    KC_TAB  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,
-    CKC_CAPS, CKC_A  , KC_S   , LAY_NUM, LAY_SYM, KC_G   ,
-    KC_LSFT , KC_Z   , HOME_X , HOME_C , KC_V   , KC_B   ,
-                               LEFT_THUMB_SMALL , LEFT_THUMB_BIG,
+    KC_GRV  , KC_1   , KC_2        , KC_3     , KC_4     , KC_5   ,
+    KC_TAB  , KC_Q   , MOD_GUI1    , MOD_ALT1 , MOD_CTRL1, KC_T   ,
+    CKC_CAPS, KC_A   , LSFT_T(KC_S), KC_D     , LAY_NUM  , KC_G   ,
+    KC_LSFT , KC_Z   , KC_X        , KC_C     , KC_V     , KC_B   ,
+                               LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
 
-                      KC_6   , KC_7   , KC_8    , KC_9   , KC_0     , KC_MINS,
-                      KC_Y   , KC_U   , KC_I    , KC_O   , KC_P     , KC_BSLS,
-                      KC_H   , KC_J   , KC_K    , KC_L   , CKC_SCLN , KC_QUOT,
-                      KC_N   , CKC_M  , KC_COMM , HOME_DOT,KC_SLSH  , TO(NAV),
+                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
+                      KC_Y   , MOD_CTRL2, MOD_ALT2  , MOD_GUI2 , KC_P     , KC_BSLS,
+                      KC_H   , KC_J     , KC_K      , KC_L     , CKC_SCLN , KC_QUOT,
+                      KC_N   , CKC_M    , KC_COMM   , KC_DOT   , KC_SLSH  , TO(NAV),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
   ),
 
-  [SYM] = LAYOUT_LR(  // Symbol layer.
+  [SYM1] = LAYOUT_LR(  // Symbol layer.
+    TMUXESC, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
+    XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_PERC, XXXXXXX,
+    XXXXXXX, KC_EXLM, KC_ASTR, KC_UNDS, KC_DQUO, KC_PLUS,
+    XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR, XXXXXXX,
+                                                KC_ENT, QK_LLCK,
+
+                      KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
+                      XXXXXXX, KC_LBRC, KC_RBRC, KC_EQL , XXXXXXX, XXXXXXX,
+                      KC_CIRC, KC_LPRN, KC_RPRN, KC_DLR , KC_BSLS, XXXXXXX,
+                      XXXXXXX, KC_LCBR, KC_RCBR, KC_BSLS, KC_QUES, XXXXXXX,
+             KC_BSPC, KC_SPC
+  ),
+
+  [SYM2] = LAYOUT_LR(  // Symbol layer.
     _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
     TMUXESC, MO(FUN), _______, _______, _______, _______,
     TO(BASE), KC_LSFT, _______, _______, _______, _______,
     _______, _______, RCTL(KC_RSFT), KC_LALT, KC_LCTL, USRNAME,
                                                 KC_ENT, QK_LLCK,
 
-                      KC_EQL , KC_AMPR, KC_ASTR, XXXXXXX, XXXXXXX, KC_TILD,
-                      KC_HASH, KC_LBRC, KC_AT  , KC_RBRC, XXXXXXX, XXXXXXX,
-                      KC_DLR , KC_LPRN, KC_UNDS, KC_RPRN, KC_PERC, KC_PIPE,
-                      KC_ASTR, KC_LCBR, KC_BSLS, KC_RCBR, KC_QUES, XXXXXXX,
+                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                      XXXXXXX, KC_ASTR, KC_PIPE, KC_SLSH, XXXXXXX, XXXXXXX,
+                      KC_EQL , KC_PLUS, KC_AMPR, KC_MINS, KC_GRV , XXXXXXX,
+                      XXXXXXX, XXXXXXX, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX,
              KC_BSPC, KC_SPC
   ),
+
 
   [NUM] = LAYOUT_LR(  // Number layer.
     _______, _______, _______, _______, _______, _______,
@@ -78,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_ENT , QK_LLCK,
 
                       KC_EQL , KC_7   , KC_8   , KC_9   , KC_LPRN, KC_RPRN,
-                      KC_MINS, KC_4   , KC_5   , KC_6   , KC_SLSH, XXXXXXX,
+                      XXXXXXX, KC_4   , KC_5   , KC_6   , XXXXXXX, XXXXXXX,
                       KC_PLUS, KC_1   , KC_2   , KC_3   , KC_ASTR, XXXXXXX,
-                      XXXXXXX, KC_0   , XXXXXXX, KC_DOT , XXXXXXX, XXXXXXX,
+                      KC_MINS, KC_0   , XXXXXXX, KC_DOT , KC_SLSH, XXXXXXX,
              KC_BSPC, KC_0 
   ),
 
@@ -127,17 +142,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [ARR] = LAYOUT_LR(  // Arrow layer.
-    _______, _______, _______, _______, _______, _______,
+    _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
     _______, XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX,
     _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                 KC_ENT, QK_LLCK,
 
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(BASE),
-             KC_BSPC, _______
+                      XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
+                      KC_VOLU, C(S(KC_TAB)), C(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX,
+                      KC_VOLD, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
+                      KC_MUTE, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, TO(BASE),
+             KC_BSPC, KC_SPC
   ),
 
 

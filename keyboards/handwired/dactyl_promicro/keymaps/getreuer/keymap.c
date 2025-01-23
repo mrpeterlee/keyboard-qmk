@@ -30,8 +30,8 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
     KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1,
     KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   ,
-    KC_BSPC, HOME_X , HOME_C , HOME_B , HOME_V , KC_Y   ,
-    WIN_COL, HOME_C , KC_K   , KC_J   , LAY_NUM  , KC_W   ,
+    KC_BSPC, MOD_ALT2 , MOD_CTRL1 , HOME_B , MOD_CTRL2 , KC_Y   ,
+    WIN_COL, MOD_CTRL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   ,
     KC_LCTL, KC_PGUP, KC_PGDN, KC_DOWN, KC_UP  ,
                                                           MO(FUN), KC_UNDS,
                                                                    KC_BSLS,
@@ -39,15 +39,15 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 
                       KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY,
                       KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-                      KC_F   , HOME_M , CKC_COMM , HOME_DOT , CKC_SCLN , KC_QUOT,
+                      KC_F   , MOD_ALT1 , MOD_GUI2 , MOD_GUI1 , CKC_SCLN , KC_QUOT,
                       KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT ,
                                KC_LEFT, KC_RGHT, DASH   , ARROW  , KC_RCTL,
-    KC_MINS, MO(SYM),
+    KC_MINS, MO(SYM1),
     KC_MUTE,
     KC_DEL , QK_REP , KC_ESC
   ),
 
-  [SYM] = LAYOUT_LR(  // Symbol layer.
+  [SYM1] = LAYOUT_LR(  // Symbol layer.
     _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
     TMUXESC, MO(FUN), KC_LABK, KC_RABK, KC_BSLS, KC_GRV ,
     _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL , KC_HASH,
