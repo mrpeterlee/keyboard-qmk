@@ -148,6 +148,8 @@ enum custom_keycodes {
 #define CKC_M LT(SYM1, KC_M)
 
 
+#define MOD_SFT1 LSFT_T(KC_D)       
+
 #define MOD_CTRL1 LCTL_T(KC_R)       
 #define MOD_CTRL2 LT(ARR, KC_U)
 
@@ -155,7 +157,7 @@ enum custom_keycodes {
 #define MOD_ALT2 RALT_T(KC_I)        
 
 #define MOD_GUI1 LGUI_T(KC_W)    
-#define MOD_GUI2 RGUI_T(KC_O) 
+#define MOD_GUI2 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
 #define LAY_SYM1 LT(SYM1, KC_D)
@@ -240,6 +242,7 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
+    case MOD_SFT1: 
     case MOD_CTRL1:
       return TAPPING_TERM + 15;
     default:
@@ -259,6 +262,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
+    case MOD_SFT1:
     case MOD_CTRL1:
     case MOD_ALT2:
       return QUICK_TAP_TERM;  // Enable key repeating.

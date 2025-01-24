@@ -43,30 +43,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* ), */
 
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
-    KC_GRV  , KC_1   , KC_2        , KC_3     , KC_4     , KC_5   ,
-    KC_TAB  , KC_Q   , MOD_GUI1    , MOD_ALT1 , MOD_CTRL1, KC_T   ,
-    CKC_CAPS, KC_A   , LSFT_T(KC_S), KC_D     , LAY_NUM  , KC_G   ,
-    KC_LSFT , KC_Z   , KC_X        , KC_C     , KC_V     , KC_B   ,
+    KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   ,
+    KC_TAB  , KC_Q   , KC_W     , MOD_ALT1 , MOD_CTRL1, KC_T   ,
+    CKC_CAPS, KC_A   , KC_S     , MOD_SFT1, LAY_NUM  , KC_G   ,
+    KC_LSFT , KC_Z   , KC_X     , KC_C     , KC_V     , KC_B   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
 
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
-                      KC_Y   , MOD_CTRL2, MOD_ALT2  , MOD_GUI2 , KC_P     , KC_BSLS,
+                      KC_Y   , MOD_CTRL2, MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
                       KC_H   , KC_J     , KC_K      , KC_L     , CKC_SCLN , KC_QUOT,
-                      KC_N   , CKC_M    , KC_COMM   , KC_DOT   , KC_SLSH  , TO(NAV),
+                      KC_N   , CKC_M    , KC_COMM   , KC_DOT   , KC_SLSH  , MOD_GUI2,
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
   ),
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.
     TMUXESC, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_PERC, XXXXXXX,
-    XXXXXXX, KC_EXLM, KC_ASTR, KC_UNDS, KC_DQUO, KC_PLUS,
+    XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_ASTR, XXXXXXX,
+    XXXXXXX, KC_EXLM, KC_UNDS, KC_DQUO, KC_MINS, KC_PLUS,
     XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR, XXXXXXX,
                                                 KC_ENT, QK_LLCK,
 
                       KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
                       XXXXXXX, KC_LBRC, KC_RBRC, KC_EQL , XXXXXXX, XXXXXXX,
                       KC_CIRC, KC_LPRN, KC_RPRN, KC_DLR , KC_BSLS, XXXXXXX,
-                      XXXXXXX, KC_LCBR, KC_RCBR, KC_BSLS, KC_QUES, XXXXXXX,
+                      XXXXXXX, KC_LCBR, KC_RCBR, KC_PERC, KC_QUES, XXXXXXX,
              KC_BSPC, KC_SPC
   ),
 
@@ -88,12 +88,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT_LR(  // Number layer.
     _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
-    _______, KC_RSFT, _______, _______, _______, _______,
+    _______, KC_LPRN, KC_RPRN, KC_RSFT, _______, _______, 
     _______, _______, _______, _______, _______, _______,
                                                KC_ENT , QK_LLCK,
 
-                      KC_EQL , KC_7   , KC_8   , KC_9   , KC_LPRN, KC_RPRN,
-                      XXXXXXX, KC_4   , KC_5   , KC_6   , XXXXXXX, XXXXXXX,
+                      KC_EQL , KC_7   , KC_8   , KC_9   , XXXXXXX, KC_MINS,
+                      KC_MINS, KC_4   , KC_5   , KC_6   , KC_LPRN, KC_RPRN,
                       KC_PLUS, KC_1   , KC_2   , KC_3   , KC_ASTR, XXXXXXX,
                       KC_MINS, KC_0   , XXXXXXX, KC_DOT , KC_SLSH, XXXXXXX,
              KC_BSPC, KC_0 
