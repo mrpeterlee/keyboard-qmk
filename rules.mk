@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-KEY_OVERRIDE_ENABLE = no
+KEY_OVERRIDE_ENABLE = yes
 COMBO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 LTO_ENABLE = yes

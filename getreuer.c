@@ -157,6 +157,8 @@ enum custom_keycodes {
 #define MOD_ALT2 RALT_T(KC_I)        
 
 #define MOD_GUI1 LGUI_T(KC_W)    
+#define WIN_COL LT(WIN, KC_SCLN)
+
 #define MOD_GUI2 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
@@ -169,7 +171,6 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 /* #define MOD_CTRL1 LGUI_T(KC_X) */
 
-#define WIN_COL LT(WIN, KC_SCLN)
 
 #define LEFT_THUMB_SMALL  RCTL_T(KC_ENT)       // ENT acts as ALT when held
 #define LEFT_THUMB_BIG    RALT_T(KC_ESC)
@@ -179,9 +180,11 @@ enum custom_keycodes {
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
+
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
+const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL);
 /* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */
 /* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
 /* const key_override_t switch_c_k = ko_make_basic(MOD_MASK_CTRL, KC_K, A(KC_K)); */
@@ -193,7 +196,8 @@ enum custom_keycodes {
 /**/
 /**/
 /* // This globally defines all key overrides to be used */
-/* const key_override_t *key_overrides[] = { */
+const key_override_t *key_overrides[] = {
+	&shift_delete,
 /* 	&switch_c_h, */
 /* 	&switch_c_j, */
 /* 	&switch_c_k, */
@@ -202,7 +206,7 @@ enum custom_keycodes {
 /* 	&switch_a_j, */
 /* 	&switch_a_k, */
 /* 	&switch_a_l */
-/* }; */
+};
 
 
 ///////////////////////////////////////////////////////////////////////////////
