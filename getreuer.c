@@ -156,10 +156,9 @@ enum custom_keycodes {
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define MOD_GUI1 LGUI_T(KC_W)    
-#define WIN_COL LT(WIN, KC_SCLN)
-
-#define MOD_GUI2 LT(KC_RGUI, TO(NAV))
+#define MOD_GUI1 LT(WIN, KC_W)    
+#define MOD_GUI2 LT(WIN, KC_O)
+#define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
 #define LAY_SYM1 LT(SYM1, KC_D)
@@ -490,7 +489,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       // Fix SFBs and awkward strokes.
       case MOD_GUI1: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
-      case MOD_GUI2: return KC_U;       // E -> U
+      case MOD_GUI3: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
       case CKC_SCLN:
         if ((mods & MOD_MASK_SHIFT) == 0) {
@@ -737,7 +736,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     // Tap behavior:
     //  * Unmodified:       :
     //  * With Shift:       std:: (C++, Rust)
-    case WIN_COL:
+    /*
+    case MOD_GUI2:
       if (record->tap.count) {
         static bool registered = false;
 
@@ -758,6 +758,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         return false;
       }
       return true;
+      */
   }
 
   if (record->event.pressed) {
