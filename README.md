@@ -19,7 +19,7 @@ This repo works as an [External QMK Userspace](https://docs.qmk.fm/newbs_externa
    relative path to your clone of `qmk-keymap` from the previous step:
 
    ```sh
-   qmk config user.overlay_dir=/mnt/d/lab/paper/keyboard-qmk
+   qmk config user.overlay_dir=/d/lab/paper/keyboard-qmk
    ```
 
 The Voyager keymap may then be compiled and flashed with

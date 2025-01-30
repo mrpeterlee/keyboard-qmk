@@ -156,8 +156,8 @@ enum custom_keycodes {
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define MOD_GUI1 LT(WIN, KC_W)    
-#define MOD_GUI2 LT(WIN, KC_O)
+#define MOD_GUI1 LT(WIN, KC_E)    
+#define MOD_GUI2 LT(WIN, KC_I)
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
@@ -170,12 +170,11 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 /* #define MOD_CTRL1 LGUI_T(KC_X) */
 
-
-#define LEFT_THUMB_SMALL  LSFT_T(KC_ENT)       // ENT acts as ALT when held
+#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
 #define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
-#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC)
+#define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
