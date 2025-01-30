@@ -42,6 +42,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*            QK_REP , KC_ESC */
   /* ), */
 
+  /* [BASE] = LAYOUT_LR(  // Base layer: Graphite */
+  /*   KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   , */
+  /*   KC_TAB  , KC_B   , KC_L     , MOD_GUI1 , KC_W     , KC_Z   , */
+  /*   CKC_CAPS, KC_N   , KC_R     , MOD_SFT1 , LAY_NUM  , KC_G   , */
+  /*   KC_LSFT , KC_Q   , KC_X     , KC_M     , KC_C     , KC_V   , */
+  /*                              LEFT_THUMB_SMALL   , LEFT_THUMB_BIG, */
+  /**/
+  /*                     KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS, */
+  /*                     KC_QUOT, MOD_CTRL2, MOD_GUI2  , KC_U     , KC_J     , KC_SCLN, */
+  /*                     KC_Y   , KC_H     , KC_A      , KC_E     , CKC_SCLN , KC_COMM, */
+  /*                     KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , MOD_GUI3, */
+  /*            RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL */
+  /* ), */
+
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
     KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   ,
     KC_TAB  , KC_Q   , KC_W     , MOD_GUI1 , KC_R     , KC_T   ,

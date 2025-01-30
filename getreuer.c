@@ -147,7 +147,6 @@ enum custom_keycodes {
 // Short aliases for home row mods and other tap-hold keys.
 #define CKC_M LT(SYM1, KC_M)
 
-
 #define MOD_SFT1 LSFT_T(KC_D)       
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
@@ -178,6 +177,16 @@ enum custom_keycodes {
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
+
+// Graphite kaymap
+// #define MOD_SFT1 LSFT_T(KC_T)
+// #define MOD_CTRL2 LT(ARR, KC_F)
+// #define MOD_ALT1 LALT_T(KC_E)       
+// #define MOD_ALT2 RALT_T(KC_I)  
+// #define MOD_GUI1 LT(WIN, KC_D)    
+// #define MOD_GUI2 LT(WIN, KC_O)
+// #define LAY_NUM  LT(NUM, KC_S)
+// #define CKC_SCLN LSFT_T(KC_I)
 
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
