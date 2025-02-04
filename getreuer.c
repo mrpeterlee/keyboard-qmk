@@ -147,16 +147,14 @@ enum custom_keycodes {
 // Short aliases for home row mods and other tap-hold keys.
 #define CKC_M LT(SYM1, KC_M)
 
-#define MOD_SFT1 LSFT_T(KC_D)       
-
 #define MOD_CTRL1 LCTL_T(KC_R)       
-#define MOD_CTRL2 LT(ARR, KC_U)
+#define LAY_ARR LT(ARR, KC_U)
 
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define MOD_GUI1 LT(WIN, KC_E)    
-#define MOD_GUI2 LT(WIN, KC_I)
+#define LAY_WIN1 LT(WIN, KC_E)    
+#define LAY_WIN2 LT(WIN, KC_I)
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
@@ -169,7 +167,7 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 /* #define MOD_CTRL1 LGUI_T(KC_X) */
 
-#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)
+#define LEFT_THUMB_SMALL  LSFT_T(KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
 #define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
@@ -177,14 +175,13 @@ enum custom_keycodes {
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
-
 // Graphite kaymap
 // #define MOD_SFT1 LSFT_T(KC_T)
-// #define MOD_CTRL2 LT(ARR, KC_F)
+// #define LAY_ARR LT(ARR, KC_F)
 // #define MOD_ALT1 LALT_T(KC_E)       
 // #define MOD_ALT2 RALT_T(KC_I)  
-// #define MOD_GUI1 LT(WIN, KC_D)    
-// #define MOD_GUI2 LT(WIN, KC_O)
+// #define LAY_WIN1 LT(WIN, KC_D)    
+// #define LAY_WIN2 LT(WIN, KC_O)
 // #define LAY_NUM  LT(NUM, KC_S)
 // #define CKC_SCLN LSFT_T(KC_I)
 
@@ -215,20 +212,19 @@ const key_override_t *key_overrides[] = {
 /* 	&switch_a_l */
 };
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
 const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
-const uint16_t d_y_combo[] PROGMEM = {MOD_CTRL2, KC_Y, COMBO_END};
+const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
     COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word.
     /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
     /* COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer */
-    /* COMBO(d_y_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
+    COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer
 };
 // clang-format on
 
@@ -253,7 +249,6 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case MOD_SFT1: 
     case MOD_CTRL1:
       return TAPPING_TERM + 15;
     default:
@@ -273,7 +268,6 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
-    case MOD_SFT1:
     case MOD_CTRL1:
     case MOD_ALT2:
       return QUICK_TAP_TERM;  // Enable key repeating.
@@ -474,7 +468,7 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t* record,
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
   if ((mods & MOD_MASK_CTRL)) {
     switch (keycode) {
-      /* case MOD_GUI1: return C(KC_C);  // Ctrl+A -> Ctrl+C */
+      /* case LAY_WIN1: return C(KC_C);  // Ctrl+A -> Ctrl+C */
       case KC_C: return C(KC_V);    // Ctrl+C -> Ctrl+V
     }
   } else if ((mods & ~MOD_MASK_SHIFT) == 0) {
@@ -495,7 +489,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case KC_N: return KC_N;
 
       // Fix SFBs and awkward strokes.
-      case MOD_GUI1: return KC_O;       // A -> O
+      case LAY_WIN1: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
       case MOD_GUI3: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
@@ -510,7 +504,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case MOD_CTRL1: return M_TMENT;    // T -> TMENT
 
       case KC_C: return KC_Y;         // C -> Y
-      case MOD_CTRL2: return KC_Y;       // D -> Y
+      case LAY_ARR: return KC_Y;       // D -> Y
       case LAY_NUM: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
@@ -745,7 +739,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     //  * Unmodified:       :
     //  * With Shift:       std:: (C++, Rust)
     /*
-    case MOD_GUI2:
+    case LAY_WIN2:
       if (record->tap.count) {
         static bool registered = false;
 
