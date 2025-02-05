@@ -155,9 +155,11 @@ enum custom_keycodes {
 
 #define LAY_WIN1 LT(WIN, KC_E)    
 #define LAY_WIN2 LT(WIN, KC_I)
+
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
+
 #define LAY_SYM1 LT(SYM1, KC_A)
 #define LAY_SYM2 LT(SYM1, KC_SCLN)
 
@@ -169,7 +171,7 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 /* #define MOD_CTRL1 LGUI_T(KC_X) */
 
-#define LEFT_THUMB_SMALL  LSFT_T(KC_ENT) // LT(SYM1, KC_ENT)
+#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
 #define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
