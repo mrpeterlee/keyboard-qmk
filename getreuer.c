@@ -69,7 +69,7 @@
 enum layers {
   BASE,
   SYM1,
-  SYM2,
+  QUICKMENU,
   NUM,
   WIN,
   FUN,
@@ -158,8 +158,10 @@ enum custom_keycodes {
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
 #define LAY_NUM  LT(NUM, KC_F)
-#define LAY_SYM1 LT(SYM1, KC_S)
-#define LAY_SYM2 LT(SYM2, KC_D)
+#define LAY_SYM1 LT(SYM1, KC_A)
+#define LAY_SYM2 LT(SYM1, KC_SCLN)
+
+#define LAY_QUICK LT(QUICKMENU, KC_D)
 
 #define CKC_A LSFT_T(KC_A)
 #define CKC_SCLN LSFT_T(KC_SCLN)
@@ -295,12 +297,11 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case MOD_ALT2:
       if (row == 0) { return true; }
       break;
+
     // Exceptionally allow G + J as a same-hand chord.
     case CKC_A:
     case CKC_SCLN:
     case CKC_CAPS:
-    case LAY_SYM1:
-    case LAY_SYM2:
     case LEFT_THUMB_SMALL:
     case LEFT_THUMB_BIG:
     case RIGHT_THUMB_SMALL:
