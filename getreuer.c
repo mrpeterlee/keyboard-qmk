@@ -330,7 +330,7 @@ uint16_t achordion_streak_chord_timeout(
 
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
-    case RIGHT_THUMB_SMALL:
+    case LEFT_THUMB_BIG:
       if (next_keycode == KC_C || next_keycode == KC_V) {
         return 0;
       }
