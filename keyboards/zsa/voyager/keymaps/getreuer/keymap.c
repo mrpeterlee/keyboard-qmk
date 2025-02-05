@@ -117,13 +117,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     G(KC_TAB), C(A(KC_Q)), XXXXXXX      , C(A(KC_UP))  , XXXXXXX       , C(A(KC_T)),
     XXXXXXX  , XXXXXXX   , C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)), G(S(KC_S)),
     XXXXXXX  , XXXXXXX   , LALT(KC_F4)  , XXXXXXX      , XXXXXXX       , XXXXXXX,
-                                                         XXXXXXX, G(KC_SPC),
+                                                         _______, _______,
 
                       XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
                       C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
                       C(A(KC_H)), C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), KC_VOLD, KC_VOLU,
                       C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), XXXXXXX, XXXXXXX,
-             KC_DEL , C(KC_SPC)
+             KC_DEL , G(KC_SPC)
   ),
 
   [FUN] = LAYOUT_LR(  // Funky fun layer.
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
-                      XXXXXXX, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
+                      KC_SCRL, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F7  , KC_F8  , KC_F9  , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F4  , KC_F5  , KC_F6  , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , XXXXXXX, XXXXXXX,
