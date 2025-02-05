@@ -73,37 +73,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM1] = LAYOUT_LR(  // Symbol layer.
     TMUXESC, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
     XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_ASTR, XXXXXXX,
-    XXXXXXX, KC_EXLM, KC_UNDS, KC_DQUO, KC_MINS, KC_PLUS,
+    QK_LLCK, KC_EXLM, KC_UNDS, KC_DQUO, KC_MINS, KC_PLUS,
     XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR, XXXXXXX,
-                                                  KC_ENT, QK_LLCK,
+                                                 _______, _______,
 
                       KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
                       XXXXXXX, KC_LBRC, KC_RBRC, KC_EQL , XXXXXXX, XXXXXXX,
                       KC_CIRC, KC_LPRN, KC_RPRN, KC_DLR , KC_BSLS, XXXXXXX,
                       XXXXXXX, KC_LCBR, KC_RCBR, KC_PERC, KC_QUES, XXXXXXX,
-             KC_BSPC, KC_SPC
+             _______, _______
   ),
 
   [SYM2] = LAYOUT_LR(  // Symbol layer.
-    _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
-    TMUXESC, MO(FUN), _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,
+    TMUXESC, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
+    _______, MO(FUN), _______, _______, _______, _______,
+    QK_LLCK, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, USRNAME,
-                                                 KC_ENT, QK_LLCK,
+                                                 _______, _______,
 
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_AT  , KC_HASH, KC_ASTR , XXXXXXX, XXXXXXX,
                       KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR , XXXXXXX, XXXXXXX,
-             KC_BSPC, KC_SPC
+             _______, _______
   ),
 
   [NUM] = LAYOUT_LR(  // Number layer.
     _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
-    _______, KC_LPRN, KC_RPRN, KC_RSFT, _______, _______, 
+    QK_LLCK, KC_LPRN, KC_RPRN, _______, _______, _______, 
     _______, _______, _______, _______, _______, _______,
-                                                 _______, QK_LLCK,
+                                                 _______, _______,
 
                       KC_EQL , KC_SLSH, KC_ASTR, KC_MINS, XXXXXXX, KC_MINS,
                       KC_EQL , KC_7   , KC_8   , KC_9   , KC_LPRN, KC_RPRN,
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     G(KC_TAB), C(A(KC_Q)), XXXXXXX      , C(A(KC_UP))  , XXXXXXX       , C(A(KC_T)),
     XXXXXXX  , XXXXXXX   , C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)), G(S(KC_S)),
     XXXXXXX  , XXXXXXX   , LALT(KC_F4)  , XXXXXXX      , XXXXXXX       , XXXXXXX,
-                                                   XXXXXXX, G(KC_SPC),
+                                                         XXXXXXX, G(KC_SPC),
 
                       XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
                       C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
@@ -129,9 +129,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [FUN] = LAYOUT_LR(  // Funky fun layer.
     _______, _______, _______, _______, _______, _______,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    _______, XXXXXXX, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
+    QK_LLCK, XXXXXXX, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
     _______, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 _______, QK_LLCK,
+                                                 _______, _______,
 
                       XXXXXXX, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F7  , KC_F8  , KC_F9  , XXXXXXX, XXXXXXX,
@@ -143,29 +143,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV] = LAYOUT_LR(  // Mouse layer.
     _______, _______, _______, _______, _______, _______,
     _______, XXXXXXX, XXXXXXX, MS_UP  , XXXXXXX, XXXXXXX,
-    _______, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,
+    QK_LLCK, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 KC_ENT, QK_LLCK,
+                                                 _______, _______,
 
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                       MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
                       XXXXXXX, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX, XXXXXXX,
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(BASE),
-             KC_BSPC, KC_SPC
+             _______, _______
   ),
 
   [ARR] = LAYOUT_LR(  // Arrow layer.
     _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
     _______, XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX,
-    _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
+    QK_LLCK, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                KC_ENT, QK_LLCK,
+                                                 _______, _______,
 
                       XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
                       KC_VOLU, C(S(KC_TAB)), C(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX,
                       KC_VOLD, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
                       KC_MUTE, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, TO(BASE),
-             KC_BSPC, KC_SPC
+             _______, _______
   ),
 
 
