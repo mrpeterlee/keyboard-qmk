@@ -160,13 +160,12 @@ enum custom_keycodes {
 
 #define LAY_NUM  LT(NUM, KC_F)
 
-#define LAY_SYM1 LT(SYM1, KC_A)
-#define LAY_SYM2 LT(SYM1, KC_SCLN)
-
 #define LAY_QUICK LT(QUICKMENU, KC_D)
 
-#define CKC_A LSFT_T(KC_A)
-#define CKC_SCLN LSFT_T(KC_SCLN)
+#define CKC_A LSFT_T(KC_F14)
+#define CKC_SCLN LSFT_T(KC_F13)
+#define LAY_SYM1 LT(SYM1, KC_F15)
+#define LAY_SYM2 LT(SYM1, KC_F16)
 
 #define HOME_B LSFT_T(KC_B)
 /* #define MOD_CTRL1 LGUI_T(KC_X) */
@@ -266,8 +265,6 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // lead to missed triggers in fast typing. Here, returning 0 means we
   // instead want to "force hold" and disable key repeating.
   switch (keycode) {
-    case CKC_A:
-    case CKC_SCLN:
     case LEFT_THUMB_BIG:   
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
@@ -301,8 +298,6 @@ bool achordion_chord(uint16_t tap_hold_keycode,
       break;
 
     // Exceptionally allow G + J as a same-hand chord.
-    case CKC_A:
-    case CKC_SCLN:
     case CKC_CAPS:
     case LEFT_THUMB_SMALL:
     case LEFT_THUMB_BIG:

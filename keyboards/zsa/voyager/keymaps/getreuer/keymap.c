@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*            RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL */
   /* ), */
 
-  [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
+  [BASE] = LAYOUT_LR(  // Base layer
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
     KC_TAB  , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   ,
     CKC_CAPS, KC_A    , KC_S     , LAY_QUICK, LAY_NUM  , KC_G   ,
