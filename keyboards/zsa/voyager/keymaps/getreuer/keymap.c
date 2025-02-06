@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       XXXXXXX, KC_LBRC, KC_RBRC, KC_EQL , XXXXXXX, XXXXXXX,
                       KC_CIRC, KC_LPRN, KC_RPRN, KC_DLR , KC_BSLS, XXXXXXX,
                       XXXXXXX, KC_LCBR, KC_RCBR, KC_PERC, KC_QUES, XXXXXXX,
-             _______, KC_DEL
+             KC_DEL  , C(KC_F)
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
