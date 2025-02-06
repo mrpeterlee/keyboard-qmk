@@ -75,13 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_ASTR, XXXXXXX,
     QK_LLCK, KC_EXLM, KC_UNDS, KC_DQUO, KC_MINS, KC_PLUS,
     XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR, XXXXXXX,
-                                                 _______, KC_DEL,
+                                                 _______, _______,
 
                       KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
                       XXXXXXX, KC_LBRC, KC_RBRC, KC_EQL , XXXXXXX, XXXXXXX,
                       KC_CIRC, KC_LPRN, KC_RPRN, KC_DLR , KC_BSLS, XXXXXXX,
                       XXXXXXX, KC_LCBR, KC_RCBR, KC_PERC, KC_QUES, XXXXXXX,
-             _______, _______
+             _______, KC_DEL
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
@@ -99,17 +99,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [NUM] = LAYOUT_LR(  // Number layer.
-    _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,
-    QK_LLCK, KC_LPRN, KC_RPRN, _______, _______, _______, 
-    _______, _______, _______, _______, _______, _______,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    QK_LLCK, XXXXXXX, XXXXXXX, KC_PERC, XXXXXXX, XXXXXXX, 
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
-                      KC_EQL , KC_SLSH, KC_ASTR, KC_MINS, XXXXXXX, KC_MINS,
-                      KC_EQL , KC_7   , KC_8   , KC_9   , KC_LPRN, KC_RPRN,
-                      KC_DOT , KC_4   , KC_5   , KC_6   , KC_PLUS, KC_PERC,
-                      XXXXXXX, KC_1   , KC_2   , KC_3   , KC_SLSH, XXXXXXX,
-             _______, KC_0   
+                      XXXXXXX, KC_7   , KC_8   , KC_9   , XXXXXXX, KC_EQL ,
+                      XXXXXXX, KC_4   , KC_5   , KC_6   , KC_LPRN, KC_RPRN,
+                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PLUS, XXXXXXX,
+                      KC_EQL , KC_0   , KC_DOT , KC_MINS, KC_SLSH, KC_MINS,
+             _______, _______
   ),
 
   [WIN] = LAYOUT_LR(  // Window management layer.
@@ -119,10 +119,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , XXXXXXX   , LALT(KC_F4)  , XXXXXXX      , XXXXXXX       , XXXXXXX,
                                                          _______, _______,
 
-                      XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
                       C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
-                      C(A(KC_H)), C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), KC_VOLD, KC_VOLU,
-                      C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), XXXXXXX, XXXXXXX,
+                      C(A(KC_H)), C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
+                      C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), KC_VOLD, KC_VOLU,
+                      XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
              KC_DEL , G(KC_SPC)
   ),
 
@@ -133,10 +133,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
-                      KC_SCRL, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
-                      XXXXXXX, KC_F7  , KC_F8  , KC_F9  , XXXXXXX, XXXXXXX,
+                      KC_SCRL, KC_F7  , KC_F8  , KC_F9  , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F4  , KC_F5  , KC_F6  , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , XXXXXXX, XXXXXXX,
+                      XXXXXXX, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
              _______, _______
   ),
 
