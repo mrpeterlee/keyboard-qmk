@@ -148,19 +148,19 @@ enum custom_keycodes {
 #define CKC_M LT(SYM1, KC_M)
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
-#define LAY_ARR LT(ARR, KC_U)
+#define LAY_ARR LT(ARR, KC_F)
 
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define LAY_WIN1 LT(WIN, KC_E)    
-#define LAY_WIN2 LT(WIN, KC_I)
+#define LAY_WIN1 LT(WIN, KC_D)    
+#define LAY_WIN2 LT(WIN, KC_O)
 
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
-#define LAY_NUM  LT(NUM, KC_F)
+#define LAY_NUM  LT(NUM, KC_S)
 
-#define LAY_QUICK LT(QUICKMENU, KC_D)
+#define LAY_QUICK LT(QUICKMENU, KC_T)
 
 #define CKC_A LSFT_T(KC_F14)
 #define CKC_SCLN LSFT_T(KC_F13)
