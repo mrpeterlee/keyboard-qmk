@@ -191,36 +191,14 @@ enum custom_keycodes {
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
-/// KC_TILDE	KC_TILD	~
-/// KC_EXCLAIM	KC_EXLM	!
-/// KC_AT		@
-/// KC_HASH		#
-/// KC_DOLLAR	KC_DLR	$
-/// KC_PERCENT	KC_PERC	%
-/// KC_CIRCUMFLEX	KC_CIRC	^
-/// KC_AMPERSAND	KC_AMPR	&
-/// KC_ASTERISK	KC_ASTR	*
-/// KC_LEFT_PAREN	KC_LPRN	(
-/// KC_RIGHT_PAREN	KC_RPRN	)
-/// KC_UNDERSCORE	KC_UNDS	_
-/// KC_PLUS		+
-/// KC_LEFT_CURLY_BRACE	KC_LCBR	{
-/// KC_RIGHT_CURLY_BRACE	KC_RCBR	}
-/// KC_PIPE		|
-/// KC_COLON	KC_COLN	:
-/// KC_DOUBLE_QUOTE	KC_DQUO, KC_DQT	"
-/// KC_LEFT_ANGLE_BRACKET	KC_LABK, KC_LT	<
-/// KC_RIGHT_ANGLE_BRACKET	KC_RABK, KC_GT	>
-/// KC_QUESTION	KC_QUES	?
-
-/* const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL); */
-const key_override_t graph_1 = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS);
-const key_override_t graph_2 = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
-const key_override_t graph_3 = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_QUES);
-const key_override_t graph_4 = ko_make_basic(MOD_MASK_SHIFT, KC_DOT , KC_RABK);
-const key_override_t graph_5 = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_DQUO);
-const key_override_t graph_6 = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_LABK);
-const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS);
+const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL);
+/* const key_override_t graph_1 = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS); */
+/* const key_override_t graph_2 = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN); */
+/* const key_override_t graph_3 = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_QUES); */
+/* const key_override_t graph_4 = ko_make_basic(MOD_MASK_SHIFT, KC_DOT , KC_RABK); */
+/* const key_override_t graph_5 = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_DQUO); */
+/* const key_override_t graph_6 = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_LABK); */
+/* const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS); */
 
 /* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */
 /* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
@@ -234,14 +212,14 @@ const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS);
 /**/
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
-	/* &shift_delete, */
-	&graph_1,
-	&graph_2,
-	&graph_3,
-	&graph_4,
-	&graph_5,
-	&graph_6,
-	&graph_7,
+	&shift_delete,
+	/* &graph_1, */
+	/* &graph_2, */
+	/* &graph_3, */
+	/* &graph_4, */
+	/* &graph_5, */
+	/* &graph_6, */
+	/* &graph_7, */
 /* 	&switch_c_h, */
 /* 	&switch_c_j, */
 /* 	&switch_c_k, */
@@ -273,12 +251,14 @@ combo_t key_combos[] = {
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef CUSTOM_SHIFT_KEYS_ENABLE
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_DOT, KC_QUES},
-    {KC_COMM, KC_EXLM},
-    {CKC_A, KC_AT  },
-    {KC_MPLY, KC_MNXT},
-    {KC_EQL , KC_EQL },  // Don't shift =
-    {KC_SLSH, KC_SLSH},  // Don't shift /
+    {KC_QUOT, KC_UNDS},
+    {KC_SCLN, KC_COLN},
+    {KC_COMM, KC_QUES},
+    {KC_DOT , KC_RABK},
+    {KC_MINS, KC_DQUO},
+    {KC_SLSH, KC_LABK},
+    {KC_EQL , KC_PLUS},
+    /* {KC_EQL , KC_EQL },  // Don't shift = */
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
