@@ -192,6 +192,10 @@ enum custom_keycodes {
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
 const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL);
+const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN);
+const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP);
+
+
 /* const key_override_t graph_1 = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS); */
 /* const key_override_t graph_2 = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN); */
 /* const key_override_t graph_3 = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_QUES); */
@@ -213,6 +217,8 @@ const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BI
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
 	&shift_delete,
+	&ctrl_h,
+	&ctrl_a,
 	/* &graph_1, */
 	/* &graph_2, */
 	/* &graph_3, */
