@@ -156,14 +156,15 @@ enum custom_keycodes {
 #define LAY_WIN1 LT(WIN, KC_E)    
 #define LAY_WIN2 LT(WIN, KC_I)
 
-#define MOD_GUI3 LT(KC_RGUI, TO(NAV))
+#define MOD_GUI3 LT(NAV, KC_F14)
 
 #define LAY_NUM  LT(NUM, KC_F)
 
 #define LAY_QUICK LT(QUICKMENU, KC_D)
 
-#define CKC_A LSFT_T(KC_F14)
-#define CKC_SCLN LSFT_T(KC_F13)
+#define CKC_A LSFT_T(KC_A)
+#define CKC_SCLN LSFT_T(KC_SCLN)
+
 #define LAY_SYM1 LT(SYM1, KC_F15)
 #define LAY_SYM2 LT(SYM1, KC_F16)
 
@@ -274,7 +275,8 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case MOD_CTRL1:
+    case CKC_A:
+    case CKC_SCLN:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -314,8 +316,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
-    /* case CKC_SCLN: */
-    case MOD_ALT2:
+    case CKC_A:
+    case CKC_SCLN:
       if (row == 0) { return true; }
       break;
 
@@ -326,6 +328,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
       return true;
+
     case LAY_NUM:
       if (other_keycode == KC_J) { return true; }
       break;
@@ -351,7 +354,7 @@ uint16_t achordion_streak_chord_timeout(
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
     case LEFT_THUMB_BIG:
-      if (next_keycode == KC_C || next_keycode == KC_V) {
+      if (next_keycode == KC_C || next_keycode == KC_V || next_keycode == RIGHT_THUMB_BIG) {
         return 0;
       }
       break;
