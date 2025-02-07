@@ -164,7 +164,7 @@ enum custom_keycodes {
 
 #define LAY_QUICK LT(QUICKMENU, KC_D)
 
-#define CKC_A LSFT_T(KC_A)
+#define CKC_A LSFT_T(KC_S)
 #define CKC_SCLN LSFT_T(KC_SCLN)
 
 #define LAY_SYM1 LT(SYM1, KC_F15)
@@ -175,7 +175,7 @@ enum custom_keycodes {
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
-#define RIGHT_THUMB_BIG   LT(LAY_ARR, KC_BSPC)
+#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
@@ -240,7 +240,7 @@ const key_override_t *key_overrides[] = {
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
-const uint16_t caps_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
+const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
 const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
 const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
