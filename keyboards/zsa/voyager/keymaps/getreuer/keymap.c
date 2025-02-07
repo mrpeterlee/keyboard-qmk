@@ -42,33 +42,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*            QK_REP , KC_ESC */
   /* ), */
 
-  [BASE] = LAYOUT_LR(  // Base layer: Graphite
-    KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   ,
-    KC_TAB  , KC_B   , KC_L     , LAY_WIN1 , KC_W     , KC_Z   ,
-    CKC_CAPS, KC_N   , KC_R     , LAY_QUICK, LAY_NUM  , KC_G   ,
-    KC_LSFT , KC_Q   , KC_X     , KC_M     , KC_C     , KC_V   ,
-                               LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
-
-                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_EQL ,
-                      KC_QUOT, LAY_ARR  , LAY_WIN2  , KC_U     , KC_J     , KC_SCLN,
-                      KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
-                      KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , MOD_GUI3,
-             RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
-  ),
-
-  /* [BASE] = LAYOUT_LR(  // Base layer: QWERTY */
-  /*   KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   , */
-  /*   KC_TAB  , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   , */
-  /*   CKC_CAPS, KC_A    , KC_S     , LAY_QUICK, LAY_NUM  , KC_G   , */
-  /*   KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   , */
-  /*                                  LEFT_THUMB_SMALL    , LEFT_THUMB_BIG, */
+  /* [BASE] = LAYOUT_LR(  // Base layer: Graphite */
+  /*   KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   , */
+  /*   KC_TAB  , KC_B   , KC_L     , LAY_WIN1 , KC_W     , KC_Z   , */
+  /*   CKC_CAPS, KC_N   , KC_R     , LAY_QUICK, LAY_NUM  , KC_G   , */
+  /*   KC_LSFT , KC_Q   , KC_X     , KC_M     , KC_C     , KC_V   , */
+  /*                              LEFT_THUMB_SMALL   , LEFT_THUMB_BIG, */
   /**/
-  /*                     KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS, */
-  /*                     KC_Y   , LAY_ARR  , LAY_WIN2  , KC_O     , KC_P     , KC_BSLS, */
-  /*                     KC_H   , KC_J     , KC_K      , KC_L     , KC_SCLN  , KC_QUOT, */
-  /*                     KC_N   , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , MOD_GUI3, */
+  /*                     KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_EQL , */
+  /*                     KC_QUOT, LAY_ARR  , LAY_WIN2  , KC_U     , KC_J     , KC_SCLN, */
+  /*                     KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM, */
+  /*                     KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , MOD_GUI3, */
   /*            RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL */
   /* ), */
+
+  [BASE] = LAYOUT_LR(  // Base layer: QWERTY
+    KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
+    KC_TAB  , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   ,
+    CKC_CAPS, KC_A    , KC_S     , LAY_QUICK, LAY_NUM  , KC_G   ,
+    KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
+                                   LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
+
+                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
+                      KC_Y   , LAY_ARR  , LAY_WIN2  , KC_O     , KC_P     , KC_BSLS,
+                      KC_H   , KC_J     , KC_K      , KC_L     , KC_SCLN  , KC_QUOT,
+                      KC_N   , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , MOD_GUI3,
+             RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
+  ),
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.
     TMUXESC, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,

@@ -148,19 +148,19 @@ enum custom_keycodes {
 #define CKC_M LT(SYM1, KC_M)
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
-#define LAY_ARR LT(ARR, KC_F)
+#define LAY_ARR LT(ARR, KC_U)
 
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define LAY_WIN1 LT(WIN, KC_D)    
-#define LAY_WIN2 LT(WIN, KC_O)
+#define LAY_WIN1 LT(WIN, KC_E)    
+#define LAY_WIN2 LT(WIN, KC_I)
 
 #define MOD_GUI3 LT(KC_RGUI, TO(NAV))
 
-#define LAY_NUM  LT(NUM, KC_S)
+#define LAY_NUM  LT(NUM, KC_F)
 
-#define LAY_QUICK LT(QUICKMENU, KC_T)
+#define LAY_QUICK LT(QUICKMENU, KC_D)
 
 #define CKC_A LSFT_T(KC_F14)
 #define CKC_SCLN LSFT_T(KC_F13)
@@ -256,14 +256,14 @@ combo_t key_combos[] = {
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef CUSTOM_SHIFT_KEYS_ENABLE
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_QUOT, KC_UNDS},
-    {KC_SCLN, KC_COLN},
-    {KC_COMM, KC_QUES},
-    {KC_DOT , KC_RABK},
-    {KC_MINS, KC_DQUO},
-    {KC_SLSH, KC_LABK},
-    {KC_EQL , KC_PLUS},
-    /* {KC_EQL , KC_EQL },  // Don't shift = */
+    /* {KC_QUOT, KC_UNDS}, */
+    /* {KC_SCLN, KC_COLN}, */
+    /* {KC_COMM, KC_QUES}, */
+    /* {KC_DOT , KC_RABK}, */
+    /* {KC_MINS, KC_DQUO}, */
+    /* {KC_SLSH, KC_LABK}, */
+    /* {KC_EQL , KC_PLUS}, */
+    {KC_F14 , KC_F14 },  // Don't shift =
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
