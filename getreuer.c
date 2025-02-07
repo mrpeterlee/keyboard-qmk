@@ -192,9 +192,8 @@ enum custom_keycodes {
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
 const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL);
-const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN);
-const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP);
-
+/* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
+/* const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP); */
 
 /* const key_override_t graph_1 = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS); */
 /* const key_override_t graph_2 = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN); */
@@ -217,8 +216,8 @@ const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP);
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
 	&shift_delete,
-	&ctrl_h,
-	&ctrl_a,
+	/* &ctrl_h, */
+	/* &ctrl_a, */
 	/* &graph_1, */
 	/* &graph_2, */
 	/* &graph_3, */
@@ -325,6 +324,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case LEFT_THUMB_SMALL:
     case LEFT_THUMB_BIG:
     case RIGHT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
       return true;
     case LAY_NUM:
       if (other_keycode == KC_J) { return true; }
