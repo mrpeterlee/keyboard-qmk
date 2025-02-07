@@ -62,7 +62,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CKC_CAPS, LAY_WIN1, CKC_A    , LAY_QUICK, LAY_NUM  , KC_G   ,
     KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
-/* LAY_ARR  LAY_WIN2   */
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
                       KC_Y   , MOD_CTRL2, MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
                       KC_H   , KC_J     , KC_K      , KC_L     , LAY_WIN2 , KC_QUOT,
@@ -85,15 +84,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
-    TMUXESC, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
+    _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
     _______, MO(FUN), _______, _______, _______, _______,
-    QK_LLCK, _______, _______, _______, _______, _______,
+    TMUXESC, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, USRNAME,
                                                  _______, _______,
 
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_AT  , KC_HASH, KC_ASTR , XXXXXXX, XXXXXXX,
-                      KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, XXXXXXX,
+                      KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, QK_LLCK,
                       XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR , XXXXXXX, XXXXXXX,
              _______, _______
   ),
@@ -101,13 +100,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT_LR(  // Number layer.
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    QK_LLCK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
                       XXXXXXX, KC_7   , KC_8   , KC_9   , XXXXXXX, KC_MINS,
                       KC_EQL , KC_4   , KC_5   , KC_6   , KC_LPRN, KC_RPRN,
-                      KC_PLUS, KC_1   , KC_2   , KC_3   , KC_ASTR, XXXXXXX,
+                      KC_PLUS, KC_1   , KC_2   , KC_3   , KC_ASTR, QK_LLCK,
                       KC_PERC, KC_0   , KC_MINS, KC_DOT , KC_SLSH, XXXXXXX,
              _______, _______
   ),
@@ -119,23 +118,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , XXXXXXX   , LALT(KC_F4)  , XXXXXXX      , XXXXXXX       , XXXXXXX,
                                                          _______     , _______,
 
-                      C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), XXXXXXX, XXXXXXX,
+                      C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), KC_VOLD, KC_VOLU,
                       C(A(KC_H)), C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
-                      C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), KC_VOLD, KC_VOLU,
+                      C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), XXXXXXX, QK_LLCK,
                       XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
              KC_DEL , G(KC_SPC)
   ),
 
   [FUN] = LAYOUT_LR(  // Funky fun layer.
     _______, _______, _______, _______, _______, _______,
+    _______, XXXXXXX, XXXXXXX, KC_LALT, KC_LCTL, XXXXXXX,
+    _______, KC_LGUI, KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    QK_LLCK, XXXXXXX, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,
-    _______, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
                       KC_SCRL, KC_F7  , KC_F8  , KC_F9  , XXXXXXX, XXXXXXX,
                       XXXXXXX, KC_F4  , KC_F5  , KC_F6  , XXXXXXX, XXXXXXX,
-                      XXXXXXX, KC_F1  , KC_F2  , KC_F3  , XXXXXXX, XXXXXXX,
+                      XXXXXXX, KC_F1  , KC_F2  , KC_F3  , XXXXXXX, QK_LLCK,
                       XXXXXXX, KC_F10 , KC_F11 , KC_F12 , XXXXXXX, XXXXXXX,
              _______, _______
   ),
@@ -143,13 +142,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV] = LAYOUT_LR(  // Mouse layer.
     _______, _______, _______, _______, _______, _______,
     _______, XXXXXXX, XXXXXXX, MS_UP  , XXXXXXX, XXXXXXX,
-    QK_LLCK, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,
+    _______, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                       MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
-                      XXXXXXX, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX, XXXXXXX,
+                      XXXXXXX, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX, QK_LLCK,
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(BASE),
              _______, _______
   ),
@@ -157,13 +156,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [ARR] = LAYOUT_LR(  // Arrow layer.
     _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
     _______, XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX,
-    QK_LLCK, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
+    _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
                       XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
                       KC_VOLU, C(S(KC_TAB)), C(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_VOLD, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
+                      KC_VOLD, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, QK_LLCK,
                       KC_MUTE, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, TO(BASE),
              _______, _______
   ),
