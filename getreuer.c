@@ -162,9 +162,9 @@ enum custom_keycodes {
 
 #define LAY_NUM  LT(NUM, KC_F)
 
-#define LAY_QUICK LT(QUICKMENU, KC_D)
+#define LAY_QUICK LT(QUICKMENU, KC_S)
 
-#define CKC_A LSFT_T(KC_S)
+#define CKC_A LSFT_T(KC_D)
 #define CKC_SCLN LSFT_T(KC_SCLN)
 
 #define LAY_SYM1 LT(SYM1, KC_F15)
