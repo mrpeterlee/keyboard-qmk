@@ -145,16 +145,18 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
+#define LAY_ARR LT(ARR, KC_U)
+
 #define CKC_M LT(SYM1, KC_M)
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
-#define LAY_ARR LT(ARR, KC_U)
+#define MOD_CTRL2 LCTL_T(KC_U)       
 
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
 
-#define LAY_WIN1 LT(WIN, KC_E)    
-#define LAY_WIN2 LT(WIN, KC_I)
+#define LAY_WIN1 LT(WIN, KC_A)    
+#define LAY_WIN2 LT(WIN, KC_SCLN)
 
 #define MOD_GUI3 LT(NAV, KC_F14)
 
@@ -169,12 +171,11 @@ enum custom_keycodes {
 #define LAY_SYM2 LT(SYM1, KC_F16)
 
 #define HOME_B LSFT_T(KC_B)
-/* #define MOD_CTRL1 LGUI_T(KC_X) */
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
-#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
+#define RIGHT_THUMB_BIG   LT(LAY_ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
@@ -294,6 +295,8 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
     case MOD_CTRL1:
+    case MOD_CTRL2:
+    case MOD_ALT1:
     case MOD_ALT2:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
