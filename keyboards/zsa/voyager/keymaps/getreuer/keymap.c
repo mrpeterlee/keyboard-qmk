@@ -62,6 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CKC_CAPS, LAY_WIN1, LAY_QUICK, CKC_A    , LAY_NUM  , KC_G   ,
     KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
+
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
                       CKC_M  , MOD_CTRL2, MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
                       KC_H   , KC_J     , KC_K      , KC_L     , LAY_WIN2 , KC_QUOT,
@@ -70,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.
-    XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_HASH, KC_ASTR, G(S(KC_S)),
-    TMUXESC, XXXXXXX, KC_EXLM, KC_PLUS, KC_MINS, XXXXXXX,
-    XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR, XXXXXXX,
+    XXXXXXX, KC_F1  , KC_F2  , KC_F3     , KC_F4  , KC_F5  ,
+    XXXXXXX, XXXXXXX, KC_AT  , KC_HASH   , KC_ASTR, G(S(KC_S)),
+    TMUXESC, XXXXXXX, KC_EXLM, KC_KP_PLUS, KC_MINS, XXXXXXX,
+    XXXXXXX, XXXXXXX, KC_TILD, KC_PIPE   , KC_AMPR, XXXXXXX,
                                                  _______, _______,
 
                       KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
