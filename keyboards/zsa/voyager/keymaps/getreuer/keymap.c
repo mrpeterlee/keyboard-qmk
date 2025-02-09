@@ -31,13 +31,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy. */
   /*   KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN1, */
   /*   KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , */
-  /*   KC_BSPC, MOD_ALT2 , MOD_CTRL1 , HOME_B , LAY_ARR , KC_Y   , */
-  /*   LAY_WIN2, MOD_CTRL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   , */
+  /*   KC_BSPC, MOD_ALT2 , MOD_CTL1 , HOME_B , LAY_ARR1 , KC_Y   , */
+  /*   LAY_WIN2, MOD_CTL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   , */
   /*                                                KC_UNDS, KC_SPC , */
   /**/
   /*                     KC_HOME, KC_LEFT, KC_RGHT , KC_END , KC_DEL , KC_MPLY, */
   /*                     KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH, */
-  /*                     KC_F   , MOD_ALT1 , MOD_GUI3 , LAY_WIN1, CKC_SCLN , KC_QUOT, */
+  /*                     KC_F   , MOD_ALT1 , LAY_NAV , LAY_WIN1, MOD_SFT2 , KC_QUOT, */
   /*                     KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT , */
   /*            QK_REP , KC_ESC */
   /* ), */
@@ -50,24 +50,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*                              LEFT_THUMB_SMALL   , LEFT_THUMB_BIG, */
   /**/
   /*                     KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_EQL , */
-  /*                     KC_QUOT, LAY_ARR  , LAY_WIN2  , KC_U     , KC_J     , KC_SCLN, */
+  /*                     KC_QUOT, LAY_ARR1  , LAY_WIN2  , KC_U     , KC_J     , KC_SCLN, */
   /*                     KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM, */
-  /*                     KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , MOD_GUI3, */
+  /*                     KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , LAY_NAV, */
   /*            RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL */
   /* ), */
 
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
-    KC_TAB  , KC_Q    , KC_W     , MOD_ALT1 , MOD_CTRL1, KC_T   ,
-    CKC_CAPS, LAY_WIN1, LAY_QUICK, CKC_A    , LAY_NUM  , KC_G   ,
+    KC_TAB  , KC_Q    , KC_W     , LAY_QUICK, LAY_WIN1 , KC_T   ,
+    CKC_CAPS, MOD_GUI1, MOD_ALT1 , MOD_SFT1 , MOD_CTL1 , LAY_NUM  ,
     KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
 
-                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
-                      CKC_M  , MOD_CTRL2, MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
-                      KC_H   , KC_J     , KC_K      , KC_L     , LAY_WIN2 , KC_QUOT,
-                      KC_N   , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , MOD_GUI3,
-             RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL
+                      KC_6    , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
+                      KC_Y    , LAY_WIN2 , KC_I      , KC_O     , KC_P     , KC_BSLS,
+                      KC_H    , MOD_CTL2 , MOD_SFT2 , MOD_ALT2  , MOD_GUI2 , KC_QUOT,
+                      KC_N    , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , LAY_NAV,
+             RIGHT_THUMB_BIG  , RIGHT_THUMB_SMALL
   ),
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.

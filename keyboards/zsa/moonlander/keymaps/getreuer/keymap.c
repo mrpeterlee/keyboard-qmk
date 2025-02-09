@@ -31,15 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_LR(  // Base layer: Magic Sturdy.
     KC_GRV , G(KC_TAB), SELLINE, KC_DOWN, KC_UP  , KC_BTN2, KC_BTN1,
     KC_TAB , KC_V   , KC_M   , KC_L   , KC_C   , KC_P   , MO(FUN),
-    KC_BSPC, MOD_ALT2 , MOD_CTRL1 , HOME_B , MOD_CTRL2 , KC_Y   , KC_BSLS,
-    MOD_GUI2, MOD_CTRL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   ,
+    KC_BSPC, MOD_ALT2 , MOD_CTL1 , HOME_B , MOD_CTL2 , KC_Y   , KC_BSLS,
+    MOD_GUI2, MOD_CTL1 , KC_K   , KC_J   , LAY_NUM  , KC_W   ,
     KC_LCTL, G(KC_TAB), SELLINE, KC_DOWN, KC_UP  ,
                                                                    KC_UNDS,
                                                  KC_UNDS, KC_SPC , KC_BTN1,
 
              KC_VOLU, KC_HOME, KC_LEFT, KC_RGHT, KC_END , KC_DEL , KC_MPLY,
              KC_VOLD, KC_B   , MAGIC  , KC_U   , KC_O   , KC_Q   , KC_SLSH,
-             KC_BSLS, KC_F   , MOD_ALT1 , MOD_GUI3 , MOD_GUI1 , CKC_SCLN , KC_QUOT,
+             KC_BSLS, KC_F   , MOD_ALT1 , LAY_NAV , MOD_GUI1 , MOD_SFT2 , KC_QUOT,
                       KC_Z   , KC_H   , KC_COMM, KC_DOT , CKC_S, KC_ENT ,
                                KC_LEFT, KC_RGHT, DASH   , ARROW  , KC_RCTL,
     KC_ESC ,

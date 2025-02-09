@@ -145,50 +145,49 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-#define LAY_ARR LT(ARR, KC_U)
+#define LAY_ARR1 LT(ARR, KC_U)
+#define LAY_ARR2 LT(ARR, KC_Y)
 
-#define CKC_M LT(ARR, KC_Y)
+#define MOD_CTL1 LCTL_T(KC_F)       
+#define MOD_CTL2 RCTL_T(KC_J)       
 
-#define MOD_CTRL1 LCTL_T(KC_R)       
-#define MOD_CTRL2 LCTL_T(KC_U)       
+#define MOD_SFT1 LSFT_T(KC_D)
+#define MOD_SFT2 RSFT_T(KC_K)
 
-#define MOD_ALT1 LALT_T(KC_E)       
-#define MOD_ALT2 RALT_T(KC_I)        
+#define MOD_ALT1 LALT_T(KC_S)       
+#define MOD_ALT2 RALT_T(KC_L)        
 
-#define LAY_WIN1 LT(WIN, KC_A)    
-#define LAY_WIN2 LT(WIN, KC_SCLN)
+#define MOD_GUI1 LGUI_T(KC_A)
+#define MOD_GUI2 RGUI_T(KC_SCLN)
 
-#define MOD_GUI3 LT(NAV, KC_F14)
+#define LAY_WIN1 LT(WIN, KC_R)    
+#define LAY_WIN2 LT(WIN, KC_U)
 
-#define LAY_NUM  LT(NUM, KC_F)
+#define LAY_NAV LT(NAV, KC_F14)
 
-#define LAY_QUICK LT(QUICKMENU, KC_S)
+#define LAY_NUM  LT(NUM, KC_G)
 
-#define CKC_A LSFT_T(KC_D)
-#define CKC_SCLN LSFT_T(KC_SCLN)
-
-#define LAY_SYM1 LT(SYM1, KC_F15)
-#define LAY_SYM2 LT(SYM1, KC_F16)
+#define LAY_QUICK LT(QUICKMENU, KC_E)
 
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
-#define RIGHT_THUMB_BIG   LALT_T(KC_BSPC)  // LT(ARR, KC_BSPC)
+#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
 // Graphite kaymap
 // #define MOD_SFT1 LSFT_T(KC_T)
-// #define LAY_ARR LT(ARR, KC_F)
+// #define LAY_ARR1 LT(ARR, KC_F)
 // #define MOD_ALT1 LALT_T(KC_E)       
 // #define MOD_ALT2 RALT_T(KC_I)  
 // #define LAY_WIN1 LT(WIN, KC_D)    
 // #define LAY_WIN2 LT(WIN, KC_O)
 // #define LAY_NUM  LT(NUM, KC_S)
-// #define CKC_SCLN LSFT_T(KC_I)
+// #define MOD_SFT2 LSFT_T(KC_I)
 
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
@@ -276,8 +275,8 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case CKC_A:
-    case CKC_SCLN:
+    case MOD_SFT1:
+    case MOD_SFT2:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -294,10 +293,14 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
-    case MOD_CTRL1:
-    case MOD_CTRL2:
+    case MOD_CTL1:
+    case MOD_CTL2:
+    case MOD_SFT1:
+    case MOD_SFT2:
     case MOD_ALT1:
     case MOD_ALT2:
+    case MOD_GUI1:
+    case MOD_GUI2:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
@@ -319,8 +322,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
-    case CKC_A:
-    case CKC_SCLN:
+    case MOD_SFT1:
+    case MOD_SFT2:
       if (row == 0) { return true; }
       break;
 
@@ -519,9 +522,9 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       // Fix SFBs and awkward strokes.
       case LAY_WIN1: return KC_O;       // A -> O
       case KC_O: return KC_A;         // O -> A
-      case MOD_GUI3: return KC_U;       // E -> U
+      case LAY_NAV: return KC_U;       // E -> U
       case KC_U: return KC_E;         // U -> E
-      case CKC_SCLN:
+      case MOD_SFT2:
         if ((mods & MOD_MASK_SHIFT) == 0) {
           return M_ION;  // I -> ON
         } else {
@@ -529,10 +532,10 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         }
       case KC_M: return M_MENT;       // M -> ENT
       case KC_Q: return M_QUEN;       // Q -> UEN
-      case MOD_CTRL1: return M_TMENT;    // T -> TMENT
+      case MOD_CTL1: return M_TMENT;    // T -> TMENT
 
       case KC_C: return KC_Y;         // C -> Y
-      case LAY_ARR: return KC_Y;       // D -> Y
+      case LAY_ARR1: return KC_Y;       // D -> Y
       case LAY_NUM: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
@@ -570,7 +573,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case KC_F:
       case KC_V:
       /* case HOME_B: */
-      case CKC_A:
+      case MOD_SFT1:
         return M_NOOP;
 
       case KC_PLUS:
