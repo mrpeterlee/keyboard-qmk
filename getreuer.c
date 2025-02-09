@@ -147,7 +147,7 @@ enum custom_keycodes {
 // Short aliases for home row mods and other tap-hold keys.
 #define LAY_ARR LT(ARR, KC_U)
 
-#define CKC_M LT(SYM1, KC_M)
+#define CKC_M LT(ARR, KC_Y)
 
 #define MOD_CTRL1 LCTL_T(KC_R)       
 #define MOD_CTRL2 LCTL_T(KC_U)       
@@ -175,7 +175,7 @@ enum custom_keycodes {
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
 
-#define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
+#define RIGHT_THUMB_BIG   LALT_T(KC_BSPC)  // LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
