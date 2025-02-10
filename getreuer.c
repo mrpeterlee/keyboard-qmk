@@ -261,7 +261,7 @@ const key_override_t *key_overrides[] = {
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
 const uint16_t j_l_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
-const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
+const uint16_t s_f_combo[] PROGMEM = {KC_S, LAY_NUM, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
