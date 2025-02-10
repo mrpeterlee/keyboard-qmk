@@ -172,7 +172,7 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    LT(ARR, KC_ESC)
+#define LEFT_THUMB_BIG    LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   KC_BSPC
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)

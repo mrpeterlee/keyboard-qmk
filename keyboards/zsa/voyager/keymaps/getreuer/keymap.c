@@ -141,30 +141,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [NAV] = LAYOUT_LR(  // Mouse layer.
-    _______, _______, _______, _______, _______, _______,
-    _______, XXXXXXX, XXXXXXX, MS_UP  , XXXXXXX, XXXXXXX,
-    _______, XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 _______, _______,
-
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
-                      XXXXXXX, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX, QK_LLCK,
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(BASE),
-             _______, _______
-  ),
-
-  [ARR] = LAYOUT_LR(  // Arrow layer.
     _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
     _______, XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX,
     _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
+                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                      MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
+                      MS_LEFT, MS_UP  , MS_DOWN, MS_RGHT, XXXXXXX, QK_LLCK,
+                      KC_MUTE, KC_VOLU, KC_VOLD, XXXXXXX, XXXXXXX, TO(BASE),
+             MS_BTN2, MS_BTN1
+  ),
+
+  [ARR] = LAYOUT_LR(  // Arrow layer.
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                                 _______, _______,
+
                       XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_VOLU, C(S(KC_TAB)), C(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX,
-                      KC_VOLD, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, QK_LLCK,
-                      KC_MUTE, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, TO(BASE),
+                      XXXXXXX, C(S(KC_TAB)), C(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX,
+                      XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, QK_LLCK,
+                      XXXXXXX, XXXXXXX     , XXXXXXX  , XXXXXXX, XXXXXXX, TO(BASE),
              _______, _______
   ),
 
