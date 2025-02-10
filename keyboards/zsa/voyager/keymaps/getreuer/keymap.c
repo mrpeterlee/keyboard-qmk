@@ -58,15 +58,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
-    KC_TAB  , KC_Q    , KC_W     , LAY_QUICK, LAY_WIN1 , KC_T   ,
-    CKC_CAPS, MOD_GUI1, MOD_ALT1 , MOD_SFT1 , MOD_CTL1 , LAY_NUM  ,
-    KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
+    KC_TAB  , KC_Q    , KC_W     , MOD_ALT1 , MOD_CTL1 , KC_T   ,
+    CKC_CAPS, MOD_SFT1, KC_S     , KC_D     , LAY_NUM  , KC_G   ,
+    KC_LSFT , MOD_GUI1, KC_X     , KC_C     , LAY_WIN1 , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
 
                       KC_6    , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
-                      KC_Y    , LAY_WIN2 , KC_I      , KC_O     , KC_P     , KC_BSLS,
-                      KC_H    , MOD_CTL2 , MOD_SFT2 , MOD_ALT2  , MOD_GUI2 , KC_QUOT,
-                      KC_N    , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , LAY_NAV,
+                      KC_Y    , MOD_CTL2 , MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
+                      KC_H    , KC_J     , KC_K      , KC_L     , MOD_SFT2 , KC_QUOT,
+                      KC_N    , LAY_WIN2 , KC_COMM   , KC_DOT   , MOD_GUI2 , LAY_NAV,
              RIGHT_THUMB_BIG  , RIGHT_THUMB_SMALL
   ),
 

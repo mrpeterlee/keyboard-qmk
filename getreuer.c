@@ -148,31 +148,31 @@ enum custom_keycodes {
 #define LAY_ARR1 LT(ARR, KC_U)
 #define LAY_ARR2 LT(ARR, KC_Y)
 
-#define MOD_CTL1 LCTL_T(KC_F)       
-#define MOD_CTL2 RCTL_T(KC_J)       
+#define MOD_CTL1 LCTL_T(KC_R)       
+#define MOD_CTL2 RCTL_T(KC_U)       
 
-#define MOD_SFT1 LSFT_T(KC_D)
-#define MOD_SFT2 RSFT_T(KC_K)
+#define MOD_SFT1 LSFT_T(KC_A)
+#define MOD_SFT2 RSFT_T(KC_SCLN)
 
-#define MOD_ALT1 LALT_T(KC_S)       
-#define MOD_ALT2 RALT_T(KC_L)        
+#define MOD_ALT1 LALT_T(KC_E)       
+#define MOD_ALT2 RALT_T(KC_I)        
 
-#define MOD_GUI1 LGUI_T(KC_A)
-#define MOD_GUI2 RGUI_T(KC_SCLN)
+#define MOD_GUI1 LGUI_T(KC_Z)
+#define MOD_GUI2 RGUI_T(KC_SLSH)
 
-#define LAY_WIN1 LT(WIN, KC_R)    
-#define LAY_WIN2 LT(WIN, KC_U)
+#define LAY_WIN1 LT(WIN, KC_V)    
+#define LAY_WIN2 LT(WIN, KC_M)
 
 #define LAY_NAV LT(NAV, KC_F14)
 
-#define LAY_NUM  LT(NUM, KC_G)
+#define LAY_NUM  LT(NUM, KC_F)
 
 #define LAY_QUICK LT(QUICKMENU, KC_E)
 
 #define HOME_B LSFT_T(KC_B)
 
-#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT) // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RCTL_T(KC_ESC)
+#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
+#define LEFT_THUMB_BIG    LT(QUICKMENU, KC_ESC) // RCTL_T(KC_ESC)
 
 #define RIGHT_THUMB_BIG   LT(ARR, KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
@@ -245,7 +245,8 @@ const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
 const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
-    COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word.
+    /* COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word. */
+    COMBO(caps_combo, C(KC_Z)),             // J and S => activate Caps Word.
     /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
     /* COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer */
     COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer
@@ -322,6 +323,10 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
+    case MOD_CTL1:
+    case MOD_CTL2:
+    case MOD_ALT1:
+    case MOD_ALT2:
     case MOD_SFT1:
     case MOD_SFT2:
       if (row == 0) { return true; }
