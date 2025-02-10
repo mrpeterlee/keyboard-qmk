@@ -261,13 +261,13 @@ const key_override_t *key_overrides[] = {
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
 const uint16_t j_l_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
-const uint16_t s_f_combo[] PROGMEM = {KC_S, LAY_NUM, COMBO_END};
+const uint16_t flowlauncher[] PROGMEM = {KC_D, LAY_NUM, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word. */
     COMBO(j_l_combo, C(KC_Z)),              // J and K => backslash
-    COMBO(s_f_combo, KC_F14),          // J and G => one-shot NUM layer
+    COMBO(flowlauncher, KC_F14),          // J and G => one-shot NUM layer
     /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
