@@ -67,6 +67,7 @@
 #endif
 
 enum layers {
+  GRAPHITE,
   BASE,
   SYM1,
   QUICKMENU,
@@ -145,17 +146,33 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
-#define LAY_ARR1 LT(ARR, KC_U)
-#define LAY_ARR2 LT(ARR, KC_Y)
+// Graphite KEYS
+#define gMOD_CTL1 LCTL_T(KC_W)       
+#define gMOD_CTL2 RCTL_T(KC_F)       
 
+#define gMOD_ALT1 LALT_T(KC_D)
+#define gMOD_ALT2 RALT_T(KC_O)        
+
+#define gMOD_SFT1 LSFT_T(KC_N)
+#define gMOD_SFT2 RSFT_T(KC_I)
+
+#define gMOD_GUI1 LGUI_T(KC_Q)
+
+#define gLAY_WIN1 LT(WIN, KC_C)    
+#define gLAY_WIN2 LT(WIN, KC_P)
+
+#define gLAY_NUM  LT(NUM, KC_S)
+
+
+// QWERTY KEYS
 #define MOD_CTL1 LCTL_T(KC_R)       
 #define MOD_CTL2 RCTL_T(KC_U)       
 
-#define MOD_SFT1 LSFT_T(KC_A)
-#define MOD_SFT2 RSFT_T(KC_SCLN)
-
 #define MOD_ALT1 LALT_T(KC_E)       
 #define MOD_ALT2 RALT_T(KC_I)        
+
+#define MOD_SFT1 LSFT_T(KC_A)
+#define MOD_SFT2 RSFT_T(KC_SCLN)
 
 #define MOD_GUI1 LGUI_T(KC_Z)
 #define MOD_GUI2 RGUI_T(KC_SLSH)
@@ -163,16 +180,19 @@ enum custom_keycodes {
 #define LAY_WIN1 LT(WIN, KC_V)    
 #define LAY_WIN2 LT(WIN, KC_M)
 
-#define LAY_NAV LT(NAV, KC_F14)
-
 #define LAY_NUM  LT(NUM, KC_F)
 
-#define LAY_QUICK LT(QUICKMENU, KC_G)
 
+#define LAY_QUICK LT(QUICKMENU, KC_G)
+#define LAY_ARR1 LT(ARR, KC_U)
+#define LAY_ARR2 LT(ARR, KC_Y)
+
+
+#define LAY_NAV LT(NAV, KC_TAB)
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    LCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   KC_BSPC
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
@@ -192,7 +212,7 @@ enum custom_keycodes {
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
-const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BIG, KC_DEL);
+const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG, KC_DEL);
 /* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
 /* const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP); */
 
@@ -216,7 +236,7 @@ const key_override_t shift_delete = ko_make_basic(MOD_MASK_SHIFT, RIGHT_THUMB_BI
 /**/
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
-	&shift_delete,
+	&ctrl_delete,
 	/* &ctrl_h, */
 	/* &ctrl_a, */
 	/* &graph_1, */
@@ -278,6 +298,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
     case MOD_SFT1:
     case MOD_SFT2:
+    case gMOD_SFT1:
+    case gMOD_SFT2:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -302,6 +324,14 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case MOD_ALT2:
     case MOD_GUI1:
     case MOD_GUI2:
+    case gMOD_CTL1:
+    case gMOD_CTL2:
+    case gMOD_SFT1:
+    case gMOD_SFT2:
+    case gMOD_ALT1:
+    case gMOD_ALT2:
+    case gMOD_GUI1:
+
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
@@ -329,6 +359,12 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case MOD_ALT2:
     case MOD_SFT1:
     case MOD_SFT2:
+    case gMOD_CTL1:
+    case gMOD_CTL2:
+    case gMOD_ALT1:
+    case gMOD_ALT2:
+    case gMOD_SFT1:
+    case gMOD_SFT2:
       if (row == 0) { return true; }
       break;
 

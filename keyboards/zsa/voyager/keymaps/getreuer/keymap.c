@@ -42,23 +42,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*            QK_REP , KC_ESC */
   /* ), */
 
-  /* [BASE] = LAYOUT_LR(  // Base layer: Graphite */
-  /*   KC_GRV  , KC_1   , KC_2     , KC_3     , KC_4     , KC_5   , */
-  /*   KC_TAB  , KC_B   , KC_L     , LAY_WIN1 , KC_W     , KC_Z   , */
-  /*   CKC_CAPS, KC_N   , KC_R     , LAY_QUICK, LAY_NUM  , KC_G   , */
-  /*   KC_LSFT , KC_Q   , KC_X     , KC_M     , KC_C     , KC_V   , */
-  /*                              LEFT_THUMB_SMALL   , LEFT_THUMB_BIG, */
-  /**/
-  /*                     KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_EQL , */
-  /*                     KC_QUOT, LAY_ARR1  , LAY_WIN2  , KC_U     , KC_J     , KC_SCLN, */
-  /*                     KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM, */
-  /*                     KC_K   , KC_P     , KC_DOT    , KC_MINS  , KC_SLSH  , LAY_NAV, */
-  /*            RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL */
-  /* ), */
+  [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
+    KC_GRV  , KC_1     , KC_2     , KC_3     , KC_4     , KC_5   ,
+    LAY_NAV , KC_B     , KC_L     , gMOD_ALT1, gMOD_CTL1, KC_Z   ,
+    CKC_CAPS, gMOD_SFT1, KC_R     , KC_T     , gLAY_NUM , LAY_QUICK,
+    KC_LSFT , gMOD_GUI1, KC_Q     , KC_X     , gLAY_WIN1, KC_V   ,
+                               LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
+  
+                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_EQL ,
+                      KC_QUOT, gMOD_CTL2, gMOD_ALT2 , KC_U     , KC_J     , KC_SCLN,
+                      KC_Y   , KC_H     , KC_A      , KC_E     , gMOD_SFT2, KC_COMM,
+                      KC_K   , gLAY_WIN2, KC_DOT    , KC_MINS  , MOD_GUI2 , TO(BASE),
+             RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
+  ),
 
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
-    KC_TAB  , KC_Q    , KC_W     , MOD_ALT1 , MOD_CTL1 , KC_T   ,
+    LAY_NAV , KC_Q    , KC_W     , MOD_ALT1 , MOD_CTL1 , KC_T   ,
     CKC_CAPS, MOD_SFT1, KC_S     , KC_D     , LAY_NUM  , LAY_QUICK,
     KC_LSFT , MOD_GUI1, KC_X     , KC_C     , LAY_WIN1 , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_6    , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
                       KC_Y    , MOD_CTL2 , MOD_ALT2  , KC_O     , KC_P     , KC_BSLS,
                       KC_H    , KC_J     , KC_K      , KC_L     , MOD_SFT2 , KC_QUOT,
-                      KC_N    , LAY_WIN2 , KC_COMM   , KC_DOT   , MOD_GUI2 , LAY_NAV,
+                      KC_N    , LAY_WIN2 , KC_COMM   , KC_DOT   , MOD_GUI2 , TO(GRAPHITE),
              RIGHT_THUMB_BIG  , RIGHT_THUMB_SMALL
   ),
 
@@ -91,10 +91,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, USRNAME,
                                                  _______, _______,
 
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
-                      XXXXXXX, KC_AT  , KC_HASH, KC_ASTR , XXXXXXX, XXXXXXX,
+                      KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
+                      KC_HOME, KC_PGDN, KC_PGUP, KC_END  , XXXXXXX, XXXXXXX,
                       KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, QK_LLCK,
-                      XXXXXXX, KC_TILD, KC_PIPE, KC_AMPR , XXXXXXX, XXXXXXX,
+                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
              _______, _______
   ),
 
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [NAV] = LAYOUT_LR(  // Mouse layer.
     _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
-    _______, XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX, KC_UP  , XXXXXXX, XXXXXXX,
     _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
