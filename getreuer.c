@@ -260,16 +260,15 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
-const uint16_t j_k_combo[] PROGMEM = {KC_J, KC_K, COMBO_END};
+const uint16_t j_l_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
 const uint16_t j_g_combo[] PROGMEM = {KC_J, LAY_NUM, COMBO_END};
-const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
+/* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word. */
-    COMBO(caps_combo, C(KC_Z)),             // J and S => activate Caps Word.
-    /* COMBO(j_k_combo, KC_BSLS),           // J and K => backslash */
+    COMBO(j_l_combo, C(KC_Z)),              // J and K => backslash
     /* COMBO(j_g_combo, OSL(NUM)),          // J and G => one-shot NUM layer */
-    COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer
+    /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
 
