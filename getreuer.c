@@ -67,8 +67,8 @@
 #endif
 
 enum layers {
-  GRAPHITE,
   BASE,
+  GRAPHITE,
   SYM1,
   QUICKMENU,
   NUM,
@@ -162,6 +162,7 @@ enum custom_keycodes {
 #define gLAY_WIN2 LT(WIN, KC_P)
 
 #define gLAY_NUM  LT(NUM, KC_S)
+#define gLAY_QUICK LT(QUICKMENU, KC_T)
 
 
 // QWERTY KEYS
@@ -181,9 +182,9 @@ enum custom_keycodes {
 #define LAY_WIN2 LT(WIN, KC_M)
 
 #define LAY_NUM  LT(NUM, KC_F)
+#define LAY_QUICK LT(QUICKMENU, KC_D)
 
 
-#define LAY_QUICK LT(QUICKMENU, KC_G)
 #define LAY_ARR1 LT(ARR, KC_U)
 #define LAY_ARR2 LT(ARR, KC_Y)
 
@@ -260,13 +261,13 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
-const uint16_t j_l_combo[] PROGMEM = {KC_J, KC_L, COMBO_END};
-const uint16_t flowlauncher[] PROGMEM = {KC_S, LAY_NUM, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = { KC_S, LAY_NUM, COMBO_END};
+const uint16_t flowlauncher[] PROGMEM = {KC_J, KC_L, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word. */
-    COMBO(j_l_combo, C(KC_Z)),              // J and K => backslash
+    COMBO(tmux_combo, C(KC_A)),              // J and K => backslash
     COMBO(flowlauncher, KC_F14),          // J and G => one-shot NUM layer
     /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };

@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3     , KC_4     , KC_5   ,
     LAY_NAV , KC_B     , KC_L     , gMOD_ALT1, gMOD_CTL1, KC_Z   ,
-    CKC_CAPS, gMOD_SFT1, KC_R     , KC_T     , gLAY_NUM , LAY_QUICK,
+    CKC_CAPS, gMOD_SFT1, KC_R     , gLAY_QUICK, gLAY_NUM , KC_G   ,
     KC_LSFT , gMOD_GUI1, KC_Q     , KC_X     , gLAY_WIN1, KC_V   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
     LAY_NAV , KC_Q    , KC_W     , MOD_ALT1 , MOD_CTL1 , KC_T   ,
-    CKC_CAPS, MOD_SFT1, KC_S     , KC_D     , LAY_NUM  , LAY_QUICK,
+    CKC_CAPS, MOD_SFT1, KC_S     , LAY_QUICK, LAY_NUM  , KC_G   ,
     KC_LSFT , MOD_GUI1, KC_X     , KC_C     , LAY_WIN1 , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
 
