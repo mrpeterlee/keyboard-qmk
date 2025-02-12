@@ -225,7 +225,7 @@ const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG,
 /* const key_override_t graph_6 = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_LABK); */
 /* const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS); */
 
-/* /* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */ */
+/* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */ 
 /* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
 /* const key_override_t switch_c_k = ko_make_basic(MOD_MASK_CTRL, KC_K, A(KC_K)); */
 /* const key_override_t switch_c_l = ko_make_basic(MOD_MASK_CTRL, KC_L, A(KC_L)); */
@@ -233,8 +233,8 @@ const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG,
 /* const key_override_t switch_a_j = ko_make_basic(MOD_MASK_ALT, KC_J, C(KC_J)); */
 /* const key_override_t switch_a_k = ko_make_basic(MOD_MASK_ALT, KC_K, C(KC_K)); */
 /* const key_override_t switch_a_l = ko_make_basic(MOD_MASK_ALT, KC_L, C(KC_L)); */
-/**/
-/**/
+
+
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
 	&ctrl_delete,
