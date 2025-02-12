@@ -67,8 +67,8 @@
 #endif
 
 enum layers {
-  BASE,
   GRAPHITE,
+  BASE,
   SYM1,
   QUICKMENU,
   NUM,
@@ -147,39 +147,39 @@ enum custom_keycodes {
 
 // Short aliases for home row mods and other tap-hold keys.
 // Graphite KEYS
-#define gMOD_CTL1 LCTL_T(KC_W)       
-#define gMOD_CTL2 RCTL_T(KC_F)       
+#define gMOD_CTL1 LCTL_T(KC_C)       
+#define gMOD_CTL2 RCTL_T(KC_P)       
 
-#define gMOD_ALT1 LALT_T(KC_D)
-#define gMOD_ALT2 RALT_T(KC_O)        
+#define gMOD_ALT1 LALT_T(KC_M)
+#define gMOD_ALT2 RALT_T(KC_DOT)        
 
 #define gMOD_SFT1 LSFT_T(KC_N)
 #define gMOD_SFT2 RSFT_T(KC_I)
 
-#define gMOD_GUI1 LGUI_T(KC_Q)
+#define gMOD_GUI2 RGUI_T(KC_MINS)
 
-#define gLAY_WIN1 LT(WIN, KC_C)    
-#define gLAY_WIN2 LT(WIN, KC_P)
+#define gLAY_WIN1 LT(WIN, KC_D)    
+#define gLAY_WIN2 LT(WIN, KC_U     )
 
 #define gLAY_NUM  LT(NUM, KC_S)
 #define gLAY_QUICK LT(QUICKMENU, KC_T)
 
 
 // QWERTY KEYS
-#define MOD_CTL1 LCTL_T(KC_R)       
-#define MOD_CTL2 RCTL_T(KC_U)       
+#define MOD_CTL1 LCTL_T(KC_V)       
+#define MOD_CTL2 RCTL_T(KC_M)       
 
-#define MOD_ALT1 LALT_T(KC_E)       
-#define MOD_ALT2 RALT_T(KC_I)        
+#define MOD_ALT1 LALT_T(KC_C)       
+#define MOD_ALT2 RALT_T(KC_COMM   )        
 
 #define MOD_SFT1 LSFT_T(KC_A)
 #define MOD_SFT2 RSFT_T(KC_SCLN)
 
-#define MOD_GUI1 LGUI_T(KC_Z)
+#define MOD_GUI1 LGUI_T(KC_X)
 #define MOD_GUI2 RGUI_T(KC_SLSH)
 
-#define LAY_WIN1 LT(WIN, KC_V)    
-#define LAY_WIN2 LT(WIN, KC_M)
+#define LAY_WIN1 LT(WIN, KC_E     )    
+#define LAY_WIN2 LT(WIN, KC_O     )
 
 #define LAY_NUM  LT(NUM, KC_F)
 #define LAY_QUICK LT(QUICKMENU, KC_D)
@@ -195,7 +195,7 @@ enum custom_keycodes {
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
-#define RIGHT_THUMB_BIG   KC_BSPC
+#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
@@ -225,7 +225,7 @@ const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG,
 /* const key_override_t graph_6 = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_LABK); */
 /* const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS); */
 
-/* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */
+/* /* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */ */
 /* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
 /* const key_override_t switch_c_k = ko_make_basic(MOD_MASK_CTRL, KC_K, A(KC_K)); */
 /* const key_override_t switch_c_l = ko_make_basic(MOD_MASK_CTRL, KC_L, A(KC_L)); */
@@ -267,7 +267,7 @@ const uint16_t flowlauncher[] PROGMEM = {KC_J, KC_L, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),             // J and S => activate Caps Word. */
-    COMBO(tmux_combo, C(KC_A)),              // J and K => backslash
+    COMBO(tmux_combo, A(KC_F12)),              // J and K => backslash
     COMBO(flowlauncher, KC_F14),          // J and G => one-shot NUM layer
     /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
@@ -278,14 +278,14 @@ combo_t key_combos[] = {
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef CUSTOM_SHIFT_KEYS_ENABLE
 const custom_shift_key_t custom_shift_keys[] = {
-    /* {KC_QUOT, KC_UNDS}, */
-    /* {KC_SCLN, KC_COLN}, */
-    /* {KC_COMM, KC_QUES}, */
-    /* {KC_DOT , KC_RABK}, */
-    /* {KC_MINS, KC_DQUO}, */
-    /* {KC_SLSH, KC_LABK}, */
-    /* {KC_EQL , KC_PLUS}, */
-    {KC_F14 , KC_F14 },  // Don't shift =
+    {KC_QUOT, KC_UNDS},
+    {KC_SCLN, KC_COLN},
+    {KC_COMM, KC_QUES},
+    {KC_DOT , KC_RABK},
+    {KC_MINS, KC_DQUO},
+    {KC_SLSH, KC_LABK},
+    {KC_EQL , KC_PLUS},
+    /* {KC_F14 , KC_F14 },  // Don't shift = */
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
@@ -330,8 +330,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case gMOD_SFT2:
     case gMOD_ALT1:
     case gMOD_ALT2:
-    case gMOD_GUI1:
-
+    case gMOD_GUI2:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
