@@ -44,15 +44,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_LPRN   , KC_RPRN   , G(S(KC_S)),
+    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
     TMUXESC, KC_SCLN, KC_QUES, KC_ASTR   , KC_KP_PLUS, KC_EQL,
     XXXXXXX, XXXXXXX, KC_EXLM, KC_LCBR   , KC_RCBR   , C(S(KC_V)),
                                           _______, _______,
 
                       KC_F6  , KC_F7     , KC_F8  , KC_F9     , KC_F10    , KC_F11 ,
                       KC_UNDS, KC_HASH   , KC_PIPE, KC_TILD   , KC_PERC   , XXXXXXX,
-                      KC_CIRC, KC_LBRC   , KC_RBRC, KC_DLR    , KC_COLN   , KC_QUES,
-                      XXXXXXX, KC_PERC   , KC_AMPR, KC_DQUO   , KC_LABK   , XXXXXXX,
+                      KC_CIRC, KC_LPRN   , KC_RPRN, KC_DLR    , KC_COLN   , KC_QUES,
+                      XXXXXXX, KC_AMPR   , KC_RABK, KC_DQUO   , KC_LABK   , XXXXXXX,
              C(KC_BSPC), C(KC_F)
   ),
    
