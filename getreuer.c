@@ -261,8 +261,8 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
-const uint16_t tmux_combo[] PROGMEM = { KC_S, LAY_NUM, COMBO_END};
-const uint16_t flowlauncher[] PROGMEM = {KC_J, KC_L, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = { KC_R, KC_S, COMBO_END};
+const uint16_t flowlauncher[] PROGMEM = {KC_H, KC_E, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
