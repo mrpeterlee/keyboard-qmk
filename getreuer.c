@@ -161,8 +161,8 @@ enum custom_keycodes {
 #define gLAY_WIN1 LT(WIN, KC_D)    
 #define gLAY_WIN2 LT(WIN, KC_U     )
 
-#define gLAY_NUM  LT(NUM, KC_S)
-#define gLAY_QUICK LT(QUICKMENU, KC_T)
+#define gLAY_NUM  LT(NUM, KC_R)
+#define gLAY_QUICK LT(QUICKMENU, KC_S)
 
 
 // QWERTY KEYS
@@ -181,8 +181,8 @@ enum custom_keycodes {
 #define LAY_WIN1 LT(WIN, KC_E     )    
 #define LAY_WIN2 LT(WIN, KC_O     )
 
-#define LAY_NUM  LT(NUM, KC_F)
-#define LAY_QUICK LT(QUICKMENU, KC_D)
+#define LAY_NUM  LT(NUM, KC_S)
+#define LAY_QUICK LT(QUICKMENU, KC_F)
 
 
 #define LAY_ARR1 LT(ARR, KC_U)
@@ -261,7 +261,7 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END};
-const uint16_t tmux_combo[] PROGMEM = { KC_R, KC_S, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = { KC_R, gLAY_NUM, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, KC_E, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
@@ -279,12 +279,12 @@ combo_t key_combos[] = {
 #ifdef CUSTOM_SHIFT_KEYS_ENABLE
 const custom_shift_key_t custom_shift_keys[] = {
     {KC_QUOT, KC_UNDS},
-    {KC_SCLN, KC_COLN},
+    /* {KC_SCLN, KC_COLN}, */
     {KC_COMM, KC_QUES},
-    {KC_DOT , KC_RABK},
-    {KC_MINS, KC_DQUO},
+    /* {KC_DOT , KC_RABK}, */
+    {gMOD_GUI2, KC_DQUO},
     {KC_SLSH, KC_LABK},
-    {KC_EQL , KC_PLUS},
+    /* {KC_EQL , KC_PLUS}, */
     /* {KC_F14 , KC_F14 },  // Don't shift = */
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
