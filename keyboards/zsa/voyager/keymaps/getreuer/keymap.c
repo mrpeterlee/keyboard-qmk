@@ -59,14 +59,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT_LR(  // Number layer.
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, KC_ASTR, KC_KP_PLUS, KC_EQL, 
+    _______, _______, XXXXXXX, KC_ASTR, KC_KP_PLUS, KC_EQL, 
     XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
                                                  _______, _______,
 
                       XXXXXXX, KC_SLSH, KC_ASTR, KC_LPRN, KC_RBRC   , KC_MINS,
                       KC_EQL , KC_7   , KC_8   , KC_9   , KC_PERC   , XXXXXXX,
-                      KC_KP_PLUS, KC_4, KC_5   , KC_6   , KC_MINS   , QK_LLCK,
-                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_SLSH   , XXXXXXX,
+                      KC_KP_PLUS, KC_4, KC_5   , KC_6   , KC_MINS   , KC_DOT,
+                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_SLSH   , QK_LLCK,
              _______, KC_0   
   ),
 
