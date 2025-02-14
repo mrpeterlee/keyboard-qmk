@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                       KC_F6  , KC_F7     , KC_F8  , KC_F9     , KC_F10    , KC_F11 ,
                       KC_UNDS, KC_HASH   , KC_PIPE, KC_TILD   , KC_PERC   , XXXXXXX,
-                      KC_CIRC, KC_LPRN   , KC_RPRN, KC_DLR    , KC_COLN   , KC_QUES,
+                      KC_CIRC, KC_LPRN   , KC_RPRN, KC_DLR    , KC_COLN   , KC_BSLS,
                       XXXXXXX, KC_AMPR   , KC_RABK, KC_DQUO   , KC_LABK   , XXXXXXX,
              C(KC_BSPC), C(KC_F)
   ),
