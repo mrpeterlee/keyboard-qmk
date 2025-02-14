@@ -404,7 +404,7 @@ uint16_t achordion_streak_chord_timeout(
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
     case LEFT_THUMB_BIG:
-      if (next_keycode == KC_C || next_keycode == KC_V || next_keycode == RIGHT_THUMB_BIG) {
+      if (next_keycode == MOD_GUI1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V || next_keycode == RIGHT_THUMB_BIG) {
         return 0;
       }
       break;
