@@ -406,6 +406,7 @@ uint16_t achordion_streak_chord_timeout(
     case LEFT_THUMB_BIG:
       if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM ||next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT2 || next_keycode == gMOD_ALT1 || next_keycode == gLAY_WIN2 || next_keycode == MOD_GUI2 || next_keycode == MOD_GUI1 || next_keycode == gMOD_CTL2 || next_keycode == gMOD_CTL1 || next_keycode == KC_V || next_keycode == RIGHT_THUMB_BIG) {
         return 0;
+      }
 
     case RIGHT_THUMB_BIG:
       if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM ||next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT2 || next_keycode == gMOD_ALT1 || next_keycode == gLAY_WIN2 || next_keycode == MOD_GUI2 || next_keycode == MOD_GUI1 || next_keycode == gMOD_CTL2 || next_keycode == gMOD_CTL1 || next_keycode == KC_V || next_keycode == LEFT_THUMB_BIG) {
