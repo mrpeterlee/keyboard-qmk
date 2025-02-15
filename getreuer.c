@@ -150,16 +150,17 @@ enum custom_keycodes {
 #define gMOD_CTL1 LCTL_T(KC_C)       
 #define gMOD_CTL2 RCTL_T(KC_P)       
 
-#define gMOD_ALT1 LALT_T(KC_M)
-#define gMOD_ALT2 RALT_T(KC_DOT)        
+#define gMOD_ALT1 LALT_T(KC_X)
+#define gMOD_ALT2 RALT_T(KC_MINS)        
 
-#define gMOD_SFT1 LSFT_T(KC_N)
-#define gMOD_SFT2 RSFT_T(KC_I)
+#define gMOD_SFT1 LSFT_T(KC_M)
+#define gMOD_SFT2 RSFT_T(KC_DOT)
 
-#define gMOD_GUI2 RGUI_T(KC_MINS)
+#define gMOD_GUI1 LGUI_T(KC_L)
+#define gMOD_GUI2 RGUI_T(KC_U)
 
 #define gLAY_WIN1 LT(WIN, KC_D)    
-#define gLAY_WIN2 LT(WIN, KC_U     )
+#define gLAY_WIN2 LT(WIN, KC_O)
 
 #define gLAY_NUM  LT(NUM, KC_R)
 #define gLAY_QUICK LT(QUICKMENU, KC_S)
@@ -193,9 +194,9 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
-#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
+#define RIGHT_THUMB_BIG   KC_BSPC               // RALT_T(KC_BSPC)
 #define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
@@ -285,8 +286,8 @@ const custom_shift_key_t custom_shift_keys[] = {
     {KC_QUOT, KC_UNDS},
     /* {KC_SCLN, KC_COLN}, */
     {KC_COMM, KC_QUES},
-    /* {KC_DOT , KC_RABK}, */
-    {gMOD_GUI2, KC_DQUO},
+    {gMOD_ALT2, KC_RABK},
+    {gMOD_SFT2, KC_DQUO},
     {KC_SLSH, KC_LABK},
     /* {KC_EQL , KC_PLUS}, */
     /* {KC_F14 , KC_F14 },  // Don't shift = */
@@ -334,6 +335,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case gMOD_SFT2:
     case gMOD_ALT1:
     case gMOD_ALT2:
+    case gMOD_GUI1:
     case gMOD_GUI2:
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
@@ -403,15 +405,14 @@ uint16_t achordion_streak_chord_timeout(
 
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
-    case LEFT_THUMB_BIG:
-      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM ||next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT2 || next_keycode == gMOD_ALT1 || next_keycode == gLAY_WIN2 || next_keycode == MOD_GUI2 || next_keycode == MOD_GUI1 || next_keycode == gMOD_CTL2 || next_keycode == gMOD_CTL1 || next_keycode == KC_V || next_keycode == RIGHT_THUMB_BIG) {
+
+    case gMOD_CTL1:
+      if (next_keycode == gLAY_WIN2 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_ALT2 || next_keycode == gMOD_CTL2) {
         return 0;
       }
-
-    case RIGHT_THUMB_BIG:
-      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM ||next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT2 || next_keycode == gMOD_ALT1 || next_keycode == gLAY_WIN2 || next_keycode == MOD_GUI2 || next_keycode == MOD_GUI1 || next_keycode == gMOD_CTL2 || next_keycode == gMOD_CTL1 || next_keycode == KC_V || next_keycode == LEFT_THUMB_BIG) {
+     case gMOD_CTL2:
+      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V) {
         return 0;
-
       }
       break;
   }

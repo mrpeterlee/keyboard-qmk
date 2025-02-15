@@ -30,15 +30,15 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
-    LAY_NAV , KC_B     , KC_L     , gLAY_WIN1 , KC_W     , KC_Z   ,
-    CKC_CAPS, gMOD_SFT1, gLAY_NUM , KC_T      , gLAY_QUICK, KC_G   ,
-    KC_LSFT , KC_Q     , MOD_GUI1 , gMOD_ALT1 , gMOD_CTL1, KC_V   ,
+    LAY_NAV , KC_B     , gMOD_GUI1, gLAY_WIN1 , KC_W     , KC_Z   ,
+    CKC_CAPS, KC_A     , gLAY_NUM , KC_T      , gLAY_QUICK, KC_G   ,
+    KC_LSFT , KC_Q     , gMOD_ALT1, gMOD_SFT1 , gMOD_CTL1, KC_V   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_BSLS,
-                      KC_QUOT, KC_F     , KC_O      , gLAY_WIN2, KC_J     , KC_SCLN,
-                      KC_Y   , KC_H     , KC_A      , KC_E     , gMOD_SFT2, KC_COMM,
-                      KC_K   , gMOD_CTL2, gMOD_ALT2 , gMOD_GUI2, KC_SLSH  , TO(BASE),
+                      KC_QUOT, KC_F     , gLAY_WIN2 , gMOD_GUI2, KC_J     , KC_SCLN,
+                      KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
+                      KC_K   , gMOD_CTL2, gMOD_SFT2 , gMOD_ALT2, KC_SLSH  , TO(BASE),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
 
@@ -85,18 +85,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
-    _______, C(KC_Z), C(KC_V), C(KC_A), C(KC_C), C(KC_X),
-    _______, MO(FUN), _______, _______, _______, _______,
-    TMUXESC, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, USRNAME,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, MS_WHLL, MS_WHLU, MS_UP  , MS_WHLR, MS_WHLR,
+    TMUXESC, C(KC_A), MS_LEFT, MS_DOWN, MS_RGHT, _______,
+    _______, C(KC_Z), C(KC_X), _______, C(KC_C), C(KC_V),
                                                  _______, _______,
 
                       KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
                       KC_HOME, KC_PGDN, KC_PGUP, KC_END  , XXXXXXX, XXXXXXX,
                       KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, QK_LLCK,
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
-             _______, _______
+             MS_BTN2, MS_BTN1
   ),
+
+  [NAV] = LAYOUT_LR(  // Mouse layer.
+    _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
+    _______, XXXXXXX, XXXXXXX, KC_UP  , XXXXXXX, XXXXXXX,
+    _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                                 _______, _______,
+
+                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                      MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
+                      MS_LEFT, MS_UP  , MS_DOWN, MS_RGHT, XXXXXXX, QK_LLCK,
+                      KC_MUTE, KC_VOLU, KC_VOLD, XXXXXXX, XXXXXXX, TO(BASE),
+             MS_BTN2, MS_BTN1
+  ),
+
 
   [WIN] = LAYOUT_LR(  // Window management layer.
     RM_TOGG  , RGB_DEF   , RM_NEXT      , RM_HUEU      , RM_SATU       , RM_VALU,
@@ -124,20 +139,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       XXXXXXX, KC_F4  , KC_F5  , KC_F6  , XXXXXXX, QK_LLCK,
                       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , XXXXXXX, XXXXXXX,
              _______, _______
-  ),
-
-  [NAV] = LAYOUT_LR(  // Mouse layer.
-    _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP, _______,
-    _______, XXXXXXX, XXXXXXX, KC_UP  , XXXXXXX, XXXXXXX,
-    _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 _______, _______,
-
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
-                      MS_LEFT, MS_UP  , MS_DOWN, MS_RGHT, XXXXXXX, QK_LLCK,
-                      KC_MUTE, KC_VOLU, KC_VOLD, XXXXXXX, XXXXXXX, TO(BASE),
-             MS_BTN2, MS_BTN1
   ),
 
   [ARR] = LAYOUT_LR(  // Arrow layer.
