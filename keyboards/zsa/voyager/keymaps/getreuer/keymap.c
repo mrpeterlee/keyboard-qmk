@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
     LAY_NAV , KC_B     , gMOD_GUI1, gLAY_WIN1 , KC_W     , KC_Z   ,
-    CKC_CAPS, KC_A     , gLAY_NUM , KC_T      , gLAY_QUICK, KC_G   ,
+    CKC_CAPS, KC_N     , gLAY_NUM , KC_T      , gLAY_QUICK, KC_G   ,
     KC_LSFT , KC_Q     , gMOD_ALT1, gMOD_SFT1 , gMOD_CTL1, KC_V   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
