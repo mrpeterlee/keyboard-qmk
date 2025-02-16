@@ -174,7 +174,7 @@ enum custom_keycodes {
 #define MOD_CTL2 RCTL_T(KC_M)       
 
 #define MOD_ALT1 LALT_T(KC_C)       
-#define MOD_ALT2 RALT_T(KC_COMM   )        
+#define MOD_ALT2 RALT_T(KC_COMM)        
 
 #define MOD_SFT1 LSFT_T(KC_A)
 #define MOD_SFT2 RSFT_T(KC_SCLN)
@@ -182,8 +182,8 @@ enum custom_keycodes {
 #define MOD_GUI1 LGUI_T(KC_X)
 #define MOD_GUI2 RGUI_T(KC_SLSH)
 
-#define LAY_WIN1 LT(WIN, KC_E     )    
-#define LAY_WIN2 LT(WIN, KC_O     )
+#define LAY_WIN1 LT(WIN, KC_E)    
+#define LAY_WIN2 LT(WIN, KC_O)
 
 #define LAY_NUM  LT(NUM, KC_S)
 #define LAY_QUICK LT(QUICKMENU, KC_F)
