@@ -44,6 +44,9 @@
  * <https://getreuer.info/posts/keyboards>
  */
 
+/* qmk config user.overlay_dir="D:/lab/paper/keyboard-qmk" */
+/* qmk flash -kb zsa/voyager -km getreuer */
+
 #ifdef ACHORDION_ENABLE
 #include "features/achordion.h"
 #endif  // ACHORDION_ENABLE
