@@ -274,7 +274,7 @@ const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END};
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),                 // J and S => activate Caps Word. */
-    COMBO(tmux_combo, A(KC_F12)),                  // J and K => backslash
+    COMBO(tmux_combo, C(KC_F12)),                  // J and K => backslash
     COMBO(flowlauncher, KC_F14),        
     COMBO(ctrl_c, C(KC_C)),        
     COMBO(ctrl_x, C(KC_X)),        
