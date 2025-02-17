@@ -269,6 +269,7 @@ const uint16_t tmux_combo[] PROGMEM = { gLAY_QUICK, gLAY_NUM, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, KC_E, COMBO_END};
 const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_CTL1, COMBO_END};
 const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END};
+const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END};
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
@@ -277,6 +278,7 @@ combo_t key_combos[] = {
     COMBO(flowlauncher, KC_F14),        
     COMBO(ctrl_c, C(KC_C)),        
     COMBO(ctrl_x, C(KC_X)),        
+    COMBO(ctrl_a, C(KC_A)),        
     /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
