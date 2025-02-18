@@ -290,7 +290,7 @@ const custom_shift_key_t custom_shift_keys[] = {
     /* {KC_SCLN, KC_COLN}, */
     {KC_COMM, KC_QUES},
     {gMOD_ALT2, KC_RABK},
-    {gMOD_SFT2, KC_DQUO},
+    {KC_MINS, KC_DQUO},
     {KC_SLSH, KC_LABK},
     /* {KC_EQL , KC_PLUS}, */
     /* {KC_F14 , KC_F14 },  // Don't shift = */
