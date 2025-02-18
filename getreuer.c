@@ -78,7 +78,6 @@ enum layers {
   WIN,
   FUN,
   NAV,
-  ARR,
 };
 
 enum custom_keycodes {
@@ -188,8 +187,8 @@ enum custom_keycodes {
 #define LAY_NUM  LT(NUM, KC_S)
 #define LAY_QUICK LT(QUICKMENU, KC_F)
 
-#define LAY_ARR1 LT(ARR, KC_U)
-#define LAY_ARR2 LT(ARR, KC_Y)
+/* #define LAY_ARR1 LT(ARR, KC_U) */
+/* #define LAY_ARR2 LT(ARR, KC_Y) */
 
 #define LAY_NAV LT(NAV, KC_TAB)
 #define HOME_B LSFT_T(KC_B)
@@ -590,7 +589,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
       case MOD_CTL1: return M_TMENT;    // T -> TMENT
 
       case KC_C: return KC_Y;         // C -> Y
-      case LAY_ARR1: return KC_Y;       // D -> Y
+      /* case LAY_ARR1: return KC_Y;       // D -> Y */
       case LAY_NUM: return KC_Y;        // G -> Y
       case KC_P: return KC_Y;         // P -> Y
       case KC_Y: return KC_P;         // Y -> P
