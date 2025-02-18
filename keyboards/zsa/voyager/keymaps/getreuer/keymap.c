@@ -31,21 +31,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
     LAY_NAV , KC_B     , gMOD_GUI1, gLAY_WIN1 , KC_W     , KC_Z   ,
-    CKC_CAPS, KC_N     , gLAY_NUM , KC_T      , gLAY_QUICK, KC_G   ,
-    KC_LSFT , KC_Q     , gMOD_ALT1, gMOD_SFT1 , gMOD_CTL1, KC_V   ,
+    CKC_CAPS, KC_N     , gLAY_NUM , gMOD_ALT1 , gMOD_CTL1, gLAY_QUICK,
+    KC_LSFT , KC_Q     , KC_X     , KC_M      , KC_C     , KC_V   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_BSLS,
                       KC_QUOT, KC_F     , gLAY_WIN2 , gMOD_GUI2, KC_J     , KC_SCLN,
                       KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
-                      KC_K   , gMOD_CTL2, gMOD_SFT2 , gMOD_ALT2, KC_SLSH  , TO(BASE),
+                      KC_K   , gMOD_CTL2, gMOD_ALT2 , KC_MINS  , KC_SLSH  , TO(BASE),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
-    TMUXESC, KC_SCLN, KC_QUES, KC_ASTR   , KC_KP_PLUS, KC_EQL,
+    TMUXESC, KC_SCLN, KC_QUES, KC_ASTR   , KC_EQL    , KC_KP_PLUS, 
     XXXXXXX, XXXXXXX, KC_EXLM, KC_LCBR   , KC_RCBR   , C(S(KC_V)),
                                           _______    , _______,
 
@@ -59,14 +59,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT_LR(  // Number layer.
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,
-    _______, _______, XXXXXXX, KC_ASTR, KC_KP_PLUS, KC_EQL, 
+    _______, _______, XXXXXXX, KC_ASTR, KC_EQL , KC_KP_PLUS,  
     XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
                                                  _______, _______,
 
                       XXXXXXX, KC_SLSH, KC_ASTR, KC_LPRN, KC_RBRC   , KC_MINS,
                       KC_EQL , KC_7   , KC_8   , KC_9   , KC_PERC   , XXXXXXX,
-                      KC_KP_PLUS, KC_4, KC_5   , KC_6   , KC_MINS   , KC_DOT,
-                      KC_ASTR, KC_1   , KC_2   , KC_3   , KC_SLSH   , QK_LLCK,
+                      KC_KP_PLUS, KC_4, KC_5   , KC_6   , KC_MINS   , XXXXXXX,
+                      KC_DOT , KC_1   , KC_2   , KC_3   , KC_SLSH   , QK_LLCK,
              _______, KC_0   
   ),
 
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  _______, _______,
 
                       KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
-                      KC_HOME, KC_PGUP, XXXXXXX, KC_PGDN , KC_END ,  XXXXXXX,
+                      KC_HOME, KC_PGUP, KC_PGDN, KC_END  , XXXXXXX, XXXXXXX,
                       KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, QK_LLCK,
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
              MS_BTN2, MS_BTN1

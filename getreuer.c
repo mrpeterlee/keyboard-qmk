@@ -150,11 +150,11 @@ enum custom_keycodes {
 
 // Short aliases for home row mods and other tap-hold keys.
 // Graphite KEYS
-#define gMOD_CTL1 LCTL_T(KC_C)       
+#define gMOD_CTL1 LCTL_T(KC_S)       
 #define gMOD_CTL2 RCTL_T(KC_P)       
 
-#define gMOD_ALT1 LALT_T(KC_X)
-#define gMOD_ALT2 RALT_T(KC_MINS)        
+#define gMOD_ALT1 LALT_T(KC_T)
+#define gMOD_ALT2 RALT_T(KC_DOT)        
 
 #define gMOD_SFT1 LSFT_T(KC_M)
 #define gMOD_SFT2 RSFT_T(KC_DOT)
@@ -166,7 +166,7 @@ enum custom_keycodes {
 #define gLAY_WIN2 LT(WIN, KC_O)
 
 #define gLAY_NUM  LT(NUM, KC_R)
-#define gLAY_QUICK LT(QUICKMENU, KC_S)
+#define gLAY_QUICK LT(QUICKMENU, KC_G)
 
 
 // QWERTY KEYS
@@ -188,19 +188,17 @@ enum custom_keycodes {
 #define LAY_NUM  LT(NUM, KC_S)
 #define LAY_QUICK LT(QUICKMENU, KC_F)
 
-
 #define LAY_ARR1 LT(ARR, KC_U)
 #define LAY_ARR2 LT(ARR, KC_Y)
-
 
 #define LAY_NAV LT(NAV, KC_TAB)
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    RSFT_T(KC_ESC) // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
-#define RIGHT_THUMB_BIG   KC_BSPC               // RALT_T(KC_BSPC)
-#define RIGHT_THUMB_SMALL LSFT_T(KC_SPC)
+#define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)
+#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
@@ -218,6 +216,7 @@ enum custom_keycodes {
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
 const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG, KC_DEL);
+/* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
 /* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
 /* const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP); */
 
@@ -265,22 +264,20 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 /* const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END}; */
-const uint16_t tmux_combo[] PROGMEM = { gLAY_QUICK, gLAY_NUM, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = {gLAY_NUM, gMOD_CTL1, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, KC_E, COMBO_END};
-const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_CTL1, COMBO_END};
-const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END};
-const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END};
-const uint16_t ctrl_f[] PROGMEM = {LEFT_THUMB_SMALL, RIGHT_THUMB_SMALL, COMBO_END};
+/* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_CTL1, COMBO_END}; */
+/* const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END}; */
+/* const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END}; */
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
 // clang-format off
 combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),                 // J and S => activate Caps Word. */
     COMBO(tmux_combo, C(KC_F12)),                  // J and K => backslash
     COMBO(flowlauncher, KC_F14),        
-    COMBO(ctrl_c, C(KC_C)),        
-    COMBO(ctrl_x, C(KC_X)),        
-    COMBO(ctrl_a, C(KC_A)),        
-    COMBO(ctrl_f, C(KC_F)),        
+    /* COMBO(ctrl_c, C(KC_C)),         */
+    /* COMBO(ctrl_x, C(KC_X)),         */
+    /* COMBO(ctrl_a, C(KC_A)),         */
     /* COMBO(fun_layer_combo, OSL(FUN)),          // D and Y => one-shot FUN layer */
 };
 // clang-format on
