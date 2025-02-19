@@ -158,11 +158,11 @@ enum custom_keycodes {
 #define gMOD_SFT1 LSFT_T(KC_M)
 #define gMOD_SFT2 RSFT_T(KC_DOT)
 
-#define gMOD_GUI1 LGUI_T(KC_L)
-#define gMOD_GUI2 RGUI_T(KC_U)
+#define gMOD_GUI1 LGUI_T(KC_N)
+#define gMOD_GUI2 RGUI_T(KC_I)
 
-#define gLAY_WIN1 LT(WIN, KC_D)    
-#define gLAY_WIN2 LT(WIN, KC_O)
+#define gLAY_WIN1 LT(WIN, KC_L)    
+#define gLAY_WIN2 LT(WIN, KC_U)
 
 #define gLAY_NUM  LT(NUM, KC_R)
 #define gLAY_QUICK LT(QUICKMENU, KC_G)
@@ -263,8 +263,8 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 /* const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END}; */
-const uint16_t tmux_combo[] PROGMEM = {gLAY_NUM, gMOD_CTL1, COMBO_END};
-const uint16_t flowlauncher[] PROGMEM = {KC_H, KC_E, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, gMOD_CTL1, COMBO_END};
+const uint16_t flowlauncher[] PROGMEM = {KC_H, RIGHT_THUMB_SMALL, COMBO_END};
 /* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_CTL1, COMBO_END}; */
 /* const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END}; */
 /* const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END}; */

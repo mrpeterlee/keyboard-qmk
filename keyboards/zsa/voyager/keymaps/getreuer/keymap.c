@@ -30,14 +30,14 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
-    LAY_NAV , KC_B     , gMOD_GUI1, gLAY_WIN1 , KC_W     , KC_Z   ,
-    CKC_CAPS, KC_N     , gLAY_NUM , gMOD_ALT1 , gMOD_CTL1, gLAY_QUICK,
+    LAY_NAV , KC_B     , gLAY_WIN1, KC_D     , KC_W     , KC_Z   ,
+    CKC_CAPS, gMOD_GUI1, gLAY_NUM , gMOD_ALT1 , gMOD_CTL1, gLAY_QUICK,
     KC_LSFT , KC_Q     , KC_X     , KC_M      , KC_C     , KC_V   ,
                                LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_BSLS,
-                      KC_QUOT, KC_F     , gLAY_WIN2 , gMOD_GUI2, KC_J     , KC_SCLN,
-                      KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
+                      KC_QUOT, KC_F     , KC_O      , gLAY_WIN2 , KC_J     , KC_SCLN,
+                      KC_Y   , KC_H     , KC_A      , KC_E     , gMOD_GUI2, KC_COMM,
                       KC_K   , gMOD_CTL2, gMOD_ALT2 , KC_MINS  , KC_SLSH  , TO(BASE),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
