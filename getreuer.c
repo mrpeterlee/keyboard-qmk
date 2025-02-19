@@ -413,11 +413,15 @@ uint16_t achordion_streak_chord_timeout(
       if (next_keycode == gLAY_WIN2 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_ALT2 || next_keycode == gMOD_CTL2) {
         return 0;
       }
-     case gMOD_CTL2:
+    case gMOD_CTL2:
       if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V) {
         return 0;
       }
-      break;
+    case CKC_CAPS:
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X ||   next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V) {
+        return 0;
+      }
+    break;
   }
 
   // Otherwise, tap_hold_keycode is a mod-tap key.
