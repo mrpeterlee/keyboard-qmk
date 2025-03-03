@@ -44,8 +44,8 @@
  * <https://getreuer.info/posts/keyboards>
  */
 
-/* qmk config user.overlay_dir="D:/lab/paper/keyboard-qmk" */
-/* qmk flash -kb zsa/voyager -km getreuer */
+// qmk config user.overlay_dir="D:/lab/paper/keyboard-qmk" 
+// qmk flash -kb zsa/voyager -km getreuer 
 
 #ifdef ACHORDION_ENABLE
 #include "features/achordion.h"
@@ -158,11 +158,11 @@ enum custom_keycodes {
 #define gMOD_SFT1 LSFT_T(KC_M)
 #define gMOD_SFT2 RSFT_T(KC_DOT)
 
-#define gMOD_GUI1 LGUI_T(KC_N)
-#define gMOD_GUI2 RGUI_T(KC_I)
+#define gMOD_GUI1 LGUI_T(KC_X)
+#define gMOD_GUI2 RGUI_T(KC_MINS  )
 
-#define gLAY_WIN1 LT(WIN, KC_L)    
-#define gLAY_WIN2 LT(WIN, KC_U)
+#define gLAY_WIN1 LT(WIN, KC_Q     )    
+#define gLAY_WIN2 LT(WIN, KC_SLSH  )
 
 #define gLAY_NUM  LT(NUM, KC_R)
 #define gLAY_QUICK LT(QUICKMENU, KC_G)
