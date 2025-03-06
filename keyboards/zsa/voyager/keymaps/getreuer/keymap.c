@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_BSLS,
                       KC_QUOT, KC_F     , KC_O      , gMOD_GUI2, KC_J     , KC_SCLN,
                       KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
-                      KC_K   , gMOD_CTL2, gMOD_ALT2 , KC_MINS  , gLAY_WIN1, TO(BASE),
+                      KC_K   , gMOD_CTL2, gMOD_ALT2 , KC_MINS  , gLAY_WIN2, TO(BASE),
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
 
