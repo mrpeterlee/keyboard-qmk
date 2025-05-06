@@ -44,7 +44,9 @@
  * <https://getreuer.info/posts/keyboards>
  */
 
+// download qmk msys: https://msys.qmk.fm/
 // qmk config user.overlay_dir="D:/lab/paper/keyboard-qmk" 
+// cd /d/lab/paper/keyboard-qmk
 // qmk flash -kb zsa/voyager -km getreuer 
 
 #ifdef ACHORDION_ENABLE
