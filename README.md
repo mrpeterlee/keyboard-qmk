@@ -6,26 +6,31 @@
 
 This repo works as an [External QMK Userspace](https://docs.qmk.fm/newbs_external_userspace). Instructions on how to use it in QMK:
 
-1. [Set up QMK](https://docs.qmk.fm/newbs) on Windows.
-
-2. Clone this repo locally
+1. [Set up QMK](https://msys.qmk.fm/) on Windows.
 
    ```sh
-   cd /mnt/d/lab/paper
+   qmk setup
+   ```
+   
+3. Clone this repo locally
+
+   ```sh
+   cd /d/lab/paper/
    git clone --recursive git@github.com:MrPeterLee/keyboard-qmk.git
    ```
 
-3. Run the following shell command, replacing "`path/to/qmk-keymap`" with the
+4. Run the following shell command, replacing "`path/to/qmk-keymap`" with the
    relative path to your clone of `qmk-keymap` from the previous step:
 
    ```sh
-   qmk config user.overlay_dir=/d/lab/paper/keyboard-qmk
+   qmk config user.overlay_dir="D:/lab/paper/keyboard-qmk"
    ```
 
 The Voyager keymap may then be compiled and flashed with
 
 ```sh
 # ZSA Voyager
+cd /d/lab/paper/keyboard-qmk
 qmk compile -kb zsa/voyager -km getreuer
 qmk flash -kb zsa/voyager -km getreuer
 ```
