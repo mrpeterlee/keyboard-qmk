@@ -26,12 +26,16 @@
 #include "layout.h"
 #include "getreuer.c"
 
+
+// Custom OS behavior
 bool process_detected_host_os_user(os_variant_t detected_os) {
-  /* const bool is_mac = (detected_os == OS_MACOS || detected_os == OS_IOS); */
   switch (detected_os) {
       case OS_MACOS:
-      case OS_IOS:
           rgb_matrix_set_color_all(RGB_WHITE);
+          break;
+      case OS_IOS:
+          rgblight_disable_noeeprom(); 
+          rgb_matrix_disable_noeeprom();
           break;
       case OS_WINDOWS:
           rgb_matrix_set_color_all(RGB_BLUE);
@@ -43,8 +47,10 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
           rgb_matrix_set_color_all(RGB_RED);
           break;
   }
+
   return true;  // Always return true to indicate that the OS was detected.
 }
+
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
