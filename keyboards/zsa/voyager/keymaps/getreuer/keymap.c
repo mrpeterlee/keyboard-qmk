@@ -26,6 +26,26 @@
 #include "layout.h"
 #include "getreuer.c"
 
+bool process_detected_host_os_user(os_variant_t detected_os) {
+  /* const bool is_mac = (detected_os == OS_MACOS || detected_os == OS_IOS); */
+  switch (detected_os) {
+      case OS_MACOS:
+      case OS_IOS:
+          rgb_matrix_set_color_all(RGB_WHITE);
+          break;
+      case OS_WINDOWS:
+          rgb_matrix_set_color_all(RGB_BLUE);
+          break;
+      case OS_LINUX:
+          rgb_matrix_set_color_all(RGB_BLUE);
+          break;
+      case OS_UNSURE:
+          rgb_matrix_set_color_all(RGB_RED);
+          break;
+  }
+  return true;  // Always return true to indicate that the OS was detected.
+}
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
@@ -42,6 +62,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
   
+  [LAY_CTRL] = LAYOUT_LR(  // CTRL layer
+    C(KC_GRV)  , C(KC_1)     , C(KC_2)     , C(KC_3)      , C(KC_4)     , C(KC_5)   ,
+    _______    , C(KC_B)     , C(gMOD_GUI1), C(KC_D)      , C(KC_W)     , C(KC_Z)   ,
+    C(KC_A)    , C(KC_N)     , C(gLAY_NUM) , C(gMOD_SYM2) , C(gMOD_SYM1), C(gLAY_QUICK),
+    KC_LSFT    , C(gLAY_WIN1), C(KC_X)     , C(KC_M)      , C(KC_C)     , C(KC_V)   ,
+                                          _______    , _______,
+  
+                      C(KC_6)   , C(KC_7)     , C(KC_8)      , C(KC_9)     , C(KC_0)     , C(KC_BSLS),
+                      C(KC_QUOT), C(KC_F)     , C(KC_O)      , C(gMOD_GUI2), C(KC_J)     , C(KC_SCLN),
+                      C(KC_Y)   , C(KC_H)     , C(KC_A)      , C(KC_E)     , C(KC_I)     , C(KC_COMM),
+                      C(KC_K)   , C(KC_P)     , C(KC_DOT)    , C(KC_MINS)  , C(gLAY_WIN2), _______,  
+             C(KC_BSPC), C(KC_F)
+  ),
+
+ 
   [SYM1] = LAYOUT_LR(  // Symbol layer.1
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
@@ -53,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_UNDS   , KC_EXLM   , KC_AMPR, KC_CIRC   , KC_BSLS   , KC_COLN,
                       KC_KP_PLUS, KC_EQL    , KC_HASH, KC_DLR    , KC_COLN   , KC_QUES,
                       KC_ASTR   , KC_PERC   , KC_RABK, KC_DQUO   , KC_LABK   , QK_LLCK,
-             C(KC_BSPC), C(KC_F)
+             _______, _______
   ),
 
   [SYM2] = LAYOUT_LR(  // Symbol layer.2
@@ -67,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_TILD   , KC_LBRC   , KC_RBRC, KC_PIPE, KC_BSLS   , KC_COLN,
                       KC_GRV    , KC_LPRN   , KC_RPRN, KC_AT  , KC_SCLN   , KC_QUES,
                       G(S(KC_S)), KC_LCBR   , KC_RCBR, KC_DQUO, KC_LABK   , QK_LLCK,
-             C(KC_BSPC), C(KC_F)
+             _______, _______
   ),
  
   [NUM] = LAYOUT_LR(  // Number layer.

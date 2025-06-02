@@ -81,6 +81,7 @@ enum layers {
   WIN,
   FUN,
   NAV,
+  LAY_CTRL,
 };
 
 enum custom_keycodes {
@@ -196,7 +197,7 @@ enum custom_keycodes {
 #define LAY_NAV LT(NAV, KC_TAB)
 #define HOME_B LSFT_T(KC_B)
 
-#define LEFT_THUMB_SMALL  LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
+#define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RSFT_T(KC_ESC) // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)

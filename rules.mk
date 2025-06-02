@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+OS_DETECTION_ENABLE = yes
+BACKLIGHT_ENABLE = no
+RGB_MATRIX_CUSTOM_USER = no
+
 KEY_OVERRIDE_ENABLE = yes
 COMBO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
@@ -29,7 +33,6 @@ CONSOLE_ENABLE ?= no
 GRAVE_ESC_ENABLE ?= no
 LAYER_LOCK_ENABLE ?= yes
 NKRO_ENABLE ?= no
-RGB_MATRIX_CUSTOM_USER ?= yes
 SPACE_CADET_ENABLE ?= no
 TAP_DANCE_ENABLE ?= no
 
