@@ -75,6 +75,7 @@ enum layers {
   GRAPHITE,
   BASE,
   SYM1,
+  SYM2,
   QUICKMENU,
   NUM,
   WIN,
@@ -151,10 +152,10 @@ enum custom_keycodes {
 
 // Short aliases for home row mods and other tap-hold keys.
 // Graphite KEYS
-#define gMOD_CTL1 LCTL_T(KC_S)       
-#define gMOD_CTL2 RCTL_T(KC_P)       
+#define gMOD_SYM1 LT(SYM1, KC_S)       
+#define gMOD_SYM2 LT(SYM2, KC_T)
 
-#define gMOD_ALT1 LALT_T(KC_T)
+#define gMOD_CTL2 RCTL_T(KC_P)       
 #define gMOD_ALT2 RALT_T(KC_DOT)        
 
 #define gMOD_SFT1 LSFT_T(KC_M)
@@ -195,11 +196,11 @@ enum custom_keycodes {
 #define LAY_NAV LT(NAV, KC_TAB)
 #define HOME_B LSFT_T(KC_B)
 
-#define LEFT_THUMB_SMALL  LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
+#define LEFT_THUMB_SMALL  LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
 #define LEFT_THUMB_BIG    RSFT_T(KC_ESC) // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)
-#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
+#define RIGHT_THUMB_SMALL LALT_T(KC_SPC)   //  LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
 
 #define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
 
@@ -265,9 +266,9 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 /* const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END}; */
-const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, gMOD_CTL1, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, gMOD_SYM1, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, RIGHT_THUMB_SMALL, COMBO_END};
-/* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_CTL1, COMBO_END}; */
+/* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_SYM1, COMBO_END}; */
 /* const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END}; */
 /* const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END}; */
 /* const uint16_t fun_layer_combo[] PROGMEM = {KC_J, KC_L, COMBO_END}; */
@@ -294,6 +295,7 @@ const custom_shift_key_t custom_shift_keys[] = {
     {gMOD_ALT2, KC_RABK},
     {KC_MINS, KC_DQUO},
     {KC_SLSH, KC_LABK},
+    {gLAY_WIN2, KC_LABK},
     /* {KC_EQL , KC_PLUS}, */
     /* {KC_F14 , KC_F14 },  // Don't shift = */
 };
@@ -334,11 +336,11 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case MOD_ALT2:
     case MOD_GUI1:
     case MOD_GUI2:
-    case gMOD_CTL1:
+    case gMOD_SYM1:
     case gMOD_CTL2:
     case gMOD_SFT1:
     case gMOD_SFT2:
-    case gMOD_ALT1:
+    case gMOD_SYM2:
     case gMOD_ALT2:
     case gMOD_GUI1:
     case gMOD_GUI2:
@@ -369,9 +371,9 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case MOD_ALT2:
     case MOD_SFT1:
     case MOD_SFT2:
-    case gMOD_CTL1:
+    case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_ALT1:
+    case gMOD_SYM2:
     case gMOD_ALT2:
     case gMOD_SFT1:
     case gMOD_SFT2:
@@ -411,16 +413,16 @@ uint16_t achordion_streak_chord_timeout(
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
 
-    case gMOD_CTL1:
+    case gMOD_SYM1:
       if (next_keycode == gLAY_WIN2 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_ALT2 || next_keycode == gMOD_CTL2) {
         return 0;
       }
     case gMOD_CTL2:
-      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V) {
+      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2 || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
         return 0;
       }
     case CKC_CAPS:
-      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X ||   next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_ALT1 || next_keycode == gMOD_CTL1 || next_keycode == KC_V) {
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X ||   next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2 || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
         return 0;
       }
     break;
