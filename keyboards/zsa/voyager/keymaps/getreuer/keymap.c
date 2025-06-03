@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       C(KC_K)   , C(KC_P)     , C(KC_DOT)    , C(KC_MINS)  , C(gLAY_WIN2), _______,  
              C(KC_BSPC), C(KC_F)
   ),
- 
+
   [SYM1] = LAYOUT_LR(  // Symbol layer.1
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
@@ -115,16 +115,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_F12 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
     _______, MS_WHLL, MS_WHLU, MS_UP  , MS_WHLR, MS_WHLR,
     TMUXESC, C(KC_A), MS_LEFT, MS_DOWN, MS_RGHT, _______,
     _______, C(KC_Z), C(KC_X), _______, C(KC_C), C(KC_V),
                                                  _______, _______,
 
-                      KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX,
+                      KC_F6  , KC_F7  , KC_F8  , KC_F9   , KC_F10 , KC_F11 ,
                       KC_HOME, KC_PGUP, KC_PGDN, KC_END  , XXXXXXX, XXXXXXX,
                       KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, XXXXXXX,
-                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, QK_LLCK,
+                      KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, QK_LLCK,
              MS_BTN2, MS_BTN1
   ),
 
@@ -144,13 +144,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   [WIN] = LAYOUT_LR(  // Window management layer.
-    RM_TOGG  , RGB_DEF   , RM_NEXT      , RM_HUEU      , RM_SATU       , RM_VALU,
+    /* RM_TOGG  , RGB_DEF   , RM_NEXT      , RM_HUEU      , RM_SATU       , RM_VALU, */
+    KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     G(KC_TAB), C(A(KC_Q)), XXXXXXX      , C(A(KC_UP))  , XXXXXXX       , C(A(KC_T)),
     XXXXXXX  , XXXXXXX   , C(A(KC_LEFT)), C(A(KC_DOWN)), C(A(KC_RIGHT)), G(S(KC_S)),
     XXXXXXX  , XXXXXXX   , LALT(KC_F4)  , XXXXXXX      , XXXXXXX       , XXXXXXX,
                                                          _______     , _______,
 
-                      XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX,
+                      KC_F6     , KC_F7     , KC_F8     , KC_F9     , KC_F10 , KC_F11 ,
                       C(A(KC_Y)), C(A(KC_7)), C(A(KC_8)), C(A(KC_9)), KC_VOLD, KC_VOLU,
                       C(A(KC_H)), C(A(KC_4)), C(A(KC_5)), C(A(KC_6)), XXXXXXX, XXXXXXX,
                       C(A(KC_N)), C(A(KC_1)), C(A(KC_2)), C(A(KC_3)), XXXXXXX, QK_LLCK,
