@@ -27,30 +27,6 @@
 #include "getreuer.c"
 
 
-// Custom OS behavior
-bool process_detected_host_os_user(os_variant_t detected_os) {
-  switch (detected_os) {
-      case OS_MACOS:
-          rgb_matrix_set_color_all(RGB_WHITE);
-          break;
-      case OS_IOS:
-          rgblight_disable_noeeprom(); 
-          rgb_matrix_disable_noeeprom();
-          break;
-      case OS_WINDOWS:
-          rgb_matrix_set_color_all(RGB_BLUE);
-          break;
-      case OS_LINUX:
-          rgb_matrix_set_color_all(RGB_BLUE);
-          break;
-      case OS_UNSURE:
-          rgb_matrix_set_color_all(RGB_RED);
-          break;
-  }
-
-  return true;  // Always return true to indicate that the OS was detected.
-}
-
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -81,7 +57,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       C(KC_K)   , C(KC_P)     , C(KC_DOT)    , C(KC_MINS)  , C(gLAY_WIN2), _______,  
              C(KC_BSPC), C(KC_F)
   ),
-
  
   [SYM1] = LAYOUT_LR(  // Symbol layer.1
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,

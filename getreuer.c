@@ -198,12 +198,12 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RSFT_T(KC_ESC) // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    RSFT_T(KC_ESC)        // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)
-#define RIGHT_THUMB_SMALL LALT_T(KC_SPC)   //  LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
+#define RIGHT_THUMB_SMALL LALT_T(KC_SPC)        //  LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
 
-#define CKC_CAPS LCTL_T(KC_ESC) // ; CAPS acts as ESC when tap; CTRL when held
+#define CKC_CAPS LCTL_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
 
 // Graphite kaymap
 // #define MOD_SFT1 LSFT_T(KC_T)
@@ -218,49 +218,64 @@ enum custom_keycodes {
 ///////////////////////////////////////////////////////////////////////////////
 // Key overrides
 ///////////////////////////////////////////////////////////////////////////////
-const key_override_t ctrl_delete = ko_make_basic(MOD_MASK_CTRL, RIGHT_THUMB_BIG, KC_DEL);
-/* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
-/* const key_override_t ctrl_h = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_DOWN); */
-/* const key_override_t ctrl_a = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP); */
 
-/* const key_override_t graph_1 = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS); */
-/* const key_override_t graph_2 = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN); */
-/* const key_override_t graph_3 = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_QUES); */
-/* const key_override_t graph_4 = ko_make_basic(MOD_MASK_SHIFT, KC_DOT , KC_RABK); */
-/* const key_override_t graph_5 = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_DQUO); */
-/* const key_override_t graph_6 = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_LABK); */
-/* const key_override_t graph_7 = ko_make_basic(MOD_MASK_SHIFT, KC_EQL , KC_PLUS); */
+// Custom OS behavior
+/* #include "os_detection.h" */
+#include "eeconfig.h"        // already in your file, but just to be explicit
+#include "keycode_config.h"  // provides the global keymap_config union
 
-/* const key_override_t switch_c_h = ko_make_basic(MOD_MASK_CTRL, KC_H, A(KC_H)); */ 
-/* const key_override_t switch_c_j = ko_make_basic(MOD_MASK_CTRL, KC_J, A(KC_J)); */
-/* const key_override_t switch_c_k = ko_make_basic(MOD_MASK_CTRL, KC_K, A(KC_K)); */
-/* const key_override_t switch_c_l = ko_make_basic(MOD_MASK_CTRL, KC_L, A(KC_L)); */
-/* const key_override_t switch_a_h = ko_make_basic(MOD_MASK_ALT, KC_H, C(KC_H)); */
-/* const key_override_t switch_a_j = ko_make_basic(MOD_MASK_ALT, KC_J, C(KC_J)); */
-/* const key_override_t switch_a_k = ko_make_basic(MOD_MASK_ALT, KC_K, C(KC_K)); */
-/* const key_override_t switch_a_l = ko_make_basic(MOD_MASK_ALT, KC_L, C(KC_L)); */
+static void set_ctrl_cmd_swap(bool mac_layout) {
+    /* 1. load current EEPROM copy into the global struct */
+    eeconfig_read_keymap(&keymap_config);
 
+    /* 2. change the flags in RAM */
+    keymap_config.swap_lctl_lgui = mac_layout;   // left Cmd ↔︎ Ctrl
+    keymap_config.swap_rctl_rgui = mac_layout;   // right Cmd ↔︎ Ctrl
+
+    /* 3. write back if you want it to persist */
+    eeconfig_update_keymap(&keymap_config);
+}
+
+bool process_detected_host_os_user(os_variant_t detected_os) {
+  switch (detected_os) {
+      case OS_MACOS:
+          rgb_matrix_set_color_all(RGB_WHITE);
+          set_ctrl_cmd_swap(true);          // ⌘ under your thumb, ^ on the edge
+          /* key_override_on(); */
+          break;
+      case OS_IOS:
+          // Disable lighting & Allow key override
+          /* key_override_on(); */
+          set_ctrl_cmd_swap(true);          // ⌘ under your thumb, ^ on the edge
+          rgblight_disable_noeeprom(); 
+          rgb_matrix_disable_noeeprom();
+          break;
+      case OS_WINDOWS:
+          /* key_override_off(); */
+          set_ctrl_cmd_swap(false);          // ⌘ under your thumb, ^ on the edge
+          rgb_matrix_set_color_all(RGB_BLUE);
+          break;
+      case OS_LINUX:
+          set_ctrl_cmd_swap(false);          // ⌘ under your thumb, ^ on the edge
+          /* key_override_off(); */
+          rgb_matrix_set_color_all(RGB_BLUE);
+          break;
+      case OS_UNSURE:
+          /* key_override_off(); */
+          set_ctrl_cmd_swap(false);          // ⌘ under your thumb, ^ on the edge
+          rgb_matrix_set_color_all(RGB_RED);
+          break;
+  }
+
+  return true;  // Always return true to indicate that the OS was detected.
+}
+
+/* static const key_override_t ctrl_cmd_C = ko_make_with_layers(MOD_MASK_CTRL, KC_C, G(KC_C), LAY_CTRL); */
 
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
-	&ctrl_delete,
-	/* &ctrl_h, */
-	/* &ctrl_a, */
-	/* &graph_1, */
-	/* &graph_2, */
-	/* &graph_3, */
-	/* &graph_4, */
-	/* &graph_5, */
-	/* &graph_6, */
-	/* &graph_7, */
-/* 	&switch_c_h, */
-/* 	&switch_c_j, */
-/* 	&switch_c_k, */
-/* 	&switch_c_l, */
-/* 	&switch_a_h, */
-/* 	&switch_a_j, */
-/* 	&switch_a_k, */
-/* 	&switch_a_l */
+    /* &ctrl_cmd_C, */
+    NULL
 };
 
 ///////////////////////////////////////////////////////////////////////////////
