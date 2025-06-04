@@ -45,16 +45,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   
   [LAY_CTRL] = LAYOUT_LR(  // CTRL layer
-    C(KC_GRV)  , C(KC_1)     , C(KC_2)     , C(KC_3)      , C(KC_4)     , C(KC_5)   ,
-    _______    , C(KC_B)     , C(gMOD_GUI1), C(KC_D)      , C(KC_W)     , C(KC_Z)   ,
-    C(KC_A)    , C(KC_N)     , C(gLAY_NUM) , C(gMOD_SYM2) , C(gMOD_SYM1), C(gLAY_QUICK),
-    C(S(KC_S)) , C(gLAY_WIN1), C(KC_X)     , C(KC_M)      , C(KC_C)     , C(KC_V)   ,
+    C(KC_GRV)  , C(KC_1) , C(KC_2) , C(KC_3) , C(KC_4) , C(KC_5) ,
+    _______    , C(KC_B) , C(KC_L) , C(KC_D) , C(KC_W) , C(KC_Z) ,
+    C(KC_A)    , C(KC_N) , C(KC_R) , C(KC_T) , C(KC_S) , C(KC_G) ,
+    G(S(KC_S)) , C(KC_Q) , C(KC_X) , C(KC_M) , C(KC_C) , C(KC_V) ,
                                           _______    , _______,
   
-                      C(KC_6)   , C(KC_7)     , C(KC_8)      , C(KC_9)     , C(KC_0)     , C(KC_BSLS),
-                      C(KC_QUOT), C(KC_F)     , C(KC_O)      , C(gMOD_GUI2), C(KC_J)     , C(KC_SCLN),
-                      C(KC_Y)   , C(KC_H)     , C(KC_A)      , C(KC_E)     , C(KC_I)     , C(KC_COMM),
-                      C(KC_K)   , C(KC_P)     , C(KC_DOT)    , C(KC_MINS)  , C(gLAY_WIN2), _______,  
+                      C(KC_6)   , C(KC_7)     , C(KC_8)      , C(KC_9)    , C(KC_0)    , C(KC_BSLS),
+                      C(KC_QUOT), C(KC_F)     , C(KC_O)      , C(KC_O)    , C(KC_U)    , C(KC_SCLN),
+                      C(KC_Y)   , C(KC_H)     , C(KC_A)      , C(KC_E)    , C(KC_I)    , C(KC_COMM),
+                      C(KC_K)   , C(KC_P)     , C(KC_DOT)    , C(KC_MINS) , C(KC_SLSH) , _______,  
              C(KC_BSPC), C(KC_F)
   ),
 
