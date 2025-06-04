@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     C(KC_GRV)  , C(KC_1)     , C(KC_2)     , C(KC_3)      , C(KC_4)     , C(KC_5)   ,
     _______    , C(KC_B)     , C(gMOD_GUI1), C(KC_D)      , C(KC_W)     , C(KC_Z)   ,
     C(KC_A)    , C(KC_N)     , C(gLAY_NUM) , C(gMOD_SYM2) , C(gMOD_SYM1), C(gLAY_QUICK),
-    KC_LSFT    , C(gLAY_WIN1), C(KC_X)     , C(KC_M)      , C(KC_C)     , C(KC_V)   ,
+    C(S(KC_S)) , C(gLAY_WIN1), C(KC_X)     , C(KC_M)      , C(KC_C)     , C(KC_V)   ,
                                           _______    , _______,
   
                       C(KC_6)   , C(KC_7)     , C(KC_8)      , C(KC_9)     , C(KC_0)     , C(KC_BSLS),
@@ -60,36 +60,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM1] = LAYOUT_LR(  // Symbol layer.1
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
+    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , _______,
     TMUXESC, KC_SCLN, KC_HASH, KC_ASTR   , KC_EQL    , KC_KP_PLUS, 
-    XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , C(S(KC_V)),
+    XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , _______,
                                           _______    , _______,
 
                       KC_F6     , KC_F7     , KC_F8  , KC_F9     , KC_F10    , KC_F11 ,
-                      KC_UNDS   , KC_EXLM   , KC_AMPR, KC_CIRC   , KC_BSLS   , KC_COLN,
-                      KC_KP_PLUS, KC_EQL    , KC_HASH, KC_DLR    , KC_COLN   , KC_QUES,
-                      KC_ASTR   , KC_PERC   , KC_RABK, KC_DQUO   , KC_LABK   , QK_LLCK,
+                      KC_UNDS   , KC_AMPR   , KC_PIPE, KC_BSLS   , KC_PERC   , KC_COLN,
+                      KC_KP_PLUS, KC_HASH   , KC_EQL , KC_EXLM   , KC_COLN   , KC_QUES,
+                      KC_ASTR   , KC_AT     , KC_RABK, KC_DQUO   , KC_LABK   , QK_LLCK,
              _______, _______
   ),
 
   [SYM2] = LAYOUT_LR(  // Symbol layer.2
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , G(S(KC_S)),
+    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , _______,
     TMUXESC, KC_SCLN, KC_HASH, KC_ASTR   , KC_EQL    , KC_KP_PLUS, 
-    XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , C(S(KC_V)),
+    XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , _______,
                                           _______    , _______,
 
                       KC_F6     , KC_F7     , KC_F8  , KC_F9  , KC_F10    , KC_F11 ,
-                      KC_TILD   , KC_LBRC   , KC_RBRC, KC_PIPE, KC_BSLS   , KC_COLN,
-                      KC_GRV    , KC_LPRN   , KC_RPRN, KC_AT  , KC_SCLN   , KC_QUES,
-                      G(S(KC_S)), KC_LCBR   , KC_RCBR, KC_DQUO, KC_LABK   , QK_LLCK,
+                      KC_TILD   , KC_LBRC   , KC_RBRC, KC_GRV , KC_PERC   , KC_COLN,
+                      KC_CIRC   , KC_LPRN   , KC_RPRN, KC_DLR , KC_SCLN   , KC_QUES,
+                      _______   , KC_LCBR   , KC_RCBR, KC_DQUO, XXXXXXX   , QK_LLCK,
              _______, _______
   ),
  
   [NUM] = LAYOUT_LR(  // Number layer.
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,
-    _______, _______, XXXXXXX, KC_ASTR, KC_EQL , KC_KP_PLUS,  
+    _______, _______, XXXXXXX, KC_EQL , KC_DOT , XXXXXXX,  
     XXXXXXX, XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
                                                  _______, _______,
 
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, XXXXXXX, XXXXXXX, KC_UP  , XXXXXXX, XXXXXXX,
     _______, KC_DEL , KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                                 _______, _______,
+                                                 MS_BTN1, MS_BTN2,
 
                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                       MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
