@@ -274,12 +274,12 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 // Overrides (https://docs.qmk.fm/features/key_overrides)
 ///////////////////////////////////////////////////////////////////////////////
 
-static const key_override_t alt_v = ko_make_basic(MOD_MASK_ALT, KC_V, C(KC_V));
+/* static const key_override_t alt_v = ko_make_basic(MOD_MASK_ALT, KC_V, C(KC_V)); */
 /* static const key_override_t alt_v = ko_make_with_layers(MOD_MASK_CTRL, KC_C, G(KC_C), LAY_CTRL); */
 
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
-    &alt_v,
+    /* &alt_v, */
     NULL
 };
 
