@@ -30,7 +30,7 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [GRAPHITE] = LAYOUT_LR(  // Base layer: Graphite
+  [GRAPHITE] = LAYOUT_LR(  // layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
     LAY_NAV , KC_B     , gMOD_GUI1, KC_D      , KC_W     , KC_Z   ,
     CKC_CAPS, KC_N     , gLAY_NUM , gMOD_SYM2 , gMOD_SYM1, gLAY_QUICK,
@@ -100,17 +100,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              _______, KC_0   
   ),
 
+  //  LAY_NAV , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   ,
+  //  KC_LCTL , MOD_SFT1, LAY_NUM  , KC_D     , LAY_QUICK, KC_G   ,
+  //  KC_LSFT , KC_Z    , MOD_GUI1 , MOD_ALT1 , MOD_CTL1 , KC_B   ,
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
-    LAY_NAV , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   ,
-    KC_LCTL , MOD_SFT1, LAY_NUM  , KC_D     , LAY_QUICK, KC_G   ,
-    KC_LSFT , KC_Z    , MOD_GUI1 , MOD_ALT1 , MOD_CTL1 , KC_B   ,
-                                   LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
+    LAY_NAV , KC_Q    , KC_W     , KC_E     , KC_R     , KC_T   ,
+    KC_LCTL , KC_A    , KC_S     , KC_D     , KC_F     , KC_G   ,
+    KC_LSFT , KC_Z    , KC_X     , KC_C     , KC_V     , KC_B   ,
+                                   LEFT_THUMB_SMALL    , RALT_T(KC_ESC),
 
+                      // KC_Y    , KC_U     , KC_I      , LAY_WIN2 , KC_P     , KC_BSLS,
+                      // KC_H    , KC_J     , KC_K      , KC_L     , MOD_SFT2 , KC_QUOT,
+                      // KC_N    , MOD_CTL2 , MOD_ALT2  , KC_DOT   , MOD_GUI2 , TO(GRAPHITE),
                       KC_6    , KC_7     , KC_8      , KC_9     , KC_0     , KC_MINS,
-                      KC_Y    , KC_U     , KC_I      , LAY_WIN2 , KC_P     , KC_BSLS,
+                      KC_Y    , KC_U     , KC_I      , KC_O     , KC_P     , KC_BSLS,
                       KC_H    , KC_J     , KC_K      , KC_L     , MOD_SFT2 , KC_QUOT,
-                      KC_N    , MOD_CTL2 , MOD_ALT2  , KC_DOT   , MOD_GUI2 , TO(GRAPHITE),
+                      KC_N    , KC_M     , KC_COMM   , KC_DOT   , KC_SLSH  , TO(GRAPHITE),
              RIGHT_THUMB_BIG  , RIGHT_THUMB_SMALL
   ),
 
