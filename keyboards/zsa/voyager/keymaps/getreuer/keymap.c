@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_LR(  // Base layer: QWERTY
     KC_GRV  , KC_1    , KC_2     , KC_3     , KC_4     , KC_5   ,
     LAY_NAV , KC_Q    , KC_W     , LAY_WIN1 , KC_R     , KC_T   ,
-    CKC_CAPS, MOD_SFT1, LAY_NUM  , KC_D     , LAY_QUICK, KC_G   ,
+    KC_LCTL , MOD_SFT1, LAY_NUM  , KC_D     , LAY_QUICK, KC_G   ,
     KC_LSFT , KC_Z    , MOD_GUI1 , MOD_ALT1 , MOD_CTL1 , KC_B   ,
                                    LEFT_THUMB_SMALL    , LEFT_THUMB_BIG,
 
