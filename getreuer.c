@@ -198,7 +198,7 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RSFT_T(KC_ESC)        // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    RSFT_T                // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
 #define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)
 #define RIGHT_THUMB_SMALL LALT_T(KC_SPC)        //  LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
