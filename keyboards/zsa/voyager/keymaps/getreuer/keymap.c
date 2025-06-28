@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM2] = LAYOUT_LR(  // Symbol layer.2
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     KC_COLN, KC_PERC, KC_GRV , KC_LBRC   , KC_RBRC   , KC_TILD,
-    KC_QUES, KC_SCLN, KC_DLR , KC_LPRN   , KC_RPRN   , KC_CIRC, 
+    KC_QUES, KC_SCLN, KC_CIRC, KC_LPRN   , KC_RPRN   , KC_DLR , 
     XXXXXXX, XXXXXXX, KC_DQUO, KC_LCBR   , KC_RCBR   , XXXXXXX,
                                           _______    , _______,
 
