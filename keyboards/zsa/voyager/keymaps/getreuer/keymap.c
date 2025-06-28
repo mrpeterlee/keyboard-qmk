@@ -32,21 +32,21 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // layer: Graphite
     KC_GRV  , KC_1     , KC_2     , KC_3      , KC_4     , KC_5   ,
-    LAY_NAV , KC_B     , gMOD_GUI1, KC_D      , KC_W     , KC_Z   ,
-    CKC_CAPS, KC_N     , gLAY_NUM , gMOD_SYM2 , gMOD_SYM1, gLAY_QUICK,
-    KC_LSFT , gLAY_WIN1, KC_X     , KC_M      , KC_C     , KC_V   ,
+    LAY_NAV , KC_B     , KC_L     , KC_D      , KC_W     , KC_Z   ,
+    CKC_CAPS, KC_N     , gLAY_NUM , gMOD_SYM2a, gMOD_SYM1, gLAY_QUICK,
+    KC_LSFT , gLAY_WIN1, KC_X     , gMOD_GUI1 , KC_C     , KC_V   ,
                            LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
-                      KC_6   , KC_7     , KC_8      , KC_9     , KC_0     , KC_BSLS,
-                      KC_QUOT, KC_F     , KC_O      , gMOD_GUI2, KC_J     , KC_SCLN,
-                      KC_Y   , KC_H     , KC_A      , KC_E     , KC_I     , KC_COMM,
-                      KC_K   , KC_P     , KC_DOT    , KC_MINS  , gLAY_WIN2, TO(BASE),  //  gLAY_WIN2 , gMOD_CTL2, gMOD_ALT2 
+                      KC_6   , KC_7      , KC_8      , KC_9     , KC_0     , KC_BSLS,
+                      KC_QUOT, KC_F      , KC_O      , KC_U     , KC_J     , KC_SCLN,
+                      KC_Y   , KC_H      , KC_A      , KC_E     , KC_I     , KC_COMM,
+                      KC_K   , gMOD_SYM2b, gMOD_GUI2 , KC_MINS  , gLAY_WIN2, TO(BASE),  //  gLAY_WIN2 , gMOD_CTL2, gMOD_ALT2 
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
   
   [LAY_CTRL] = LAYOUT_LR(  // CTRL layer
     C(KC_GRV)  , C(KC_1) , C(KC_2) , C(KC_3) , C(KC_4) , C(KC_5) ,
-    _______    , C(KC_B) , C(KC_L) , C(KC_D) , C(KC_W) , C(KC_Z) ,
+    C(KC_TAB)  , C(KC_B) , C(KC_L) , C(KC_D) , C(KC_W) , C(KC_Z) ,
     C(KC_A)    , C(KC_N) , C(KC_R) , C(KC_T) , C(KC_S) , C(KC_G) ,
     G(S(KC_S)) , C(KC_Q) , C(KC_X) , C(KC_M) , C(KC_C) , C(KC_V),
                                           _______    , _______,
@@ -74,15 +74,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM2] = LAYOUT_LR(  // Symbol layer.2
     KC_F12 , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
-    XXXXXXX, XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , _______,
-    TMUXESC, KC_SCLN, KC_HASH, KC_ASTR   , KC_EQL    , KC_KP_PLUS, 
-    XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , _______,
+    KC_COLN, KC_PERC, KC_GRV , KC_LBRC   , KC_RBRC   , KC_TILD,
+    KC_QUES, KC_SCLN, KC_DLR , KC_LPRN   , KC_RPRN   , KC_CIRC, 
+    XXXXXXX, XXXXXXX, KC_DQUO, KC_LCBR   , KC_RCBR   , XXXXXXX,
                                           _______    , _______,
 
                       KC_F6     , KC_F7     , KC_F8  , KC_F9  , KC_F10    , KC_F11 ,
                       KC_TILD   , KC_LBRC   , KC_RBRC, KC_GRV , KC_PERC   , KC_COLN,
                       KC_CIRC   , KC_LPRN   , KC_RPRN, KC_DLR , KC_SCLN   , KC_QUES,
-                      _______   , KC_LCBR   , KC_RCBR, KC_DQUO, XXXXXXX   , QK_LLCK,
+                      XXXXXXX   , KC_LCBR   , KC_RCBR, KC_DQUO, XXXXXXX   , QK_LLCK,
              _______, _______
   ),
  
