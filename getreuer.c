@@ -291,6 +291,7 @@ const key_override_t *key_overrides[] = {
 /* const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END}; */
 const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, gMOD_SYM1, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, RIGHT_THUMB_SMALL, COMBO_END};
+/* const uint16_t alt_enter[] PROGMEM = {LEFT_THUMB_SMALL, KC_LSFT, COMBO_END}; */
 /* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_SYM1, COMBO_END}; */
 /* const uint16_t ctrl_x[] PROGMEM = {LEFT_THUMB_BIG, MOD_GUI1, COMBO_END}; */
 /* const uint16_t ctrl_a[] PROGMEM = {CKC_CAPS, KC_N, COMBO_END}; */
@@ -300,6 +301,7 @@ combo_t key_combos[] = {
     /* COMBO(caps_combo, CW_TOGG),                 // J and S => activate Caps Word. */
     COMBO(tmux_combo, C(KC_F12)),                  // J and K => backslash
     COMBO(flowlauncher, KC_F14),        
+    /* COMBO(alt_enter, A(KC_ENT)),         */
     /* COMBO(ctrl_c, C(KC_C)),         */
     /* COMBO(ctrl_x, C(KC_X)),         */
     /* COMBO(ctrl_a, C(KC_A)),         */
@@ -447,7 +449,11 @@ uint16_t achordion_streak_chord_timeout(
         return 0;
       }
     case CKC_CAPS:
-      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X ||   next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2a || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X || next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2a || next_keycode == gMOD_SYM1) {
+        return 0;
+      }
+    case LEFT_THUMB_SMALL:
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X) {
         return 0;
       }
     break;
