@@ -161,8 +161,8 @@ enum custom_keycodes {
 #define gMOD_CTL2 RCTL_T(KC_P)       
 #define gMOD_ALT2 RALT_T(KC_DOT)        
 
-#define gMOD_SFT1 LSFT_T(KC_M)
-#define gMOD_SFT2 RSFT_T(KC_DOT)
+#define gMOD_SFT1 LSFT_T(KC_N)
+#define gMOD_SFT2 RSFT_T(KC_I)
 
 #define gMOD_GUI1 LGUI_T(KC_M      )
 #define gMOD_GUI2 RGUI_T(KC_DOT    )
@@ -170,8 +170,8 @@ enum custom_keycodes {
 #define gLAY_WIN1 LT(WIN, KC_Q)    
 #define gLAY_WIN2 LT(WIN, KC_SLSH)
 
-#define gLAY_NUM  LT(NUM, KC_R)
-#define gLAY_QUICK LT(QUICKMENU, KC_G)
+#define gLAY_NUM  LT(NUM, KC_T)
+#define gLAY_QUICK LT(QUICKMENU, KC_S)
 
 
 // QWERTY KEYS
@@ -200,12 +200,13 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    KC_LSFT               // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    RALT_T(KC_ESC) // KC_LALT // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
 
-#define RIGHT_THUMB_BIG   RSFT_T(KC_BSPC)
-#define RIGHT_THUMB_SMALL LALT_T(KC_SPC)        //  LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
+#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC) // LSFT_T(KC_SPC)
+#define RIGHT_THUMB_BIG   KC_BSPC
 
-#define CKC_CAPS LCTL_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
+#define CKC_CAPS LGUI_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
+
 
 // Graphite kaymap
 // #define MOD_SFT1 LSFT_T(KC_T)
@@ -335,8 +336,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
     case MOD_SFT1:
     case MOD_SFT2:
-    case gMOD_SFT1:
-    case gMOD_SFT2:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -363,8 +362,6 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case MOD_GUI2:
     case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_SFT1:
-    case gMOD_SFT2:
     case gMOD_SYM2a:
     case gMOD_SYM2b:
     case gMOD_ALT2:
@@ -402,8 +399,6 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case gMOD_SYM2a:
     case gMOD_SYM2b:
     case gMOD_ALT2:
-    case gMOD_SFT1:
-    case gMOD_SFT2:
       if (row == 0) { return true; }
       break;
 
@@ -440,10 +435,6 @@ uint16_t achordion_streak_chord_timeout(
   // Exceptions so that certain hotkeys don't get blocked as streaks.
   switch (tap_hold_keycode) {
 
-    case gMOD_SYM1:
-      if (next_keycode == gLAY_WIN2 || next_keycode == gMOD_SFT2 || next_keycode == gMOD_ALT2 || next_keycode == gMOD_CTL2) {
-        return 0;
-      }
     case gMOD_CTL2:
       if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2a || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
         return 0;
