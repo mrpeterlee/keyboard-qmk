@@ -26,13 +26,14 @@
 #include "layout.h"
 #include "getreuer.c"
 
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [GRAPHITE] = LAYOUT_LR(  // layer: Graphite
     KC_GRV         , KC_1     , KC_2     , KC_3      , KC_4      , KC_5   ,
     LAY_NAV        , KC_B     , KC_L     , KC_D      , KC_W      , KC_Z   ,
     CKC_CAPS       , gMOD_SFT1, KC_R     , gLAY_NUM  , gLAY_QUICK, KC_G   ,
-    LSFT_T(KC_CAPS), KC_Q     , KC_X     , KC_C      , KC_V   ,
+    LSFT_T(KC_CAPS), KC_Q     , KC_X     , KC_M      , KC_C      , KC_V   ,
                            LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
                       KC_6   , KC_7      , KC_8      , KC_9     , KC_0     , XXXXXXX,
