@@ -57,10 +57,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              C(KC_BSPC), C(KC_F)
   ),
 
+  // TMUXESC
   [SYM1] = LAYOUT_LR(  // Symbol layer (right small key)
     KC_GRV , KC_F1  , KC_F2  , KC_F3     , KC_F4     , KC_F5  ,
     KC_F12 , XXXXXXX, KC_AT  , KC_LBRC   , KC_RBRC   , XXXXXXX,
-    TMUXESC, KC_COLN, KC_CIRC, KC_LPRN   , KC_RPRN   , KC_DLR , 
+    KC_QUES, KC_COLN, KC_CIRC, KC_LPRN   , KC_RPRN   , KC_DLR , 
     XXXXXXX, XXXXXXX, KC_TILD, KC_LCBR   , KC_RCBR   , XXXXXXX,
                                           _______    , _______,
 
@@ -117,17 +118,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [QUICKMENU] = LAYOUT_LR(  // Symbol layer.
-    KC_F12 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
-    _______, MS_WHLL, MS_WHLU, MS_UP  , MS_WHLR, MS_WHLR,
-    TMUXESC, C(KC_A), MS_LEFT, MS_DOWN, MS_RGHT, _______,
-    _______, C(KC_Z), C(KC_X), _______, C(KC_C), C(KC_V),
+    XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
+    KC_F12 , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                  _______, _______,
 
                       KC_F6  , KC_F7  , KC_F8  , KC_F9   , KC_F10 , KC_F11 ,
                       KC_HOME, KC_PGUP, KC_PGDN, KC_END  , XXXXXXX, XXXXXXX,
-                      KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX, XXXXXXX,
-                      KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, QK_LLCK,
-             MS_BTN1, MS_BTN2
+                      KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, KC_INS , XXXXXXX,
+                      KC_SCRL, KC_KB_VOLUME_UP, KC_KB_VOLUME_DOWN, XXXXXXX, XXXXXXX, QK_LLCK,
+             KC_DEL, _______
   ),
 
   [NAV] = LAYOUT_LR(  // Mouse layer.
