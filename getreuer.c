@@ -75,7 +75,7 @@ enum layers {
   GRAPHITE,
   BASE,
   SYM1,
-  SYM2,
+  TILE,
   QUICKMENU,
   NUM,
   WIN,
@@ -154,9 +154,7 @@ enum custom_keycodes {
 // Short aliases for home row mods and other tap-hold keys.
 // Graphite KEYS
 #define gMOD_SYM1 LT(SYM1, KC_S)       
-
-#define gMOD_SYM2a LT(SYM2, KC_T)
-#define gMOD_SYM2b LT(SYM2, KC_P)
+#define gMOD_TILEa LT(TILE, KC_G)
 
 #define gMOD_CTL2 RCTL_T(KC_P)       
 #define gMOD_ALT2 RALT_T(KC_DOT)        
@@ -167,7 +165,7 @@ enum custom_keycodes {
 #define gMOD_GUI1 LGUI_T(KC_M      )
 #define gMOD_GUI2 RGUI_T(KC_DOT    )
 
-#define gLAY_WIN1 LT(WIN, KC_Q)    
+#define gLAY_WIN1 LT(WIN, KC_R)    
 #define gLAY_WIN2 LT(WIN, KC_SLSH)
 
 #define gLAY_NUM  LT(NUM, KC_T)
@@ -362,8 +360,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case MOD_GUI2:
     case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_SYM2a:
-    case gMOD_SYM2b:
+    case gMOD_TILEa:
     case gMOD_ALT2:
     case gMOD_GUI1:
     case gMOD_GUI2:
@@ -396,8 +393,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case MOD_SFT2:
     case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_SYM2a:
-    case gMOD_SYM2b:
+    case gMOD_TILEa:
     case gMOD_ALT2:
       if (row == 0) { return true; }
       break;
@@ -436,11 +432,11 @@ uint16_t achordion_streak_chord_timeout(
   switch (tap_hold_keycode) {
 
     case gMOD_CTL2:
-      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2a || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
+      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_TILEa || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
         return 0;
       }
     case CKC_CAPS:
-      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X || next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_SYM2a || next_keycode == gMOD_SYM1) {
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X || next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_TILEa || next_keycode == gMOD_SYM1) {
         return 0;
       }
     case LEFT_THUMB_SMALL:
