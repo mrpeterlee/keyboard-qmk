@@ -75,13 +75,15 @@ enum layers {
   GRAPHITE,
   BASE,
   SYM1,
-  TILE,
-  QUICKMENU,
+  G_BASIC,
+  G_ADV,
+  T_BASIC,
+  T_ADV,
   NUM,
-  WIN,
-  FUN,
+  S_LAYER,
   NAV,
   LAY_CTRL,
+  LAY_ALT,
 };
 
 enum custom_keycodes {
@@ -152,9 +154,12 @@ enum custom_keycodes {
 #define MAGIC QK_AREP
 
 // Short aliases for home row mods and other tap-hold keys.
+
 // Graphite KEYS
+#define G_MOD LT(G_BASIC, KC_G)
+#define T_MOD LT(T_BASIC, KC_T)
+#define S_MOD LT(S_LAYER, KC_S)
 #define gMOD_SYM1 LT(SYM1, KC_S)       
-#define gMOD_TILEa LT(TILE, KC_G)
 
 #define gMOD_CTL2 RCTL_T(KC_P)       
 #define gMOD_ALT2 RALT_T(KC_DOT)        
@@ -165,11 +170,9 @@ enum custom_keycodes {
 #define gMOD_GUI1 LGUI_T(KC_M      )
 #define gMOD_GUI2 RGUI_T(KC_DOT    )
 
-#define gLAY_WIN1 LT(WIN, KC_R)    
-#define gLAY_WIN2 LT(WIN, KC_SLSH)
+#define gLAY_WIN2 LT(T_BASIC, KC_SLSH)
 
-#define gLAY_NUM  LT(NUM, KC_T)
-#define gLAY_QUICK LT(QUICKMENU, KC_S)
+#define gLAY_NUM  LT(NUM, KC_R)
 
 
 // QWERTY KEYS
@@ -185,11 +188,11 @@ enum custom_keycodes {
 #define MOD_GUI1 RGUI_T(KC_X)
 #define MOD_GUI2 RGUI_T(KC_SLSH)
 
-#define LAY_WIN1 LT(WIN, KC_E)    
-#define LAY_WIN2 LT(WIN, KC_O)
+#define LAY_WIN1 LT(T_BASIC, KC_E)    
+#define LAY_WIN2 LT(T_BASIC, KC_O)
 
 #define LAY_NUM  LT(NUM, KC_S)
-#define LAY_QUICK LT(QUICKMENU, KC_F)
+#define LAY_QUICK LT(G_ADV, KC_F)
 
 /* #define LAY_ARR1 LT(ARR, KC_U) */
 /* #define LAY_ARR2 LT(ARR, KC_Y) */
@@ -198,10 +201,10 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RALT_T(KC_ESC) // KC_LALT // LT(QUICKMENU, KC_ESC)       // RCTL_T(KC_ESC)        // LT(NAV, KC_ESC)
+#define LEFT_THUMB_BIG    LT(LAY_ALT, KC_ESC)  
 
 #define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC) // LSFT_T(KC_SPC)
-#define RIGHT_THUMB_BIG   KC_BSPC
+#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC) 
 
 #define CKC_CAPS LGUI_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
 
@@ -211,8 +214,8 @@ enum custom_keycodes {
 // #define LAY_ARR1 LT(ARR, KC_F)
 // #define MOD_ALT1 LALT_T(KC_E)       
 // #define MOD_ALT2 RALT_T(KC_I)  
-// #define LAY_WIN1 LT(WIN, KC_D)    
-// #define LAY_WIN2 LT(WIN, KC_O)
+// #define LAY_WIN1 LT(T_BASIC, KC_D)    
+// #define LAY_WIN2 LT(T_BASIC, KC_O)
 // #define LAY_NUM  LT(NUM, KC_S)
 // #define MOD_SFT2 LSFT_T(KC_I)
 
@@ -360,7 +363,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case MOD_GUI2:
     case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_TILEa:
+    case G_MOD:
     case gMOD_ALT2:
     case gMOD_GUI1:
     case gMOD_GUI2:
@@ -393,7 +396,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case MOD_SFT2:
     case gMOD_SYM1:
     case gMOD_CTL2:
-    case gMOD_TILEa:
+    case G_MOD:
     case gMOD_ALT2:
       if (row == 0) { return true; }
       break;
@@ -432,11 +435,11 @@ uint16_t achordion_streak_chord_timeout(
   switch (tap_hold_keycode) {
 
     case gMOD_CTL2:
-      if (next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_TILEa || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
+      if (next_keycode == T_MOD || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == S_MOD || next_keycode == G_MOD || next_keycode == gMOD_SYM1 || next_keycode == KC_V) {
         return 0;
       }
     case CKC_CAPS:
-      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X || next_keycode == gLAY_WIN1 || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == gLAY_QUICK || next_keycode == gMOD_TILEa || next_keycode == gMOD_SYM1) {
+      if (next_keycode == KC_V ||next_keycode == KC_C ||next_keycode == KC_X || next_keycode == T_MOD || next_keycode == gMOD_SFT1 || next_keycode == gLAY_NUM || next_keycode == S_MOD || next_keycode == G_MOD || next_keycode == gMOD_SYM1) {
         return 0;
       }
     case LEFT_THUMB_SMALL:
