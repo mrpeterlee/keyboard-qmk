@@ -201,10 +201,10 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    LT(LAY_ALT, KC_ESC)  
+#define LEFT_THUMB_BIG    RALT_T(KC_ESC)// LT(LAY_ALT, KC_ESC)  
 
 #define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC) // LSFT_T(KC_SPC)
-#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC) 
+#define RIGHT_THUMB_BIG   KC_BSPC
 
 #define CKC_CAPS LGUI_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
 
