@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-                                                       KC_LCTL, LT(G_ADV, XXXXXXX),
+                                             KC_LCTL  , LT(G_ADV, KC_LALT),
 
                       XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , S(A(KC_Q)),
                       S(A(KC_F13)), S(A(KC_F7)), S(A(KC_F8)), S(A(KC_F9)), XXXXXXX, S(A(KC_W)),
@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_LCTL, XXXXXXX ,
 
                       XXXXXXX , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F7))), C(S(A(KC_F8))), C(S(A(KC_F9))), XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F4))), C(S(A(KC_F5))), C(S(A(KC_F6))), XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F1))), C(S(A(KC_F2))), C(S(A(KC_F3))), XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_7))), C(S(A(KC_8))), C(S(A(KC_9))), XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_4))), C(S(A(KC_5))), C(S(A(KC_6))), XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_1))), C(S(A(KC_2))), C(S(A(KC_3))), XXXXXXX, XXXXXXX,
              _______, _______
   ),
 
