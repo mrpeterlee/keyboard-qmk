@@ -291,7 +291,7 @@ const key_override_t *key_overrides[] = {
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
 /* const uint16_t caps_combo[] PROGMEM = {KC_J, KC_F, COMBO_END}; */
-const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, gMOD_SYM1, COMBO_END};
+const uint16_t tmux_combo[] PROGMEM = {LEFT_THUMB_SMALL, S_MOD, COMBO_END};
 const uint16_t flowlauncher[] PROGMEM = {KC_H, RIGHT_THUMB_SMALL, COMBO_END};
 /* const uint16_t alt_enter[] PROGMEM = {LEFT_THUMB_SMALL, KC_LSFT, COMBO_END}; */
 /* const uint16_t ctrl_c[] PROGMEM = {LEFT_THUMB_BIG, gMOD_SYM1, COMBO_END}; */
