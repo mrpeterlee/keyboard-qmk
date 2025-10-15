@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
 
-  [T_BASIC] = LAYOUT_LR(
+  [G_BASIC] = LAYOUT_LR(
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       S(C(KC_QUOT)), S(C(KC_F))   , S(C(KC_O))  , S(C(KC_U))    , S(C(KC_J))   , XXXXXXX,
                       S(C(KC_LEFT)), S(C(KC_DOWN)), S(C(KC_UP)) , S(C(KC_RIGHT)), S(C(KC_I))   , XXXXXXX,
                       S(C(KC_K))   , S(C(KC_P))   , S(C(KC_DOT)), S(C(KC_MINS)) , S(C(KC_SLSH)), S(C(KC_F16)),
-             S(C(KC_F17)), S(C(KC_F18))
+             S(C(KC_F15)), S(C(KC_F14))
   ),
 
   [T_ADV] = LAYOUT_LR(  
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              XXXXXXX , XXXXXXX
   ),
 
-  [G_BASIC] = LAYOUT_LR(
+  [T_BASIC] = LAYOUT_LR(
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       S(C(KC_F13)), S(C(KC_F7)), S(C(KC_F8)), S(C(KC_F9)), XXXXXXX, S(C(KC_W)),
                       S(C(KC_F20)), S(C(KC_F4)), S(C(KC_F5)), S(C(KC_F6)), XXXXXXX, S(C(KC_N)),
                       S(C(KC_F21)), S(C(KC_F1)), S(C(KC_F2)), S(C(KC_F3)), XXXXXXX, XXXXXXX,
-             S(C(KC_F15)), S(C(KC_F14))
+             S(C(KC_F17)), S(C(KC_F18))
   ),
 
   [G_ADV] = LAYOUT_LR(  // Symbol layer.
