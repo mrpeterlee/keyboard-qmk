@@ -48,27 +48,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-                                             KC_LCTL  , LT(T_ADV, KC_LALT),
+                                              KC_LALT , XXXXXXX , //  LT(G_ADV, KC_LALT),
 
-                      XXXXXXX      , XXXXXXX      , XXXXXXX     , XXXXXXX       , XXXXXXX      , XXXXXXX,
-                      S(C(KC_QUOT)), S(C(KC_F))   , S(C(KC_O))  , S(C(KC_U))    , S(C(KC_J))   , XXXXXXX,
-                      S(C(KC_LEFT)), S(C(KC_DOWN)), S(C(KC_UP)) , S(C(KC_RIGHT)), S(C(KC_I))   , XXXXXXX,
+                      S(C(KC_6))   , S(C(KC_7))   , S(C(KC_8))  , S(C(KC_9))    , S(C(KC_0))   , S(A(KC_Q)),
+                      S(C(KC_F13)) , S(C(KC_F))   , S(C(KC_O))  , S(C(KC_U))    , S(C(KC_J))   , S(C(KC_W)),
+                      S(C(KC_LEFT)), S(C(KC_DOWN)), S(C(KC_UP)) , S(C(KC_RIGHT)), S(C(KC_I))   , S(C(KC_N)),
                       S(C(KC_K))   , S(C(KC_P))   , S(C(KC_DOT)), S(C(KC_MINS)) , S(C(KC_SLSH)), S(C(KC_F16)),
-             S(C(KC_F15)), S(C(KC_F14))
-  ),
-
-  [T_ADV] = LAYOUT_LR(  
-    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-                                              KC_LCTL, XXXXXXX ,
-
-                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
-                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
-                      C(S(A(KC_LEFT))), C(S(A(KC_DOWN))), C(S(A(KC_UP))) , C(S(A(KC_RIGHT))), C(S(A(KC_I)))   , XXXXXXX,
-                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
-             XXXXXXX , XXXXXXX
+             XXXXXXX , S(C(KC_F14))
   ),
 
   [T_BASIC] = LAYOUT_LR(
@@ -76,29 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-                                             KC_LCTL  , LT(G_ADV, KC_LALT),
+                                              KC_LALT , S(C(KC_F15)), // LT(T_ADV, KC_LALT),
 
-                      XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , S(A(KC_Q)),
-                      S(C(KC_F13)), S(C(KC_F7)), S(C(KC_F8)), S(C(KC_F9)), XXXXXXX, S(C(KC_W)),
-                      S(C(KC_F20)), S(C(KC_F4)), S(C(KC_F5)), S(C(KC_F6)), XXXXXXX, S(C(KC_N)),
-                      S(C(KC_F21)), S(C(KC_F1)), S(C(KC_F2)), S(C(KC_F3)), XXXXXXX, XXXXXXX,
+                      XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX     , XXXXXXX,
+                      XXXXXXX     , S(C(KC_F7)), S(C(KC_F8)), S(C(KC_F9)), XXXXXXX     , XXXXXXX,
+                      S(C(KC_F20)), S(C(KC_F4)), S(C(KC_F5)), S(C(KC_F6)), S(C(KC_F23)), XXXXXXX,
+                      S(C(KC_F21)), S(C(KC_F1)), S(C(KC_F2)), S(C(KC_F3)), XXXXXXX     , XXXXXXX,
              S(C(KC_F17)), S(C(KC_F18))
   ),
-
-  [G_ADV] = LAYOUT_LR(  // Symbol layer.
-    XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
-    KC_F12 , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                               KC_LCTL, XXXXXXX ,
-
-                      XXXXXXX , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F7))), C(S(A(KC_8))), C(S(A(KC_9))), XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F4))), C(S(A(KC_5))), C(S(A(KC_6))), XXXXXXX, XXXXXXX,
-                      XXXXXXX , C(S(A(KC_F1))), C(S(A(KC_2))), C(S(A(KC_3))), XXXXXXX, XXXXXXX,
-             _______, _______
-  ),
-
 
   [LAY_CTRL] = LAYOUT_LR(  // CTRL layer
     C(KC_GRV)  , C(KC_1) , C(KC_2) , C(KC_3) , C(KC_4) , C(KC_5) ,
@@ -201,6 +172,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
     /* RM_TOGG  , RGB_DEF   , RM_NEXT      , RM_HUEU      , RM_SATU       , RM_VALU, */
+
+  [G_ADV] = LAYOUT_LR(  
+    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    XXXXXXX  , XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+                                              KC_LCTL, XXXXXXX ,
+
+                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
+                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
+                      C(S(A(KC_LEFT))), C(S(A(KC_DOWN))), C(S(A(KC_UP))) , C(S(A(KC_RIGHT))), C(S(A(KC_I)))   , XXXXXXX,
+                      XXXXXXX         , XXXXXXX   , XXXXXXX     , XXXXXXX      , XXXXXXX      , XXXXXXX,
+             XXXXXXX , XXXXXXX
+  ),
+
+  [T_ADV] = LAYOUT_LR(  // Symbol layer.
+    XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
+    KC_F12 , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                               KC_LCTL, XXXXXXX ,
+
+                      XXXXXXX , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_F7))), C(S(A(KC_8))), C(S(A(KC_9))), XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_F4))), C(S(A(KC_5))), C(S(A(KC_6))), XXXXXXX, XXXXXXX,
+                      XXXXXXX , C(S(A(KC_F1))), C(S(A(KC_2))), C(S(A(KC_3))), XXXXXXX, XXXXXXX,
+             _______, _______
+  ),
+
+
 
 };
 
