@@ -34,16 +34,18 @@
 
 #define ACHORDION_STREAK
 
+// Activate UPPER CASE WORD by double tapping Left Shift
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 // Holding Shift while Caps Word is active inverts the shift state.
-#define CAPS_WORD_INVERT_ON_SHIFT
+// #define CAPS_WORD_INVERT_ON_SHIFT
 // When idle, turn off Caps Word after 5 seconds.
-#define CAPS_WORD_IDLE_TIMEOUT 5000
+#define CAPS_WORD_IDLE_TIMEOUT 3000
 
 // Don't apply custom shift keys with mods other than Shift.
-#define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
+// #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 // Only apply custom shift keys on layer 0.
-#define CUSTOM_SHIFT_KEYS_LAYER_MASK (1 << 0)
+// #define CUSTOM_SHIFT_KEYS_LAYER_MASK (1 << 0)
 
 // When idle, turn off Layer Lock after 60 seconds.
 #define LAYER_LOCK_IDLE_TIMEOUT 60000
