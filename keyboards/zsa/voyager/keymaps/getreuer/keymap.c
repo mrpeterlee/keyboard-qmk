@@ -101,29 +101,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAY_CTRL] = LAYOUT_LR(  // Left Sym layer
     KC_TILD    , KC_F1    , KC_F2    , KC_F3     , KC_F4     , KC_F5   ,
-    XXXXXXX    , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_EXLM   , KC_PIPE ,
+    XXXXXXX    , XXXXXXX  , KC_EXLM  , KC_LBRC   , KC_PERC  , KC_PIPE ,
     C(KC_A)    , KC_QUES  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
     G(S(KC_S)) , XXXXXXX  , C(KC_X)  , KC_LCBR   , C(KC_C)   , C(KC_V) ,
                                                   _______    , _______ ,
 
                       KC_F6      , KC_F7     , KC_F8     , KC_F9     , KC_F10    , KC_F11 ,
                       KC_DQUO    , KC_HASH   , KC_RBRC   , KC_BSLS   , KC_PERC   , KC_F12 ,
-                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_COLN   , KC_UNDS   , A(KC_SPACE),
+                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_UNDS   , KC_COLN   , XXXXXXX,
                       KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_ENT),
              C(KC_BSPC), C(KC_F)
 ),
 
   [SYM1] = LAYOUT_LR(  // right sym layer
     KC_TILD    , KC_F1    , KC_F2    , KC_F3     , KC_F4     , KC_F5   ,
-    XXXXXXX    , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_EXLM   , KC_PIPE ,
+    XXXXXXX    , XXXXXXX  , KC_EXLM  , KC_LBRC   , KC_PERC   , KC_PIPE ,
     XXXXXXX    , KC_QUES  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
     XXXXXXX    , XXXXXXX  , C(KC_X)  , KC_LCBR   , C(KC_C)   , C(KC_V) ,
                                           _______    , _______,
- 
+
                       KC_F6      , KC_F7     , KC_F8     , KC_F9     , KC_F10    , KC_F11 ,
                       KC_DQUO    , KC_HASH   , KC_RBRC   , KC_BSLS   , KC_PERC   , KC_F12 ,
-                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_COLN   , KC_UNDS   , A(KC_SPACE),
-                      KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_ENT),
+                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_UNDS   , KC_COLN   , XXXXXXX    ,
+                      KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , A(KC_SPACE),
              _______, C(KC_F)
   ),
 
