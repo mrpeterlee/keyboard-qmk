@@ -74,7 +74,6 @@
 enum layers {
   GRAPHITE,
   BASE,
-  SYM1,
   G_BASIC,
   G_ADV,
   T_BASIC,
@@ -83,6 +82,7 @@ enum layers {
   S_LAYER,
   NAV,
   LAY_CTRL,
+  SYM1,
   LAY_ALT,
 };
 
@@ -201,10 +201,11 @@ enum custom_keycodes {
 #define HOME_B LSFT_T(KC_B)
 
 #define LEFT_THUMB_SMALL  LT(LAY_CTRL, KC_ENT)  // LCTL_T(KC_ENT)   // LT(SYM1, KC_ENT)      // LT(SYM1, KC_ENT)
-#define LEFT_THUMB_BIG    RALT_T(KC_ESC)// LT(LAY_ALT, KC_ESC)  
+//
+#define LEFT_THUMB_BIG    RCTL_T(KC_ESC)        // LT(LAY_ALT, KC_ESC)  
 
-#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC) // LSFT_T(KC_SPC)
-#define RIGHT_THUMB_BIG   KC_BSPC
+#define RIGHT_THUMB_SMALL LT(SYM1, KC_SPC)      // LSFT_T(KC_SPC)
+#define RIGHT_THUMB_BIG   RALT_T(KC_BSPC)
 
 #define CKC_CAPS LGUI_T(KC_ESC)                 // ; CAPS acts as ESC when tap; CTRL when held
 
@@ -281,6 +282,7 @@ bool process_detected_host_os_user(os_variant_t detected_os) {
 /* static const key_override_t alt_v = ko_make_basic(MOD_MASK_ALT, KC_V, C(KC_V)); */
 /* static const key_override_t alt_v = ko_make_with_layers(MOD_MASK_CTRL, KC_C, G(KC_C), LAY_CTRL); */
 
+
 /* // This globally defines all key overrides to be used */
 const key_override_t *key_overrides[] = {
     /* &alt_v, */
@@ -316,14 +318,12 @@ combo_t key_combos[] = {
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef CUSTOM_SHIFT_KEYS_ENABLE
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_QUOT, KC_UNDS},
+    {KC_QUOT, KC_DQUO},
     /* {KC_SCLN, KC_COLN}, */
-    {KC_COMM, KC_QUES},
-    {gMOD_ALT2, KC_RABK},
-    {KC_MINS, KC_DQUO},
-    {KC_SLSH, KC_LABK},
-    {gLAY_WIN2, KC_LABK},
-    /* {KC_EQL , KC_PLUS}, */
+    {KC_COMM, KC_TILD},
+    {KC_MINS, KC_LABK},
+    {KC_SLSH, KC_RABK},
+    {KC_DOT , KC_RCBR},
     /* {KC_F14 , KC_F14 },  // Don't shift = */
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
