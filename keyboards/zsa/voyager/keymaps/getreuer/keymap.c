@@ -36,10 +36,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LSFT        , KC_Q     , KC_X     , KC_M      , KC_C      , KC_V   ,
                            LEFT_THUMB_SMALL   , LEFT_THUMB_BIG,
   
-                      KC_6   , KC_7      , KC_8      , KC_9     , KC_0     , KC_BSLS,
+                      KC_6   , KC_7      , KC_8      , KC_9     , KC_0     , TO(BASE),
                       KC_QUOT, KC_F      , KC_O      , KC_U     , KC_J     , KC_SCLN,
                       KC_Y   , KC_H      , KC_A      , KC_E     , gMOD_SFT2, KC_COMM,
-                      KC_K   , KC_P      , KC_DOT    , KC_MINS  , KC_SLSH  , TO(BASE),  
+                      KC_K   , KC_P      , KC_DOT    , KC_MINS  , KC_SLSH  , KC_RSFT,  
              RIGHT_THUMB_BIG , RIGHT_THUMB_SMALL 
   ),
 
@@ -101,28 +101,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAY_CTRL] = LAYOUT_LR(  // Left Sym layer
     KC_TILD    , KC_F1    , KC_F2    , KC_F3     , KC_F4     , KC_F5   ,
-    A(KC_TAB)  , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_BSLS   , KC_PIPE ,
-    C(KC_A)    , KC_UNDS  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
+    XXXXXXX    , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_EXLM   , KC_PIPE ,
+    C(KC_A)    , KC_QUES  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
     G(S(KC_S)) , XXXXXXX  , C(KC_X)  , KC_LCBR   , C(KC_C)   , C(KC_V) ,
                                                   _______    , _______ ,
 
                       KC_F6      , KC_F7     , KC_F8     , KC_F9     , KC_F10    , KC_F11 ,
-                      KC_DQUO    , KC_HASH   , KC_RBRC   , KC_EXLM   , KC_PERC   , KC_F12 ,
-                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_QUES   , KC_COLN   , A(KC_SPACE),
+                      KC_DQUO    , KC_HASH   , KC_RBRC   , KC_BSLS   , KC_PERC   , KC_F12 ,
+                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_COLN   , KC_UNDS   , A(KC_SPACE),
                       KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_ENT),
              C(KC_BSPC), C(KC_F)
 ),
 
   [SYM1] = LAYOUT_LR(  // right sym layer
     KC_TILD    , KC_F1    , KC_F2    , KC_F3     , KC_F4     , KC_F5   ,
-    XXXXXXX    , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_BSLS   , KC_PIPE ,
-    XXXXXXX    , KC_UNDS  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
+    XXXXXXX    , XXXXXXX  , KC_PERC  , KC_LBRC   , KC_EXLM   , KC_PIPE ,
+    XXXXXXX    , KC_QUES  , KC_CIRC  , KC_LPRN   , KC_EQL    , KC_DLR  ,
     XXXXXXX    , XXXXXXX  , C(KC_X)  , KC_LCBR   , C(KC_C)   , C(KC_V) ,
                                           _______    , _______,
  
                       KC_F6      , KC_F7     , KC_F8     , KC_F9     , KC_F10    , KC_F11 ,
-                      KC_DQUO    , KC_HASH   , KC_RBRC   , KC_EXLM   , KC_PERC   , KC_F12 ,
-                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_QUES   , KC_COLN   , A(KC_SPACE),
+                      KC_DQUO    , KC_HASH   , KC_RBRC   , KC_BSLS   , KC_PERC   , KC_F12 ,
+                      KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_COLN   , KC_UNDS   , A(KC_SPACE),
                       KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_ENT),
              _______, C(KC_F)
   ),
