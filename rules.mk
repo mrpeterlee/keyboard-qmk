@@ -61,7 +61,7 @@ ifeq ($(strip $(ORBITAL_MOUSE_ENABLE)), yes)
 	SRC += features/orbital_mouse.c
 endif
 
-SENTENCE_CASE_ENABLE ?= yes
+SENTENCE_CASE_ENABLE = no
 ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
 	OPT_DEFS += -DSENTENCE_CASE_ENABLE
 	SRC += features/sentence_case.c
