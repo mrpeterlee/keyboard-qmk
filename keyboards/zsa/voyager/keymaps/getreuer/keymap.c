@@ -29,6 +29,7 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
   [GRAPHITE] = LAYOUT_LR(  // layer: Graphite
     KC_GRV         , KC_1     , KC_2     , KC_3      , KC_4      , KC_5   ,
     LAY_NAV        , KC_B     , KC_L     , KC_D      , KC_W      , KC_Z   ,

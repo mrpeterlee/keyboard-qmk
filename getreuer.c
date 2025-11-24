@@ -335,8 +335,7 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS =
 ///////////////////////////////////////////////////////////////////////////////
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case MOD_SFT1:
-    case MOD_SFT2:
+    case MOD_GUI2:
       return TAPPING_TERM + 15;
     default:
       return TAPPING_TERM;
@@ -353,20 +352,20 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
     case LEFT_THUMB_SMALL:
     case RIGHT_THUMB_SMALL:
     case RIGHT_THUMB_BIG:
-    case MOD_CTL1:
-    case MOD_CTL2:
-    case MOD_SFT1:
-    case MOD_SFT2:
-    case MOD_ALT1:
-    case MOD_ALT2:
-    case MOD_GUI1:
-    case MOD_GUI2:
-    case gMOD_SYM1:
-    case gMOD_CTL2:
-    case G_MOD:
-    case gMOD_ALT2:
-    case gMOD_GUI1:
-    case gMOD_GUI2:
+    /* case MOD_CTL1: */
+    /* case MOD_CTL2: */
+    /* case MOD_SFT1: */
+    /* case MOD_SFT2: */
+    /* case MOD_ALT1: */
+    /* case MOD_ALT2: */
+    /* case MOD_GUI1: */
+    /* case MOD_GUI2: */
+    /* case gMOD_SYM1: */
+    /* case gMOD_CTL2: */
+    /* case G_MOD: */
+    /* case gMOD_ALT2: */
+    /* case gMOD_GUI1: */
+    /* case gMOD_GUI2: */
       return QUICK_TAP_TERM;  // Enable key repeating.
     default:
       return 0;  // Otherwise, force hold and disable key repeating.
@@ -388,15 +387,6 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     // Exceptionally allow symbol layer LTs + row 0 in same-hand chords.
-    case MOD_CTL1:
-    case MOD_CTL2:
-    case MOD_ALT1:
-    case MOD_ALT2:
-    case MOD_SFT1:
-    case MOD_SFT2:
-    case gMOD_SYM1:
-    case gMOD_CTL2:
-    case G_MOD:
     case gMOD_ALT2:
       if (row == 0) { return true; }
       break;
@@ -409,9 +399,9 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case RIGHT_THUMB_BIG:
       return true;
 
-    case LAY_NUM:
-      if (other_keycode == KC_J) { return true; }
-      break;
+    /* case LAY_NUM: */
+      /* if (other_keycode == KC_J) { return true; } */
+      /* break; */
   }
 
   return achordion_opposite_hands(tap_hold_record, other_record);

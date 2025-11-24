@@ -28,7 +28,10 @@ UCIS_ENABLE = no
 UNICODE_COMMON = yes
 CAPS_WORD_ENABLE = yes
 
-AUTOCORRECT_ENABLE ?= yes
+# Manually disabled
+# :thier        -> their
+AUTOCORRECT_ENABLE = no
+
 CONSOLE_ENABLE ?= no
 GRAVE_ESC_ENABLE ?= no
 LAYER_LOCK_ENABLE ?= yes
