@@ -372,6 +372,17 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   }
 }
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case LEFT_THUMB_SMALL:
+    case LEFT_THUMB_BIG:
+    case RIGHT_THUMB_SMALL:
+    case RIGHT_THUMB_BIG:
+      return true;
+  }
+  return false;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // Achordion (https://getreuer.info/posts/keyboards/achordion)
 ///////////////////////////////////////////////////////////////////////////////
