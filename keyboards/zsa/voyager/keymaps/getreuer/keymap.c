@@ -97,8 +97,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_F6      , KC_F7     , KC_F8     , KC_F9     , KC_F10    , KC_F11 ,
                       KC_AMPR    , KC_HASH   , KC_RBRC   , KC_BSLS   , KC_PERC   , KC_F12 ,
                       KC_KP_PLUS , KC_ASTR   , KC_RPRN   , KC_UNDS   , KC_COLN   , KC_DQUO,
-                      KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_ENT),
-             C(KC_BSPC), C(KC_F)
+                      KC_ASTR    , KC_AT     , KC_RCBR   , KC_LABK   , KC_RABK   , C(KC_BSPC),
+             C(KC_ENT), C(KC_F)
 ),
 
   [SYM1] = LAYOUT_LR(  // right sym layer
